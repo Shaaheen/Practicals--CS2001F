@@ -1,4 +1,7 @@
 package PracTwoSource;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -18,11 +21,11 @@ public class TreeUI {
     
     public TreeUI() {
         commands = new HashMap<String, Command>();
-        //commands.put("new", new New());
-        //commands.put("insert", new Insert());
+        commands.put("new", new New());
+        commands.put("insert", new Insert());
         commands.put("contains", new Contains());
-        //commands.put("print", new Print());
-        //commands.put("write", new Write());
+        commands.put("print", new Print());
+        commands.put("write", new Write());
         commands.put("help", new Help());
         commands.put("quit", new Quit());
         target = new AVLTree();
@@ -71,6 +74,51 @@ public class TreeUI {
             catch (NumberFormatException numFormE) {
                 throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
             }    
+        }
+    }
+
+    private class Insert extends Command {
+        public String help() { return "insert <key value>"; }
+
+        public void execute(String argument) throws IllegalArgumentException {
+            try {
+                int key = Integer.parseInt(argument);
+                target.insert(key);
+            }
+            catch (NumberFormatException numFormE) {
+                throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
+            }
+        }
+    }
+    private class New extends Command {
+        public String help() { return "new"; }
+
+        public void execute(String argument) throws IllegalArgumentException {
+            target = new AVLTree();
+        }
+    }
+
+    private class Print extends Command {
+        public String help() { return "print"; }
+
+        public void execute(String argument) throws IllegalArgumentException {
+            PrintStream stream = null;
+            stream = System.out;
+            target.print(stream);
+        }
+    }
+
+    private class Write extends Command {
+        public String help() { return "write <file name>"; }
+
+        public void execute(String argument) throws IllegalArgumentException {
+            PrintStream stream = null;
+            try {
+                stream = new PrintStream(new File(argument));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            target.print(stream);
         }
     }
             
