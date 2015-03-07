@@ -37,7 +37,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
         String leadingStr;
         String branchRep = "";
         int resetter = 0;
-        String tmpStr = "";
+        //String tmpStr = "";
 
         //for loop will go through each level and then each item in that level
         for (int y = 0; y < currentTree.getHeight(); y++){ //each level
@@ -58,7 +58,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
                 if (workingNode != null){ //if its not a place holder
                     String itemFormatted = String.format("%-6s",workingNode.toString()); //format number so the width will always be 3 spaces
                     currLine = currLine + itemFormatted;
-                    tmpStr = tmpStr + " The Key is " + workingNode.getKey() + "  the height is " + workingNode.getHeight() + "\r\n";
+                    //tmpStr = tmpStr + " The Key is " + workingNode.getKey() + "  the height is " + workingNode.getHeight() + "\r\n";
                 }
                 else{
                     currLine = currLine + "      ";//if  a placeholder then add three spaces
@@ -100,7 +100,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
             wholeTree = wholeTree + branchRep;//add the branch representation line also
             wholeTree = wholeTree + "\r\n"; //Next level of Binary Tree so move to next line
         }
-        System.out.print(tmpStr);
+        //System.out.print(tmpStr);
         setDestination(streamer); //passes streamer to setDestination method to write tree to file or screen
 
     }

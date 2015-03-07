@@ -128,32 +128,30 @@ public class TreeUtils {
     }
 
     /**
-     * Recursive implementation of insert on an AVLTreeNode structure.
+     * Iterative implementation of insert on an AVLTreeNode structure.
      */
     public static AVLTreeNode insert(AVLTreeNode node, Integer key) {
-        boolean inserted = false;
-        AVLTreeNode currNode = node;
-        Stack balanceStack = new Stack<AVLTreeNode>();
-        balanceStack.add(currNode);
-        while (!inserted){
-            if (node == null){
-                node = new AVLTreeNode(key);
-                node.setHeight(heightSetter(node));
+        boolean inserted = false; //used to check if a node has been added yet
+        AVLTreeNode currNode = node; //current node working with, changes over each loop
+        Stack balanceStack = new Stack<AVLTreeNode>(); //Stack that acts to store the path taken to add object so as to balance tree easily
+        balanceStack.add(currNode); //add root node to stack
+        while (!inserted){ //while nothing has been inserted keep going
+            if (node == null){ //if empty tree then create root node
+                node = new AVLTreeNode(key); //create root node
+                node.setHeight(heightSetter(node)); //set the height of the node
+                return node;//end method and return root
+            }
+            else if (currNode.getKey() == key){ //if duplicate then do nothing
                 return node;
             }
-            else if (currNode.getKey() == key){
-                return node;
-            }
-            else if (key < currNode.getKey()){
-                if (currNode.hasLeft()){
+            else if (key < currNode.getKey()){ //if new key is smaller than current node key value then try go left
+                if (currNode.hasLeft()){ //try go left
                     currNode = currNode.getLeft();
                 }
-                else{
+                else{ //if no left value already then add new node here
                     currNode.setLeft(new AVLTreeNode(key));
                     currNode.getLeft().setHeight(heightSetter(currNode.getLeft()));
-                    node.setHeight(heightSetter(node));
                     currNode.setHeight(heightSetter(currNode));
-                    balanceStack.add(currNode);
                     inserted = true;
                     currNode = currNode.getLeft();
                 }
@@ -168,7 +166,6 @@ public class TreeUtils {
                     node.setHeight(heightSetter(node));
                     currNode.setHeight(heightSetter(currNode));
                     inserted = true;
-                    //HAVE TO SORT OUT HEIGHT PROBLEM
                     currNode = currNode.getRight();
                 }
             }
@@ -176,8 +173,13 @@ public class TreeUtils {
         }
         node = checkBalance(balanceStack,node);
         refreshAllHts(node);
+        //node = checkBalance(balanceStack,node);
+        //node.setHeight(heightSetter(node));
 
         return node;
+    }
+    public static void adjustHeights(Stack<AVLTreeNode> stackBalance){
+
     }
 
     public static AVLTreeNode checkBalance(Stack<AVLTreeNode> stackBalance, AVLTreeNode root){
@@ -185,27 +187,76 @@ public class TreeUtils {
         AVLTreeNode insertedNode = stackBalance.peek();
         //System.out.println("This is the inserted node " + insertedNode);
         AVLTreeNode currStackNode;
-        System.out.println("the node at bottom of stack is " + stackBalance.get(stackBalance.size() - 1));
-        System.out.println("the node at top of stack is " + stackBalance.get(0));
-        //System.out.println("the stackl size is " + stackBalance.size());*/
+        AVLTreeNode beforeImbalanceNode = root;
+        //System.out.println("the node at bottom of stack is " + stackBalance.get(stackBalance.size() - 1));
+        //System.out.println("the node at top of stack is " + stackBalance.get(0));
+        //System.out.println("the stack size is " + stackBalance.size());*/
         for (int i = (stackBalance.size()-1); i >= 0; i--){
             currStackNode = stackBalance.get(i);
-            if (stackBalance.get(i).getBalanceFactor() > 1){
+            if (i>0){
+
+                beforeImbalanceNode = stackBalance.get(i-1);
+            }
+            if (currStackNode.getBalanceFactor() > 1){
                 if (i == 0){
-                    return rebalanceLeft(stackBalance.get(i), stackBalance.get(i).getLeft().getKey());
+                    AVLTreeNode newRootNode = rebalanceLeft(currStackNode, currStackNode.getLeft().getKey());
+                    newRootNode.setHeight(heightSetter(newRootNode));
+                    return newRootNode;
                 }
                 else{
-                    stackBalance.get(i-1).setLeft(rebalanceLeft(stackBalance.get(i), stackBalance.get(i).getLeft().getKey()));
+                    if (beforeImbalanceNode.getBalanceFactor() > 0){
+                        beforeImbalanceNode.setLeft(rebalanceLeft(currStackNode, currStackNode.getLeft().getKey()));
+                        beforeImbalanceNode.getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft()));
+                        if (beforeImbalanceNode.getLeft().hasLeft()){
+                            beforeImbalanceNode.getLeft().getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft().getLeft()));
+                        }
+                        else if (beforeImbalanceNode.getLeft().hasRight()){
+                            beforeImbalanceNode.getLeft().getRight().setHeight(heightSetter(beforeImbalanceNode.getLeft().getRight()));
+                        }
+                    }
+                    else{
+                        beforeImbalanceNode.setRight(rebalanceLeft(currStackNode, currStackNode.getLeft().getKey()));
+                        beforeImbalanceNode.getRight().setHeight(heightSetter(beforeImbalanceNode.getRight()));
+                        if (beforeImbalanceNode.getRight().hasLeft()){
+                            beforeImbalanceNode.getRight().getLeft().setHeight(heightSetter(beforeImbalanceNode.getRight().getLeft()));
+                        }
+                        else if (beforeImbalanceNode.getRight().hasRight()){
+                            beforeImbalanceNode.getRight().getRight().setHeight(heightSetter(beforeImbalanceNode.getRight().getRight()));
+                        }
+                    }
+
                 }
                 //refreshAllHts(root);
                 break;
             }
-            else if (stackBalance.get(i).getBalanceFactor() < -1){
+            else if (currStackNode.getBalanceFactor() < -1){
                 if (i == 0){
-                    return rebalanceRight(stackBalance.get(i), stackBalance.get(i).getRight().getKey());
+                    AVLTreeNode newRootNode = rebalanceRight(currStackNode, currStackNode.getRight().getKey());
+                    newRootNode.setHeight(heightSetter(newRootNode));
+                    return newRootNode;
                 }
                 else{
-                    stackBalance.get(i-1).setRight(rebalanceRight(stackBalance.get(i), stackBalance.get(i).getRight().getKey()));
+                    if (beforeImbalanceNode.getBalanceFactor() < 0){
+                        beforeImbalanceNode.setRight(rebalanceRight(currStackNode, currStackNode.getRight().getKey()));
+                        beforeImbalanceNode.getRight().setHeight(heightSetter(beforeImbalanceNode.getRight()));
+                        if (beforeImbalanceNode.getRight().hasLeft()){
+                            beforeImbalanceNode.getRight().getLeft().setHeight(heightSetter(beforeImbalanceNode.getRight().getLeft()));
+                        }
+                        else if (beforeImbalanceNode.getRight().hasRight()){
+                            beforeImbalanceNode.getRight().getRight().setHeight(heightSetter(beforeImbalanceNode.getRight().getRight()));
+                        }
+                    }
+                    else{
+                        beforeImbalanceNode.setLeft(rebalanceRight(currStackNode, currStackNode.getRight().getKey()));
+                        beforeImbalanceNode.getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft()));
+                        if (beforeImbalanceNode.getLeft().hasLeft()){
+                            beforeImbalanceNode.getLeft().getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft().getLeft()));
+                        }
+                        else if (beforeImbalanceNode.getLeft().hasRight()){
+                            beforeImbalanceNode.getLeft().getRight().setHeight(heightSetter(beforeImbalanceNode.getRight().getRight()));
+                        }
+                    }
+
                 }
                 //refreshAllHts(root);
             }
@@ -307,6 +358,11 @@ public class TreeUtils {
         AVLk2.setLeft(AVLk1.getRight());
         AVLk1.setRight(AVLk2);
         //System.out.println("Centre = " + AVLk1.getKey() + "Right = " + AVLk1.getRight() + "Left is " + AVLk1.getLeft());
+        AVLk1.setHeight(AVLk1.getHeight()+1);
+        AVLk1.getRight().setHeight(AVLk1.getRight().getHeight() - 1);
+        if (AVLk1.hasLeft()){
+            AVLk1.getLeft().setHeight(AVLk1.getLeft().getHeight() - 1);
+        }
         return AVLk1;
     }
 

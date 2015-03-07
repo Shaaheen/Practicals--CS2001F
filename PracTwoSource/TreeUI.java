@@ -11,6 +11,10 @@ import java.util.Scanner;
  * 
  * @author Stephan Jamieson
  * @version 4/3/2015
+ *
+ * modified by Shaaheen Sacoor on 7/03/2015
+ * SCRSHA001
+ * Added more commands to the interface - new,insert,print,write
  */
 public class TreeUI {
 
@@ -20,6 +24,7 @@ public class TreeUI {
     
     
     public TreeUI() {
+        //added commands into hashmap
         commands = new HashMap<String, Command>();
         commands.put("new", new New());
         commands.put("insert", new Insert());
@@ -62,7 +67,7 @@ public class TreeUI {
         public abstract void execute(String argument) throws IllegalArgumentException;
    
     }
-    
+    //calls contains method in TreeUtils
     private class Contains extends Command {
         public String help() { return "contains <key value>"; }
 
@@ -76,7 +81,7 @@ public class TreeUI {
             }    
         }
     }
-
+    //calls insert method in TreeUtils
     private class Insert extends Command {
         public String help() { return "insert <key value>"; }
 
@@ -90,6 +95,7 @@ public class TreeUI {
             }
         }
     }
+    //create a new AVLTree
     private class New extends Command {
         public String help() { return "new"; }
 
@@ -97,7 +103,7 @@ public class TreeUI {
             target = new AVLTree();
         }
     }
-
+    //use SimpleTreeWriterImpl to print to screen
     private class Print extends Command {
         public String help() { return "print"; }
 
@@ -107,7 +113,7 @@ public class TreeUI {
             target.print(stream);
         }
     }
-
+    //use SimpleTreeWriterImpl to write to a File
     private class Write extends Command {
         public String help() { return "write <file name>"; }
 
