@@ -87,8 +87,7 @@ public class TreeUI {
 
         public void execute(String argument) throws IllegalArgumentException {
             try {
-                int key = Integer.parseInt(argument);
-                target.insert(key);
+                target.insert(argument);
             }
             catch (NumberFormatException numFormE) {
                 throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");

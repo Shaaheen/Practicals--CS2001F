@@ -8,6 +8,7 @@ package PracTwoSource;
 public class AVLTreeNode {
 
     private Integer key;
+    private String keyWord;
     private int height;
     
     private AVLTreeNode left;
@@ -15,20 +16,21 @@ public class AVLTreeNode {
     
     public final static AVLTreeNode EMPTY_NODE = new AVLTreeNode();
     
-    private AVLTreeNode() { this.key=null; this.height=-1; this.left=null; this.right=null; }
+    private AVLTreeNode() { this.key=null; this.height=-1; this.left=null; this.right=null;this.keyWord = ""; }
     
     
     /**
      * Create an AVLTreeNode that contains the given key
      */
-    public AVLTreeNode(Integer key) { this(null, key, null); }
+    public AVLTreeNode(Integer key,String word) { this(null, key, word, null); }
     
-    private AVLTreeNode(AVLTreeNode left, Integer key, AVLTreeNode right) {
+    private AVLTreeNode(AVLTreeNode left, Integer key,String wrd, AVLTreeNode right) {
         assert(key!=null);
         this.left=left;
         this.right=right;
         this.key=key;
         this.height=0;
+        this.keyWord = wrd;
     }
     
     /* Low level structural operations */  
@@ -50,6 +52,12 @@ public class AVLTreeNode {
      * Obtain the key stored in this node.
      */
     public Integer getKey() { return key; }
+
+    public String getKeyWord(){ return  keyWord;}
+
+    public void setKeyWord(String newWord){
+        this.keyWord = newWord;
+    }
     
     /**
      * Obtain the height value stored at this node. (Requirs that ka
@@ -124,7 +132,7 @@ public class AVLTreeNode {
      * Obtain a String representation of this node.
      */
     public String toString() {
-        return this.getKey().toString()+"("+this.getBalanceFactor()+")";
+        return this.getKey().toString()+"("+this.getBalanceFactor()+")" + "(" + keyWord + ")";
     }
     
 

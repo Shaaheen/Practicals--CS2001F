@@ -20,8 +20,8 @@ public class AVLTree {
     /**
      * Insert the given key into the tree.
      */
-    public void insert(Integer key) {
-        root = TreeUtils.insert(root, key);
+    public void insert(String keyWord) {
+        root = TreeUtils.insert(root, keyWord);
     }
 
     /**

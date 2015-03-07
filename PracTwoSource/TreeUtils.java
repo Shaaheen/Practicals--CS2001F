@@ -130,18 +130,21 @@ public class TreeUtils {
     /**
      * Iterative implementation of insert on an AVLTreeNode structure.
      */
-    public static AVLTreeNode insert(AVLTreeNode node, Integer key) {
+    public static AVLTreeNode insert(AVLTreeNode node, String newItem) {
+        TreeString toInsert = new TreeString(newItem);
+        int key = Character.toUpperCase(newItem.charAt(0)) - 64;
         boolean inserted = false; //used to check if a node has been added yet
         AVLTreeNode currNode = node; //current node working with, changes over each loop
         Stack balanceStack = new Stack<AVLTreeNode>(); //Stack that acts to store the path taken to add object so as to balance tree easily
         balanceStack.add(currNode); //add root node to stack
         while (!inserted){ //while nothing has been inserted keep going
             if (node == null){ //if empty tree then create root node
-                node = new AVLTreeNode(key); //create root node
+                node = new AVLTreeNode(key,newItem); //create root node
                 node.setHeight(heightSetter(node)); //set the height of the node
                 return node;//end method and return root
             }
             else if (currNode.getKey() == key){ //if duplicate then do nothing
+                currNode.setKeyWord(newItem);
                 return node;
             }
             else if (key < currNode.getKey()){ //if new key is smaller than current node key value then try go left
@@ -149,7 +152,7 @@ public class TreeUtils {
                     currNode = currNode.getLeft();
                 }
                 else{ //if no left value already then add new node here
-                    currNode.setLeft(new AVLTreeNode(key));
+                    currNode.setLeft(new AVLTreeNode(key,newItem));
                     currNode.getLeft().setHeight(heightSetter(currNode.getLeft()));
                     currNode.setHeight(heightSetter(currNode));
                     inserted = true;
@@ -161,7 +164,7 @@ public class TreeUtils {
                     currNode = currNode.getRight();
                 }
                 else{
-                    currNode.setRight(new AVLTreeNode(key));
+                    currNode.setRight(new AVLTreeNode(key,newItem));
                     currNode.getRight().setHeight(heightSetter(currNode.getRight()));
                     node.setHeight(heightSetter(node));
                     currNode.setHeight(heightSetter(currNode));
@@ -263,40 +266,7 @@ public class TreeUtils {
         }
         return stackBalance.get(0);
     }
-    
-    /*public static AVLTreeNode checkBalance(AVLTreeNode root){
-        if (root.getBalanceFactor() > 1){
-            return rebalanceLeft(root, root.getLeft().getKey());
-        }
-        else if (root.getBalanceFactor() < -1){
-            return rebalanceRight(root, root.getRight().getKey());
-        }
-        AVLTreeNode currentNode = root;
-        AVLTreeNode[] zeroList = {root};
-        ArrayList levelsList = createSubTreeList(zeroList);
-        for (int i = 0; i < root.getHeight(); i++){
-            for (int j = 0; j < )
-            if (currentNode.hasLeft()){
-                if (currentNode.getLeft().getBalanceFactor() > 1){
-                    currentNode.setLeft(rebalanceLeft(currentNode.getLeft(),currentNode.getLeft().getLeft().getKey()));
-                }
-                else if (currentNode.getLeft().getBalanceFactor() < -1){
-                    currentNode.setLeft(rebalanceRight(currentNode.getLeft(),currentNode.getLeft().getRight().getKey()));
-                }
-            }
-            if (currentNode.hasRight()){
-                if (currentNode.getRight().getBalanceFactor() > 1){
-                    currentNode.setRight(rebalanceLeft(currentNode.getRight(), currentNode.getRight().getLeft().getKey()));
-                }
-                else if (currentNode.getRight().getBalanceFactor() < -1){
-                    currentNode.setRight(rebalanceRight(currentNode.getRight(), currentNode.getRight().getRight().getKey()));
-                }
-            }
 
-
-        }
-
-    }*/
     
     public static void refreshAllHts(AVLTreeNode allTreeNodes) {
         //System.out.println("Every node here " + allTreeNodes.getKey());
@@ -312,12 +282,18 @@ public class TreeUtils {
 
     public static AVLTreeNode rebalanceLeft(AVLTreeNode ancestor,int parentKey){
         int left = (ancestor.getLeft().hasLeft() ? ancestor.getLeft().getLeft().getKey() : 0);
-        if (left < parentKey){
+        if (ancestor.getLeft().hasLeft()){
             return rotateWithLeftChild(ancestor);
         }
         else{
             return doubleRotateWithLeftChild(ancestor);
         }
+        /*if (left < parentKey){
+            return rotateWithLeftChild(ancestor);
+        }
+        else{
+            return doubleRotateWithLeftChild(ancestor);
+        }*/
     }
     
     public static AVLTreeNode rebalanceRight(AVLTreeNode ancestor,int parentKey){
