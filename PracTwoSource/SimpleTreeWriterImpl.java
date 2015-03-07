@@ -37,6 +37,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
         String leadingStr;
         String branchRep = "";
         int resetter = 0;
+        String tmpStr = "";
 
         //for loop will go through each level and then each item in that level
         for (int y = 0; y < currentTree.getHeight(); y++){ //each level
@@ -46,6 +47,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
             String currLine = ""; //String containing the current line of nodes
             for (int x = 0; x < currentPrintList.size(); x++ ){ //each item
                 AVLTreeNode workingNode = (AVLTreeNode) currentPrintList.get(x); //retrieves Binary Node at current loop index
+
                 betweenStrNum = (int) (Math.pow(2,height - y) - 1); //Calculates the amount of space that should be between items in that level
                 leadingStrNum = (int) betweenStrNum/2; //Calculates amount of space that should be at the ends of each level
                 betweenStr = createSpaces(betweenStrNum); //Creates a string of correct amount of spaces
@@ -54,11 +56,12 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
                     currLine = currLine + leadingStr; //if beginning of line then add beginning space
                 }
                 if (workingNode != null){ //if its not a place holder
-                    String itemFormatted = String.format("%-3d",workingNode.toString()); //format number so the width will always be 3 spaces
+                    String itemFormatted = String.format("%-6s",workingNode.toString()); //format number so the width will always be 3 spaces
                     currLine = currLine + itemFormatted;
+                    tmpStr = tmpStr + " The Key is " + workingNode.getKey() + "  the height is " + workingNode.getHeight() + "\r\n";
                 }
                 else{
-                    currLine = currLine + "   ";//if  a placeholder then add three spaces
+                    currLine = currLine + "      ";//if  a placeholder then add three spaces
                 }
 
                 //For representation of branches
@@ -74,7 +77,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
                         leftAlready = true; //current node has done a representation for left node]
                         //Creates single spaces to fill up the current length of currentLine string variable,
                         //so spaces will be added right up till it is below the node number then place the star on the left of the number
-                        branchRep = branchRep + createSpaces2(currLine.length() - branchRep.length() - 2) + "*";
+                        branchRep = branchRep + createSpaces2(currLine.length() - branchRep.length() - 6) + "*";
                     }
                     if (workingNode.hasRight()) {
                         if (resetter == 0) { //if hasn't already moved to next line then move
@@ -82,11 +85,11 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
                             resetter = resetter + 1;
                         }
                         if (leftAlready){ //if already went through the left node then add a star on the right of the number
-                            branchRep = branchRep + "   *";
+                            branchRep = branchRep + "      *";
                         }
                         else{
                             //same as above but will place star on right
-                            branchRep = branchRep + createSpaces2(currLine.length()- branchRep.length() + 2) + "*";
+                            branchRep = branchRep + createSpaces2(currLine.length()- branchRep.length() + 3) + "*";
                         }
 
                     }
@@ -97,15 +100,15 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
             wholeTree = wholeTree + branchRep;//add the branch representation line also
             wholeTree = wholeTree + "\r\n"; //Next level of Binary Tree so move to next line
         }
-        System.out.print(wholeTree); //Print Tree
-        setDestination(streamer); //passes streamer to setDestination method to write tree to file
+        System.out.print(tmpStr);
+        setDestination(streamer); //passes streamer to setDestination method to write tree to file or screen
 
     }
     //Method to create strings of spaces with length given
     public static String createSpaces(int numOfspaces){
         String spaces = "";
         for (int i = 0; i < numOfspaces; i++){
-            spaces = spaces + "   "; //each block is 3 spaces
+            spaces = spaces + "      "; //each block is 3 spaces
         }
         return spaces;
     }

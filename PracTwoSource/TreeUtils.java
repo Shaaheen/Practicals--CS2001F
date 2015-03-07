@@ -1,9 +1,7 @@
 package PracTwoSource;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+
 /**
  * Utility procedures for binary tree structures.
  * 
@@ -12,10 +10,9 @@ import java.util.List;
  *
  * Modified by SCRSHA001 at 06/03/2015
  * Shaaheen Sacoor
- * Implemented code for empty methods contain, insert, rotate methods and double rotate methods
+ * Implemented code for empty methods contain, insert, rotate methods and double rotate methods and added methods from previous assignment
  */
 public class TreeUtils {
-        
     /**
      * Obtain the height value of the given node.
      * @return 0 if <code>node==null</code>, otherwise <code>node.getHeight()</code>.
@@ -136,9 +133,11 @@ public class TreeUtils {
     public static AVLTreeNode insert(AVLTreeNode node, Integer key) {
         boolean inserted = false;
         AVLTreeNode currNode = node;
+        Stack balanceStack = new Stack<AVLTreeNode>();
         while (!inserted){
-            if (currNode == null){
-                currNode = new AVLTreeNode(key);
+            if (node == null){
+                node = new AVLTreeNode(key);
+                node.setHeight(heightSetter(node));
                 break;
             }
             else if (currNode.getKey() == key){
@@ -150,9 +149,11 @@ public class TreeUtils {
                 }
                 else{
                     currNode.setLeft(new AVLTreeNode(key));
+                    currNode.getLeft().setHeight(heightSetter(currNode.getLeft()));
+                    node.setHeight(heightSetter(node));
+                    currNode.setHeight(heightSetter(currNode));
+                    balanceStack.add(currNode);
                     inserted = true;
-                    break;
-                    //HAVE TO SORT OUT HEIGHT PROBLEM
                 }
             }
             else if (key > currNode.getKey()){
@@ -161,33 +162,105 @@ public class TreeUtils {
                 }
                 else{
                     currNode.setRight(new AVLTreeNode(key));
+                    currNode.getRight().setHeight(heightSetter(currNode.getRight()));
+                    node.setHeight(heightSetter(node));
+                    currNode.setHeight(heightSetter(currNode));
                     inserted = true;
-                    break;
                     //HAVE TO SORT OUT HEIGHT PROBLEM
                 }
             }
+            balanceStack.add(currNode);
+            checkBalance(balanceStack,node);
         }
+
         return node;
+    }
+
+    public static void checkBalance(Stack<AVLTreeNode> stackBalance, AVLTreeNode root){
+        AVLTreeNode insertedNode = stackBalance.peek();
+        for (int i = 0; i < stackBalance.size(); i++){
+            if (stackBalance.get(i).getBalanceFactor() > 1){
+                rebalanceLeft(stackBalance.get(i), stackBalance.get(i).getLeft().getKey());
+                refreshAllHts(root);
+                break;
+            }
+            else if (stackBalance.get(i).getBalanceFactor() < -1){
+                rebalanceRight(stackBalance.get(i), stackBalance.get(i).getRight().getKey());
+                refreshAllHts(root);
+                break;
+            }
+        }
+    }
+    
+    public static void refreshAllHts(AVLTreeNode allTreeNodes){
+        allTreeNodes.setHeight(heightSetter(allTreeNodes));
+        if (allTreeNodes.hasLeft()){
+            refreshAllHts(allTreeNodes.getLeft());
+        }
+        else if (allTreeNodes.hasRight()){
+            refreshAllHts(allTreeNodes.getRight());
+        }
+    }
+
+    public static void rebalanceLeft(AVLTreeNode ancestor,int parentKey){
+        int left = (ancestor.getLeft().hasLeft() ? ancestor.getLeft().getLeft().getKey() : 0);
+        if (left < parentKey){
+            rotateWithLeftChild(ancestor);
+        }
+        else{
+            doubleRotateWithLeftChild(ancestor);
+        }
+    }
+    
+    public static void rebalanceRight(AVLTreeNode ancestor,int parentKey){
+        int right = (ancestor.getRight().hasRight() ? ancestor.getRight().getRight().getKey() : 0);
+        if (right > parentKey){
+            rotateWithRightChild(ancestor);
+        }
+        else{
+            doubleRotateWithRightChild(ancestor);
+        }
+    }
+
+
+    public static int heightSetter(AVLTreeNode nodeToChangeHt){
+            if (nodeToChangeHt.hasLeft() && nodeToChangeHt.hasRight()) {
+                return Math.max(heightSetter(nodeToChangeHt.getLeft()), heightSetter(nodeToChangeHt.getRight())) + 1;
+            }
+            else if (nodeToChangeHt.hasLeft()) {
+                return heightSetter(nodeToChangeHt.getLeft()) + 1;
+            }
+            else if (nodeToChangeHt.hasRight()) {
+                return heightSetter(nodeToChangeHt.getRight()) + 1;
+            }
+            else {
+                return 1;
+            }
     }
     
     /**
      * Rotate binary tree node with left child.
      * This is a single rotation for case 1.
      */
-    public static AVLTreeNode rotateWithLeftChild( AVLTreeNode k2 )
-    {
-        // Your code here
-        return null;
+    public static AVLTreeNode rotateWithLeftChild( AVLTreeNode AVLk2 ) {
+        
+        AVLTreeNode AVLk1 = AVLk2.getLeft();
+        AVLk2.setLeft(AVLk1.getRight());
+        AVLk1.setRight(AVLk2);        
+        return AVLk1;
     }
 
     /**
      * Rotate binary tree node with right child.
      * This is a single rotation for case 4.
      */
-    public static AVLTreeNode rotateWithRightChild( AVLTreeNode k1 )
-    {
-        // Your code here
-        return null;
+    public static AVLTreeNode rotateWithRightChild( AVLTreeNode AVLk1 ) {
+        
+        AVLTreeNode AVLk2 = AVLk1.getRight();
+        AVLk1.setRight(AVLk2.getLeft());
+        AVLk2.setLeft(AVLk1);
+        
+        return AVLk2;
     }
 
     /**
@@ -195,10 +268,10 @@ public class TreeUtils {
      * with its right child; then rotate node k3 with the new left child.
      * This is a double rotation for case 2.
      */
-    public static AVLTreeNode doubleRotateWithLeftChild( AVLTreeNode k3 )
-    {
-        // Your code here.
-        return null;
+    public static AVLTreeNode doubleRotateWithLeftChild( AVLTreeNode AVLk3 ) {
+        AVLk3.setLeft(rotateWithRightChild(AVLk3.getLeft()));
+        return rotateWithLeftChild(AVLk3);
+        
     }
 
     /**
@@ -206,11 +279,13 @@ public class TreeUtils {
      * with its left child; then rotate node k1 with the new right child.
      * This is a double rotation for case 3.
      */
-    public static AVLTreeNode doubleRotateWithRightChild( AVLTreeNode k1 )
+    public static AVLTreeNode doubleRotateWithRightChild( AVLTreeNode AVLk3 )
     {
-        // Your code here.
-        return null;
+        AVLk3.setRight(rotateWithLeftChild(AVLk3.getRight()));
+        return rotateWithRightChild(AVLk3);
     }
+    
+    
 
     
     /**
