@@ -33,6 +33,7 @@ public class TreeUI {
         commands.put("write", new Write());
         commands.put("help", new Help());
         commands.put("quit", new Quit());
+        commands.put("delete",new Delete());
         target = new AVLTree();
     }
     
@@ -73,7 +74,7 @@ public class TreeUI {
 
         public void execute(String argument) throws IllegalArgumentException {
             try {
-                String response = target.contains(Integer.parseInt(argument)) ? "Yes" : "No";
+                String response = target.contains(argument) ? "Yes" : "No";
                 System.out.println(response);
             }
             catch (NumberFormatException numFormE) {
@@ -88,6 +89,19 @@ public class TreeUI {
         public void execute(String argument) throws IllegalArgumentException {
             try {
                 target.insert(argument);
+            }
+            catch (NumberFormatException numFormE) {
+                throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
+            }
+        }
+    }
+    //calls delete method from TreeUtils
+    private class Delete extends Command {
+        public String help() { return "delete <key value>"; }
+
+        public void execute(String argument) throws IllegalArgumentException {
+            try {
+                target.delete(argument);
             }
             catch (NumberFormatException numFormE) {
                 throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
@@ -154,6 +168,6 @@ public class TreeUI {
             System.exit(0);
         }
     }
- 
+
 
 }

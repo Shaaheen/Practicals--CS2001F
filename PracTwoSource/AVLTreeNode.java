@@ -75,6 +75,12 @@ public class AVLTreeNode {
         return left-right;
     }
 
+    //Method that changes a nodes key and keyWord value to a different nodes key and keyWord value, For delete method
+    public void changeNodeDet(AVLTreeNode changedTo){
+        this.keyWord = changedTo.keyWord;
+        this.key = changedTo.key;
+    }
+
         
         /**
      * Obtain this node's left branch. Requires that <code>this.hasLeft()</code>.

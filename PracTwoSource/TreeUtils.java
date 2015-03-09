@@ -104,13 +104,14 @@ public class TreeUtils {
     /** 
      * Determine whether the given tree structure contains the given key.
      */
-    public static boolean contains(AVLTreeNode node, Integer key) {
-        if (node.getKey() == key){ //if node key is equal to key we want to find then return true
+    public static boolean contains(AVLTreeNode node, String keyWord) {
+        int key = Character.toUpperCase(keyWord.charAt(0)) - 64;
+        if ((node.getKeyWord()).equals(keyWord)){ //if node key is equal to key we want to find then return true
             return true;
         }
         if (key < node.getKey()){ //if key searching for is smaller than current key then try go to the left subtree
             if (node.hasLeft()) { //go down left subtree
-                return contains(node.getLeft(), key);
+                return contains(node.getLeft(), keyWord);
             }
             else { //if there is no subtree and key is smaller than current node key then there can't be key in tree, therefore false
                 return false;
@@ -118,7 +119,7 @@ public class TreeUtils {
         }
         else {
             if (node.hasRight()){ //same as left
-                return contains(node.getRight(),key);
+                return contains(node.getRight(),keyWord);
             }
             else{
                 return false;
@@ -131,7 +132,6 @@ public class TreeUtils {
      * Iterative implementation of insert on an AVLTreeNode structure.
      */
     public static AVLTreeNode insert(AVLTreeNode node, String newItem) {
-        TreeString toInsert = new TreeString(newItem);
         int key = Character.toUpperCase(newItem.charAt(0)) - 64;
         boolean inserted = false; //used to check if a node has been added yet
         AVLTreeNode currNode = node; //current node working with, changes over each loop
@@ -181,7 +181,100 @@ public class TreeUtils {
 
         return node;
     }
-    public static void adjustHeights(Stack<AVLTreeNode> stackBalance){
+
+    public static AVLTreeNode delete(AVLTreeNode node, String deleteItem) {
+        int key = Character.toUpperCase(deleteItem.charAt(0)) - 64;
+        Stack<AVLTreeNode> deleteStack = new Stack<AVLTreeNode>();
+        AVLTreeNode currNode = node;
+        for (int i = 0; i < node.getHeight(); i++){
+            deleteStack.add(currNode);
+            if (key == currNode.getKey()){
+                if (deleteItem.equals(currNode.getKeyWord())){
+                    if (deleteStack.size()  == 1){
+                        node = deleteTheNode(currNode);
+                    }
+                    else if (deleteStack.size() > 1){
+                        deleteStack.pop();
+                        AVLTreeNode parentNode = deleteStack.peek();
+                        if (parentNode.hasLeft() && !parentNode.hasRight()){
+                            parentNode.setLeft(deleteTheNode(currNode));
+                        }
+                        else if (!parentNode.hasLeft() && parentNode.hasRight()){
+                            parentNode.setRight(deleteTheNode(currNode));
+                        }
+                        else if (parentNode.hasLeft() && parentNode.hasRight()){
+                            if (parentNode.getLeft().getKey() == currNode.getKey()){
+                                parentNode.setLeft(deleteTheNode(currNode));
+                            }
+                            else{
+                                parentNode.setRight(deleteTheNode(currNode));
+                            }
+                        }
+                    }
+                    break;
+
+                }
+                else{
+                    System.out.println("Item does not exist in Tree");
+                    break;
+                }
+            }
+            else if (key < currNode.getKey()){
+                if (currNode.hasLeft()){
+                    currNode = currNode.getLeft();
+                }
+                else{
+                    System.out.println("Item does not exist in Tree");
+                    break;
+                }
+            }
+            else if (key > currNode.getKey()){
+                if (currNode.hasRight()){
+                    currNode = currNode.getRight();
+                }
+                else{
+                    System.out.println("Item does not exist in Tree");
+                    break;
+                }
+            }
+        }
+        checkBalance(deleteStack,node);
+        return node;
+
+    }
+
+    public static AVLTreeNode deleteTheNode(AVLTreeNode toBeDeleted){
+        if (!toBeDeleted.hasRight() && !toBeDeleted.hasLeft()){
+            return null;
+        }
+        else if (!toBeDeleted.hasRight() && toBeDeleted.hasLeft()){
+            return toBeDeleted.getLeft();
+        }
+        else if(toBeDeleted.hasRight() && !toBeDeleted.hasLeft()){
+            return toBeDeleted.getRight();
+        }
+        else{
+            AVLTreeNode successor = toBeDeleted.getRight();
+            AVLTreeNode beforeSuccessor = toBeDeleted;
+            if (successor.hasLeft()){
+                beforeSuccessor = successor.getRight();
+                successor = successor.getLeft();
+            }
+            while (successor.hasLeft()){
+                successor = successor.getLeft();
+                beforeSuccessor.getLeft();
+            }
+            if (beforeSuccessor.getKey() != toBeDeleted.getKey()){
+                beforeSuccessor.setLeft(successor.getRight());
+                toBeDeleted.changeNodeDet(successor);
+            }
+            else{
+                successor.setLeft(toBeDeleted.getLeft());
+            }
+
+        }
+
+        return toBeDeleted;
 
     }
 
@@ -207,7 +300,7 @@ public class TreeUtils {
                     return newRootNode;
                 }
                 else{
-                    if (beforeImbalanceNode.getBalanceFactor() > 0){
+                    if (beforeImbalanceNode.getBalanceFactor() >= 0){
                         beforeImbalanceNode.setLeft(rebalanceLeft(currStackNode, currStackNode.getLeft().getKey()));
                         beforeImbalanceNode.getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft()));
                         if (beforeImbalanceNode.getLeft().hasLeft()){
@@ -239,7 +332,7 @@ public class TreeUtils {
                     return newRootNode;
                 }
                 else{
-                    if (beforeImbalanceNode.getBalanceFactor() < 0){
+                    if (beforeImbalanceNode.getBalanceFactor() <= 0){
                         beforeImbalanceNode.setRight(rebalanceRight(currStackNode, currStackNode.getRight().getKey()));
                         beforeImbalanceNode.getRight().setHeight(heightSetter(beforeImbalanceNode.getRight()));
                         if (beforeImbalanceNode.getRight().hasLeft()){

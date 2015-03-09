@@ -24,6 +24,11 @@ public class AVLTree {
         root = TreeUtils.insert(root, keyWord);
     }
 
+    //Delete given node from tree
+    public void delete(String keyWord) {
+        root = TreeUtils.delete(root, keyWord);
+    }
+
     /**
      * Use the given PrintStream object to output a textual representation of this tree.
      */
@@ -35,12 +40,12 @@ public class AVLTree {
     /**
      * Determine whether the tree contains the given key.
      */
-    public boolean contains(Integer key) {
+    public boolean contains(String keyWord) {
         if (root==null) {
             return false;
         }
         else {
-            return TreeUtils.contains(root, key);
+            return TreeUtils.contains(root, keyWord);
         }
     }
 

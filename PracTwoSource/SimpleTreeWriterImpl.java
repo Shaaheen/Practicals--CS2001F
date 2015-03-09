@@ -27,6 +27,10 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
 
     //Method to Print out Binary Trees in correct format and to write same output to a file
     public void write(AVLTreeNode currentTree) {
+        if (currentTree == null){
+            wholeTree = "";
+            return;
+        }
         AVLTreeNode[] rootLevel = TreeUtils.createLvlZero(currentTree); //Use TreeUtils method to create a level 0 list
         ArrayList NodeLevels = TreeUtils.createSubTreeList(rootLevel); //Use TreeUtils to get an ArrayList that contains
                                                                        //a list for every level in Binary Tree
