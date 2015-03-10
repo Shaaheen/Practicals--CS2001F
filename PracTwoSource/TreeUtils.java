@@ -238,7 +238,9 @@ public class TreeUtils {
                 }
             }
         }
-        checkBalance(deleteStack,node);
+
+        node = checkBalance(deleteStack,node);
+        refreshAllHts(node);
         return node;
 
     }
@@ -257,12 +259,12 @@ public class TreeUtils {
             AVLTreeNode successor = toBeDeleted.getRight();
             AVLTreeNode beforeSuccessor = toBeDeleted;
             if (successor.hasLeft()){
-                beforeSuccessor = successor.getRight();
+                beforeSuccessor = beforeSuccessor.getRight();
                 successor = successor.getLeft();
             }
             while (successor.hasLeft()){
                 successor = successor.getLeft();
-                beforeSuccessor.getLeft();
+                beforeSuccessor = beforeSuccessor.getLeft();
             }
             if (beforeSuccessor.getKey() != toBeDeleted.getKey()){
                 beforeSuccessor.setLeft(successor.getRight());
@@ -270,6 +272,7 @@ public class TreeUtils {
             }
             else{
                 successor.setLeft(toBeDeleted.getLeft());
+                return successor;
             }
 
         }
@@ -300,7 +303,7 @@ public class TreeUtils {
                     return newRootNode;
                 }
                 else{
-                    if (beforeImbalanceNode.getBalanceFactor() >= 0){
+                    if (beforeImbalanceNode.getKey() >= currStackNode.getKey() ){
                         beforeImbalanceNode.setLeft(rebalanceLeft(currStackNode, currStackNode.getLeft().getKey()));
                         beforeImbalanceNode.getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft()));
                         if (beforeImbalanceNode.getLeft().hasLeft()){
@@ -332,7 +335,7 @@ public class TreeUtils {
                     return newRootNode;
                 }
                 else{
-                    if (beforeImbalanceNode.getBalanceFactor() <= 0){
+                    if (beforeImbalanceNode.getKey() <= currStackNode.getKey()){
                         beforeImbalanceNode.setRight(rebalanceRight(currStackNode, currStackNode.getRight().getKey()));
                         beforeImbalanceNode.getRight().setHeight(heightSetter(beforeImbalanceNode.getRight()));
                         if (beforeImbalanceNode.getRight().hasLeft()){
@@ -373,6 +376,21 @@ public class TreeUtils {
         }
     }
 
+    public static int heightSetter(AVLTreeNode nodeToChangeHt){
+        if (nodeToChangeHt.hasLeft() && nodeToChangeHt.hasRight()) {
+            return Math.max(heightSetter(nodeToChangeHt.getLeft()), heightSetter(nodeToChangeHt.getRight())) + 1;
+        }
+        else if (nodeToChangeHt.hasLeft()) {
+            return heightSetter(nodeToChangeHt.getLeft()) + 1;
+        }
+        else if (nodeToChangeHt.hasRight()) {
+            return heightSetter(nodeToChangeHt.getRight()) + 1;
+        }
+        else {
+            return 1;
+        }
+    }
+
     public static AVLTreeNode rebalanceLeft(AVLTreeNode ancestor,int parentKey){
         int left = (ancestor.getLeft().hasLeft() ? ancestor.getLeft().getLeft().getKey() : 0);
         if (ancestor.getLeft().hasLeft()){
@@ -391,7 +409,7 @@ public class TreeUtils {
     
     public static AVLTreeNode rebalanceRight(AVLTreeNode ancestor,int parentKey){
         int right = (ancestor.getRight().hasRight() ? ancestor.getRight().getRight().getKey() : 0);
-        if (right > parentKey){
+        if (ancestor.getRight().hasRight()){
             return rotateWithRightChild(ancestor);
         }
         else{
@@ -400,20 +418,7 @@ public class TreeUtils {
     }
 
 
-    public static int heightSetter(AVLTreeNode nodeToChangeHt){
-            if (nodeToChangeHt.hasLeft() && nodeToChangeHt.hasRight()) {
-                return Math.max(heightSetter(nodeToChangeHt.getLeft()), heightSetter(nodeToChangeHt.getRight())) + 1;
-            }
-            else if (nodeToChangeHt.hasLeft()) {
-                return heightSetter(nodeToChangeHt.getLeft()) + 1;
-            }
-            else if (nodeToChangeHt.hasRight()) {
-                return heightSetter(nodeToChangeHt.getRight()) + 1;
-            }
-            else {
-                return 1;
-            }
-    }
+
     
     /**
      * Rotate binary tree node with left child.
