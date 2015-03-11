@@ -20,6 +20,7 @@ public class AVLTreeNode {
     private AVLTreeNode left;
     private AVLTreeNode right;
     private ArrayList nodeDict;
+    private int wordsEntered = 0;
     
     public final static AVLTreeNode EMPTY_NODE = new AVLTreeNode();
     
@@ -40,6 +41,7 @@ public class AVLTreeNode {
         this.keyWord = wrd;
         this.nodeDict = new ArrayList();
         this.nodeDict.add(wrd);
+        this.wordsEntered = this.wordsEntered + 1;
 
     }
     
@@ -70,18 +72,20 @@ public class AVLTreeNode {
     }
 
     public void addToDict(String newWord){
-        this.nodeDict.add(newWord);
+        //Checks if already exists under key
+        boolean notInArray = true;
+        for (int i = 0; i< nodeDict.size();i++){
+            if (newWord.equals(nodeDict.get(i))){
+                notInArray = false;
+            }
+        }
+        //if it doesn't then add to the list under key
+        if (notInArray){
+            this.nodeDict.add(newWord);
+        }
+        this.wordsEntered = wordsEntered + 1; //Another word entered under key
     }
 
-    public String findString(){
-        String stringFound = "(" + nodeDict.size() + ")" + "(" + nodeDict.get(0);
-        for (int i = 1; i < nodeDict.size(); i++){
-            stringFound = stringFound + ", " + nodeDict.get(i);
-        }
-        stringFound = stringFound + ")";
-        return stringFound;
-    }
-    
     /**
      * Obtain the height value stored at this node. (Requirs that ka
      */
@@ -166,9 +170,19 @@ public class AVLTreeNode {
      */
     public String toString() {
         String toPrint = "";
-        toPrint = this.getKey().toString()+"("+this.getBalanceFactor()+")";
+        toPrint = "(" + Character.toUpperCase(((String) nodeDict.get(0)).charAt(0)) + ") (" + wordsEntered + ")";
+        //toPrint = this.getKey().toString()+"("+this.getBalanceFactor()+")";
 
         return toPrint;
+    }
+
+    public String findString(){
+        String stringFound = "(" + nodeDict.size() + ")" + "(" + nodeDict.get(0);
+        for (int i = 1; i < nodeDict.size(); i++){
+            stringFound = stringFound + ", " + nodeDict.get(i);
+        }
+        stringFound = stringFound + ")";
+        return stringFound;
     }
     
 
