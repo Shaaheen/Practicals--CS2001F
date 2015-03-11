@@ -215,7 +215,10 @@ public class TreeUtils {
         for (int i = 0; i < node.getHeight(); i++){
             deleteStack.add(currNode);
             if (key == currNode.getKey()){
-                if (deleteItem.equals(currNode.getKeyWord())){
+                if (currNode.getDictionary().size() > 1){
+                    currNode.getDictionary().remove(deleteItem);
+                }
+                else if (deleteItem.equals(currNode.getDictionary().get(0))){
                     if (deleteStack.size()  == 1){
                         node = deleteTheNode(currNode);
                     }
