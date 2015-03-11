@@ -34,7 +34,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
         AVLTreeNode[] rootLevel = TreeUtils.createLvlZero(currentTree); //Use TreeUtils method to create a level 0 list
         ArrayList NodeLevels = TreeUtils.createSubTreeList(rootLevel); //Use TreeUtils to get an ArrayList that contains
                                                                        //a list for every level in Binary Tree
-        int height = currentTree.getHeight();//Gets height of tree
+        int height = TreeUtils.height(currentTree);//Gets height of tree
         int leadingStrNum = 0;
         int betweenStrNum = 0;  //These variable will be used to store the amount of space that there should be between numbers
         String betweenStr;
@@ -44,7 +44,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
         //String tmpStr = "";
 
         //for loop will go through each level and then each item in that level
-        for (int y = 0; y < currentTree.getHeight(); y++){ //each level
+        for (int y = 0; y < height; y++){ //each level
             ArrayList currentPrintList = (ArrayList) NodeLevels.get(y); //gets list for that level
             resetter = 0; //variable used for the tree representation string, it is used to see when to move to a new line
             branchRep = ""; //string that contains the branch representation for the children Nodes
@@ -61,7 +61,14 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
                 }
                 if (workingNode != null){ //if its not a place holder
                     String itemFormatted = String.format("%-6s",workingNode.toString()); //format number so the width will always be 3 spaces
+
+                    String spacesForDictVal = createSpaces2(currLine.length());
                     currLine = currLine + itemFormatted;
+                    //System.out.println(currLine);
+                    for (int h = 0; h < workingNode.getDictionary().size();h++){
+                        currLine = currLine + "\r\n" + spacesForDictVal + workingNode.getDictionary().get(h);
+                    }
+
                     //tmpStr = tmpStr + " The Key is " + workingNode.getKey() + "  the height is " + workingNode.getHeight() + "\r\n";
                 }
                 else{
@@ -101,7 +108,7 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter{
                 currLine = currLine + betweenStr + "";
             }
             wholeTree = wholeTree + currLine; //add the line to main string
-            wholeTree = wholeTree + branchRep;//add the branch representation line also
+            //wholeTree = wholeTree + branchRep;//add the branch representation line also
             wholeTree = wholeTree + "\r\n"; //Next level of Binary Tree so move to next line
         }
         //System.out.print(tmpStr);

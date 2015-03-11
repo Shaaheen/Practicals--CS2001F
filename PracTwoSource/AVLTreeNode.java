@@ -72,6 +72,15 @@ public class AVLTreeNode {
     public void addToDict(String newWord){
         this.nodeDict.add(newWord);
     }
+
+    public String findString(){
+        String stringFound = "(" + nodeDict.size() + ")" + "(" + nodeDict.get(0);
+        for (int i = 1; i < nodeDict.size(); i++){
+            stringFound = stringFound + ", " + nodeDict.get(i);
+        }
+        stringFound = stringFound + ")";
+        return stringFound;
+    }
     
     /**
      * Obtain the height value stored at this node. (Requirs that ka
@@ -93,6 +102,10 @@ public class AVLTreeNode {
     public void changeNodeDet(AVLTreeNode changedTo){
         this.keyWord = changedTo.keyWord;
         this.key = changedTo.key;
+    }
+
+    public ArrayList getDictionary(){
+        return this.nodeDict;
     }
 
         
@@ -154,9 +167,6 @@ public class AVLTreeNode {
     public String toString() {
         String toPrint = "";
         toPrint = this.getKey().toString()+"("+this.getBalanceFactor()+")";
-        for (int i = 0; i < nodeDict.size();i++){
-            toPrint = toPrint + "\r\n" + nodeDict.get(i);
-        }
 
         return toPrint;
     }

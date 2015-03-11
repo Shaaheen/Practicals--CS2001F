@@ -17,12 +17,13 @@ public class TreeUtils {
      * Obtain the height value of the given node.
      * @return 0 if <code>node==null</code>, otherwise <code>node.getHeight()</code>.
      */
+
     public static int height(AVLTreeNode node) {
         if (node==null) {
             return 0;
         }
         else {
-            return node.getHeight();
+            return heightSetter(node);
         }
     }
 
@@ -36,7 +37,7 @@ public class TreeUtils {
     //Method to create a Arraylist that contains a list for each level in a Binary Tree
     public static ArrayList createSubTreeList(AVLTreeNode[] parentList){
         AVLTreeNode currentTree = parentList[0]; //Gets root Node from List
-        int height = currentTree.getHeight();//Gets height of Binary Tree
+        int height = height(currentTree);//Gets height of Binary Tree
 
         LinkedList NodesQueue = new LinkedList(); //Linked list used to contain Nodes in a Tree in a Queue format
         LinkedList numNodesInLevel = new LinkedList(); //Keeps the number of nodes that are supposed to be in a level
@@ -127,6 +128,31 @@ public class TreeUtils {
         }
 
     }
+
+    public static String find(AVLTreeNode node, String keyWord) {
+        int key = Character.toUpperCase(keyWord.charAt(0)) - 64;
+        if (node.getKey() == key){ //if node key is equal to key we want to find then return true
+            return node.findString();
+        }
+        if (key < node.getKey()){ //if key searching for is smaller than current key then try go to the left subtree
+            if (node.hasLeft()) { //go down left subtree
+                return find(node.getLeft(), keyWord);
+            }
+            else { //if there is no subtree and key is smaller than current node key then there can't be key in tree, therefore false
+                return "Does not exist in tree";
+            }
+        }
+        else {
+            if (node.hasRight()){ //same as left
+                return find(node.getRight(), keyWord);
+            }
+            else{
+                return "Does not exist in tree";
+            }
+        }
+
+    }
+
 
     /**
      * Iterative implementation of insert on an AVLTreeNode structure.

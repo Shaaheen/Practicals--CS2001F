@@ -24,6 +24,10 @@ public class AVLTree {
         root = TreeUtils.insert(root, keyWord);
     }
 
+    public String find(String keyWord) {
+        return TreeUtils.find(root,keyWord);
+    }
+
     //Delete given node from tree
     public void delete(String keyWord) {
         root = TreeUtils.delete(root, keyWord);
