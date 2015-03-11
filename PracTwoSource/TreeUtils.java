@@ -144,7 +144,7 @@ public class TreeUtils {
                 return node;//end method and return root
             }
             else if (currNode.getKey() == key){ //if duplicate then do nothing
-                currNode.setKeyWord(newItem);
+                currNode.addToDict(newItem);
                 return node;
             }
             else if (key < currNode.getKey()){ //if new key is smaller than current node key value then try go left

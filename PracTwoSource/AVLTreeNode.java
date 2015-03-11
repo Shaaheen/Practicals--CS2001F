@@ -1,4 +1,10 @@
 package PracTwoSource;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
 /**
  * Implements a node suitable for building AVL tree structures.
  * 
@@ -13,6 +19,7 @@ public class AVLTreeNode {
     
     private AVLTreeNode left;
     private AVLTreeNode right;
+    private ArrayList nodeDict;
     
     public final static AVLTreeNode EMPTY_NODE = new AVLTreeNode();
     
@@ -31,6 +38,9 @@ public class AVLTreeNode {
         this.key=key;
         this.height=0;
         this.keyWord = wrd;
+        this.nodeDict = new ArrayList();
+        this.nodeDict.add(wrd);
+
     }
     
     /* Low level structural operations */  
@@ -57,6 +67,10 @@ public class AVLTreeNode {
 
     public void setKeyWord(String newWord){
         this.keyWord = newWord;
+    }
+
+    public void addToDict(String newWord){
+        this.nodeDict.add(newWord);
     }
     
     /**
@@ -138,7 +152,13 @@ public class AVLTreeNode {
      * Obtain a String representation of this node.
      */
     public String toString() {
-        return this.getKey().toString()+"("+this.getBalanceFactor()+")" + "(" + keyWord + ")";
+        String toPrint = "";
+        toPrint = this.getKey().toString()+"("+this.getBalanceFactor()+")";
+        for (int i = 0; i < nodeDict.size();i++){
+            toPrint = toPrint + "\r\n" + nodeDict.get(i);
+        }
+
+        return toPrint;
     }
     
 
