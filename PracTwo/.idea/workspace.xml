@@ -7,57 +7,37 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../AVL3.out" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../AVL4.out" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../PracTwo.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/AVL0.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/AVL1.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/AVL3.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/AVL4.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwo.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/AVLTree.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/AVLTreeNode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/SimpleTreeWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/SimpleTreeWriterImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Command.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Contains.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Delete.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Find.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Help.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Insert.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$New.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Print.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Quit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI$Write.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/PracTwoSource/TreeUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/AVLTree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/AVLTreeNode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/SimpleTreeWriter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/SimpleTreeWriterImpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/TreeUI.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/TreeUtils.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/allclasses-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/allclasses-noframe.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/constant-values.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/help-doc.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/index-all.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/logfile.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/overview-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/package-list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/resources/inherit.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PracTwo/doc/stylesheet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Before Printing Algorithm/AVLTree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Before Printing Algorithm/AVLTreeNode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Before Printing Algorithm/SimpleTreeWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Before Printing Algorithm/SimpleTreeWriterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Before Printing Algorithm/TreeUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Before Printing Algorithm/TreeUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 1(need to comment)/PracTwoSource/AVLTree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 1(need to comment)/PracTwoSource/AVLTreeNode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 1(need to comment)/PracTwoSource/SimpleTreeWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 1(need to comment)/PracTwoSource/SimpleTreeWriterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 1(need to comment)/PracTwoSource/TreeUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 1(need to comment)/PracTwoSource/TreeUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 2/AVLTree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 2/AVLTreeNode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 2/SimpleTreeWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 2/SimpleTreeWriterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 2/TreeUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 2/TreeUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 3/AVLTree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 3/AVLTreeNode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 3/SimpleTreeWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 3/SimpleTreeWriterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 3/TreeUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 3/TreeUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 4/AVLTree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 4/AVLTreeNode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 4/SimpleTreeWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 4/SimpleTreeWriterImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 4/TreeUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Task 4/TreeUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Find.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../PracTwoSource/AVLTree.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../PracTwoSource/AVLTreeNode.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../PracTwoSource/SimpleTreeWriter.java" afterPath="" />
@@ -130,14 +110,29 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/PracTwo/doc/package-tree.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/PracTwo/doc/resources/inherit.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/PracTwo/doc/stylesheet.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/AVLTree.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/AVLTree.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/AVLTreeNode.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/AVLTreeNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/SimpleTreeWriterImpl.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/SimpleTreeWriterImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Command.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Command.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Contains.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Contains.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Delete.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Delete.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Help.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Help.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Insert.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Insert.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$New.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$New.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Print.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Print.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Quit.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Quit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Write.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI$Write.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUI.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PracTwoSource/TreeUtils.class" afterPath="$PROJECT_DIR$/out/PracTwoSource/TreeUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PracTwoSource/AVLTree.java" afterPath="$PROJECT_DIR$/PracTwoSource/AVLTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Task 3/AVLTree.java" afterPath="$PROJECT_DIR$/Task 3/AVLTree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PracTwoSource/AVLTreeNode.java" afterPath="$PROJECT_DIR$/PracTwoSource/AVLTreeNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PracTwo.iml" afterPath="$PROJECT_DIR$/.idea/PracTwo.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PracTwoSource/SimpleTreeWriterImpl.java" afterPath="$PROJECT_DIR$/PracTwoSource/SimpleTreeWriterImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PracTwoSource/TreeUI.java" afterPath="$PROJECT_DIR$/PracTwoSource/TreeUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PracTwoSource/TreeUtils.java" afterPath="$PROJECT_DIR$/PracTwoSource/TreeUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Task 3/TreeUtils.java" afterPath="$PROJECT_DIR$/Task 3/TreeUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/.idea/workspace.xml" />
     </list>
     <ignored path="PracTwo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -168,14 +163,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TreeUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TreeUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PracTwoSource/TreeUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.60739434" vertical-offset="0" max-vertical-offset="2400">
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding>
-                <element signature="e#1840#1841#0" expanded="true" />
-                <element signature="e#1876#1877#0" expanded="true" />
+                <element signature="e#1742#1743#0" expanded="true" />
+                <element signature="e#1778#1779#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,15 +179,11 @@
       <file leaf-file-name="AVLTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PracTwoSource/AVLTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="930">
-              <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
               <folding>
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#455#456#0" expanded="true" />
-                <element signature="e#569#570#0" expanded="true" />
-                <element signature="e#620#621#0" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#750#751#0" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+                <element signature="e#296#297#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,26 +192,25 @@
       <file leaf-file-name="SimpleTreeWriterImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PracTwoSource/SimpleTreeWriterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
-              <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
-              <folding>
-                <element signature="e#454#455#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#585#586#0" expanded="true" />
-                <element signature="e#1507#1516#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1965">
+              <caret line="44" column="98" selection-start-line="44" selection-start-column="98" selection-end-line="44" selection-end-column="98" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreeUtils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TreeUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PracTwoSource/TreeUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1891892" vertical-offset="3525" max-vertical-offset="6735">
-              <caret line="242" column="53" selection-start-line="242" selection-start-column="53" selection-end-line="242" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4695">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
               <folding>
-                <element signature="e#5455#5468#0" expanded="true" />
+                <marker date="1426255473000" expanded="true" signature="45:260" placeholder="/**...*/" />
+                <marker date="1426255473000" expanded="true" signature="3156:3229" placeholder="/**...*/" />
+                <marker date="1426255473000" expanded="true" signature="10916:11207" placeholder="/**...*/" />
+                <marker date="1426255473000" expanded="true" signature="11724:11930" placeholder="/**...*/" />
+                <marker date="1426255473000" expanded="true" signature="12377:12522" placeholder="/**...*/" />
+                <marker date="1426255473000" expanded="true" signature="12705:12875" placeholder="/**...*/" />
               </folding>
             </state>
           </provider>
@@ -229,16 +219,10 @@
       <file leaf-file-name="AVLTreeNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PracTwoSource/AVLTreeNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2985">
-              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2055">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3529#3530#0" expanded="true" />
-                <element signature="e#3565#3566#0" expanded="true" />
-                <element signature="e#3712#3713#0" expanded="true" />
-                <element signature="e#3746#3747#0" expanded="true" />
-                <element signature="e#3882#3883#0" expanded="true" />
-                <element signature="e#3917#3918#0" expanded="true" />
+                <element signature="e#3225#3226#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -252,11 +236,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PracTwoSource/TreeUI.java" />
         <option value="$PROJECT_DIR$/PracTwoSource/AVLTree.java" />
         <option value="$PROJECT_DIR$/PracTwoSource/SimpleTreeWriterImpl.java" />
         <option value="$PROJECT_DIR$/PracTwoSource/AVLTreeNode.java" />
         <option value="$PROJECT_DIR$/PracTwoSource/TreeUtils.java" />
+        <option value="$PROJECT_DIR$/PracTwoSource/TreeUI.java" />
       </list>
     </option>
   </component>
@@ -267,10 +251,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
-    <option name="y" value="-14" />
-    <option name="width" value="1555" />
-    <option name="height" value="924" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1535" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -297,7 +281,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,7 +316,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,6 +454,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -633,44 +622,45 @@
       <created>1426233327535</created>
       <option name="number" value="Default" />
       <updated>1426233327535</updated>
-      <workItem from="1426233327538" duration="7131000" />
+      <workItem from="1426233327538" duration="7241000" />
+      <workItem from="1426252234353" duration="5239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7131000" />
+    <option name="totallyTimeSpent" value="12480000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-14" width="1555" height="924" extended-state="7" />
+    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953784" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.4996651" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5003349" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5003349" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953784" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2103148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24203822" sideWeight="0.4996651" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -700,11 +690,65 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PracTwoSource/TreeUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2805">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="e#1742#1743#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracTwoSource/AVLTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="930">
+          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+          <folding>
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracTwoSource/SimpleTreeWriterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1590">
+          <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracTwoSource/TreeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6735">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1426255473000" expanded="true" signature="45:260" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="3156:3229" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="10916:11207" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="11724:11930" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="12377:12522" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="12705:12875" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracTwoSource/AVLTreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2985">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding>
+            <element signature="e#3225#3226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AVL6.out">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,72 +756,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PracTwoSource/TreeUI.java">
+    <entry file="file://$PROJECT_DIR$/AVL0.out">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="e#1840#1841#0" expanded="true" />
-            <element signature="e#1876#1877#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="568">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PracTwoSource/AVLTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="362" max-vertical-offset="930">
-          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
           <folding>
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PracTwoSource/SimpleTreeWriterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
-          <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
-          <folding>
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#1507#1516#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PracTwoSource/AVLTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2985">
-          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2055">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3529#3530#0" expanded="true" />
-            <element signature="e#3565#3566#0" expanded="true" />
-            <element signature="e#3712#3713#0" expanded="true" />
-            <element signature="e#3746#3747#0" expanded="true" />
-            <element signature="e#3882#3883#0" expanded="true" />
-            <element signature="e#3917#3918#0" expanded="true" />
+            <element signature="e#3225#3226#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PracTwoSource/TreeUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1891892" vertical-offset="3525" max-vertical-offset="6735">
-          <caret line="242" column="53" selection-start-line="242" selection-start-column="53" selection-end-line="242" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4695">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
-            <element signature="e#5455#5468#0" expanded="true" />
+            <marker date="1426255473000" expanded="true" signature="45:260" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="3156:3229" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="10916:11207" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="11724:11930" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="12377:12522" placeholder="/**...*/" />
+            <marker date="1426255473000" expanded="true" signature="12705:12875" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracTwoSource/SimpleTreeWriterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="1965">
+          <caret line="44" column="98" selection-start-line="44" selection-start-column="98" selection-end-line="44" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracTwoSource/TreeUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60739434" vertical-offset="0" max-vertical-offset="2400">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding>
+            <element signature="e#1742#1743#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
           </folding>
         </state>
       </provider>
