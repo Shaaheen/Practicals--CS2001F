@@ -10,25 +10,21 @@ import java.util.Map;
  * 
  * @author Stephan Jamieson
  * @version 3/3/2015
- *
- * Modified by Shaaheen Sacoor at 10/03/2015
- * SCRSHA001
- * Implemented code to allow for Tree to contain dictionaries
- * Does not contain height or height methods - For last 10%
  */
 public class AVLTreeNode {
 
     private Integer key;
     private String keyWord;
-
+    private int height;
+    
     private AVLTreeNode left;
     private AVLTreeNode right;
-    private ArrayList nodeDict; //node dictionary contains all values entered with the same first letter
-    private int wordsEntered = 0; //number of words entered into the dictionary, doesn't matter if deleted
+    private ArrayList nodeDict;
+    private int wordsEntered = 0;
     
     public final static AVLTreeNode EMPTY_NODE = new AVLTreeNode();
     
-    private AVLTreeNode() { this.key=null; this.left=null; this.right=null;this.keyWord = ""; }
+    private AVLTreeNode() { this.key=null; this.height=-1; this.left=null; this.right=null;this.keyWord = ""; }
     
     
     /**
@@ -41,10 +37,11 @@ public class AVLTreeNode {
         this.left=left;
         this.right=right;
         this.key=key;
+        this.height=0;
         this.keyWord = wrd;
-        this.nodeDict = new ArrayList(); // Creates and arraylist that will contain all the words
-        this.nodeDict.add(wrd); //adds the first word into the dictionary
-        this.wordsEntered = this.wordsEntered + 1; //Another word entered, adds one
+        this.nodeDict = new ArrayList();
+        this.nodeDict.add(wrd);
+        this.wordsEntered = this.wordsEntered + 1;
 
     }
     
@@ -70,11 +67,14 @@ public class AVLTreeNode {
 
     public String getKeyWord(){ return  keyWord;}
 
-    //Will check if Arraylist contains the parameter word
+    public void setKeyWord(String newWord){
+        this.keyWord = newWord;
+    }
+
     public boolean checkIfInAry(String word){
         boolean IfInArray = false;
         for (int i = 0; i< nodeDict.size();i++){
-            if (word.equals(nodeDict.get(i))){ //if word found in array return true
+            if (word.equals(nodeDict.get(i))){
                 IfInArray = true;
             }
         }
@@ -93,24 +93,28 @@ public class AVLTreeNode {
         this.wordsEntered = wordsEntered + 1; //Another word entered under key
     }
 
+    /**
+     * Obtain the height value stored at this node. (Requirs that ka
+     */
+    public int getHeight() {
+        return this.height;
+    }
     
     /**
      * Obtain the balance factor for this node.
      */
     public int getBalanceFactor() { 
-        int left = TreeUtils.height(this.getLeft());
-        int right = TreeUtils.height(this.getRight());
+        int left = (this.hasLeft() ? this.getLeft().getHeight() : 0);
+        int right = (this.hasRight() ? this.getRight().getHeight() : 0);
         return left-right;
     }
 
-    //Method that changes nodes key, dictionary and wordsEntered to another nodes instance variables. For delete method
+    //Method that changes a nodes key and keyWord value to a different nodes key and keyWord value, For delete method
     public void changeNodeDet(AVLTreeNode changedTo){
-        this.nodeDict = changedTo.nodeDict;
+        this.keyWord = changedTo.keyWord;
         this.key = changedTo.key;
-        this.wordsEntered = changedTo.wordsEntered;
     }
 
-    //returns Arraylist
     public ArrayList getDictionary(){
         return this.nodeDict;
     }
@@ -128,8 +132,16 @@ public class AVLTreeNode {
     public AVLTreeNode getRight() { 
         return this.right; 
     }
-
-
+    
+    /**
+     * Set the height stored in this node.
+     */
+    public void setHeight(int height) { 
+        assert(this!=EMPTY_NODE);
+        this.height=height; 
+    }
+    
+    
     /**
      * Set this node's left branch.
      */

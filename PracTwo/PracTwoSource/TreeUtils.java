@@ -3,14 +3,14 @@ package PracTwoSource;
 import java.util.*;
 
 /**
- * Utility procedures for binary tree structures.
+ * Utility procedures for AVL tree structures.
  * 
  * @author Stephan Jamieson
  * @version 25/2/2015
  *
  * Modified by SCRSHA001 at 06/03/2015
  * Shaaheen Sacoor
- * Implemented code for empty methods contain, insert, rotate methods and double rotate methods and added methods from previous assignment
+ * Implemented code for empty methods contain, insert,delete,find, rotate methods and double rotate methods and added printing methods from previous assignment
  */
 public class TreeUtils {
     /**
@@ -27,80 +27,7 @@ public class TreeUtils {
         }
     }
 
-    //method that will return a list of nodes in the first level
-    public static AVLTreeNode[] createLvlZero(AVLTreeNode root){
-        AVLTreeNode[] levelZero = new AVLTreeNode[1];
-        levelZero[0] = root;
-        return levelZero;
-    }
-
-    //Method to create a Arraylist that contains a list for each level in a Binary Tree
-    public static ArrayList createSubTreeList(AVLTreeNode[] parentList){
-        AVLTreeNode currentTree = parentList[0]; //Gets root Node from List
-        int height = height(currentTree);//Gets height of Binary Tree
-
-        LinkedList NodesQueue = new LinkedList(); //Linked list used to contain Nodes in a Tree in a Queue format
-        LinkedList numNodesInLevel = new LinkedList(); //Keeps the number of nodes that are supposed to be in a level
-        ArrayList NodeLevels = new ArrayList(); //will keep all levels of node, Main list which will have inner lists
-
-        for (int i = 0; i < height; i++){
-            int noOfNodes = (int) Math.pow(2,i); //Calculates number of nodes in each level
-            numNodesInLevel.add(noOfNodes); //Adds number to linkedlist so as to use later
-            NodeLevels.add(new ArrayList()); //Create a list for every level, Put into main list
-        }
-        NodesQueue.add(currentTree); //Adds root node into Linked List. Will work with it first
-
-        //While loop will retrieve and delete first item in linked list Queue and work with that item for current loop
-        //Then it will add that Tree Node to appropriate Node level List, eg root node into Level 0 Arraylist
-        //After this it will determine if there are left or right sub trees, if there are it will add that subtree
-        //node to the Linked List Queue with Left preferenced.
-
-        int count = 0; //Determines which Level List should be on by using the numNodesInLevel list
-        int currNodeLevel = 0;//Index for the Node level list
-        ArrayList currAryList; //current working Arraylist
-
-        while(currNodeLevel < height){ //Goes until it reaches end of last level
-            count = count + 1;
-            AVLTreeNode currTreeNode = (AVLTreeNode) NodesQueue.pop();
-            currAryList = (ArrayList) (NodeLevels.get(currNodeLevel));
-            currAryList.add(currTreeNode);
-            if (currTreeNode == null){ //For the placeholder Nodes, if a placeholder then create placeholder children
-
-                NodesQueue.add(null);//have to create placeholder children to space
-                NodesQueue.add(null);//it out appropriately for printing algorithm
-            }
-            else { //if legit Node, (Node != null)
-
-                if (currTreeNode.hasLeft()) {
-                    NodesQueue.add(currTreeNode.getLeft());//add Left sub tree to Queue so it can be processed later
-                }
-                else {
-                    NodesQueue.add(null); //if no left tree, put a placeholder
-                }
-
-                if (currTreeNode.hasRight()) {
-                    NodesQueue.add(currTreeNode.getRight()); //same as left
-                }
-                else {
-                    NodesQueue.add(null);
-                }
-
-            }
-
-            //if the number of nodes added so far in the loop equal to what the number
-            //of nodes in a level should be then reset counter and start adding till
-            //the number of nodes equal the next levels predicted number of nodes
-
-            if (count == numNodesInLevel.peek()) {
-                currNodeLevel = currNodeLevel + 1; //New level of Tree
-                count = 0; //reset counter
-                numNodesInLevel.pop(); //remove old levels Node number(number of nodes in that level)
-            }
-
-        } //end of while loop
-
-        return NodeLevels; //returns arraylist containing lists of every level
-    }
+    //Deleted old levels methods because those were used by my printing algorithm for previous tasks
 
     /** 
      * Determine whether the given tree structure contains the given key.
@@ -130,16 +57,17 @@ public class TreeUtils {
 
     }
 
+    //Will find the dictionary that contains the words starting with letter provided(keyWord) and prints all items in list out
     public static String find(AVLTreeNode node, String keyWord) {
         int key = Character.toUpperCase(keyWord.charAt(0)) - 64;
-        if (node.getKey() == key){ //if node key is equal to key we want to find then return true
+        if (node.getKey() == key){ //if node key is equal to key we want to find then return string containing items in dictionary
             return node.findString();
         }
         if (key < node.getKey()){ //if key searching for is smaller than current key then try go to the left subtree
             if (node.hasLeft()) { //go down left subtree
                 return find(node.getLeft(), keyWord);
             }
-            else { //if there is no subtree and key is smaller than current node key then there can't be key in tree, therefore false
+            else { //if there is no subtree and key is smaller than current node key then there can't be key in tree, therefore print that it doesn't exist
                 return "Does not exist in tree";
             }
         }
@@ -157,6 +85,7 @@ public class TreeUtils {
 
     /**
      * Iterative implementation of insert on an AVLTreeNode structure.
+     * Iterative for last 10%
      */
     public static AVLTreeNode insert(AVLTreeNode node, String newItem) {
         int key = Character.toUpperCase(newItem.charAt(0)) - 64;
@@ -167,7 +96,6 @@ public class TreeUtils {
         while (!inserted){ //while nothing has been inserted keep going
             if (node == null){ //if empty tree then create root node
                 node = new AVLTreeNode(key,newItem); //create root node
-                node.setHeight(heightSetter(node)); //set the height of the node
                 return node;//end method and return root
             }
             else if (currNode.getKey() == key){ //if duplicate then do nothing
@@ -180,93 +108,93 @@ public class TreeUtils {
                 }
                 else{ //if no left value already then add new node here
                     currNode.setLeft(new AVLTreeNode(key,newItem));
-                    currNode.getLeft().setHeight(heightSetter(currNode.getLeft()));
-                    currNode.setHeight(heightSetter(currNode));
                     inserted = true;
                     currNode = currNode.getLeft();
                 }
             }
-            else if (key > currNode.getKey()){
+            else if (key > currNode.getKey()){ //Checks if key should be on the right side
                 if (currNode.hasRight()){
                     currNode = currNode.getRight();
                 }
                 else{
                     currNode.setRight(new AVLTreeNode(key,newItem));
-                    currNode.getRight().setHeight(heightSetter(currNode.getRight()));
-                    node.setHeight(heightSetter(node));
-                    currNode.setHeight(heightSetter(currNode));
                     inserted = true;
                     currNode = currNode.getRight();
                 }
             }
-            balanceStack.add(currNode);
+            balanceStack.add(currNode); //add node to stack to keep track of insert path
         }
-        node = checkBalance(balanceStack,node);
-        refreshAllHts(node);
-        //node = checkBalance(balanceStack,node);
-        //node.setHeight(heightSetter(node));
+        node = checkBalance(balanceStack,node); //balances node
 
         return node;
     }
 
+    // deletes given item from tree
     public static AVLTreeNode delete(AVLTreeNode node, String deleteItem) {
-        int key = Character.toUpperCase(deleteItem.charAt(0)) - 64;
-        Stack<AVLTreeNode> deleteStack = new Stack<AVLTreeNode>();
-        AVLTreeNode currNode = node;
-        for (int i = 0; i < node.getHeight(); i++){
-            deleteStack.add(currNode);
-            if (key == currNode.getKey()){
-                if (currNode.getDictionary().size() > 1){
-                    if (currNode.getDictionary().contains(deleteItem)){
-                        currNode.getDictionary().remove(deleteItem);
+
+        int key = Character.toUpperCase(deleteItem.charAt(0)) - 64; //gets key value of delete item
+        Stack<AVLTreeNode> deleteStack = new Stack<AVLTreeNode>(); //delete stack so as to follow delete path
+        AVLTreeNode currNode = node; //current working node = root node
+
+        for (int i = 0; i < height(node); i++){ //loop till height of tree reached
+            deleteStack.add(currNode); //add node to stack
+            if (key == currNode.getKey()){ //if found the node with the same first letter
+                if (currNode.getDictionary().size() > 1){ //if theres multiple words in dictionary then just delete from dictionary list
+                    if (currNode.getDictionary().contains(deleteItem)){ //if delete item is in dictionary
+                        currNode.getDictionary().remove(deleteItem); //remove from dictionary list
                     }
-                    else {
-                        System.out.println("Item not does not exist in Tree");
+                    else { //if not in dictionary
+                        System.out.println("Item not does not exist in Tree"); //print that it doesn't exist
                     }
 
-                    return node;
+                    return node; //return root node back since there should be no change to tree
                 }
+                //if deleted item is equal the first item in list , then delete that node
+                //Can say get(0) as if dictionary was bigger than 1 then would follow if statement from above so there has to be one value in dict or it wouldn't exist
                 else if (deleteItem.equals(currNode.getDictionary().get(0))){
-                    if (deleteStack.size()  == 1){
-                        node = deleteTheNode(currNode);
-                        return node;
+                    if (deleteStack.size()  == 1){ //if delete stack is one then we were told to delete root node so have to change root node
+                        node = deleteTheNode(currNode); // set root node to new root node
+                        return node; //return node straight away
                     }
-                    else if (deleteStack.size() > 1){
-                        deleteStack.pop();
-                        AVLTreeNode parentNode = deleteStack.peek();
-                        if (parentNode.hasLeft() && !parentNode.hasRight()){
-                            parentNode.setLeft(deleteTheNode(currNode));
+                    else if (deleteStack.size() > 1){ //if not deleting root node
+                        deleteStack.pop(); //delete node at top of stack as that was node to be deleted
+                        AVLTreeNode parentNode = deleteStack.peek(); //gets parent node of node to be deleted
+                        //Checks which side to set the new node from parent
+                        if (parentNode.hasLeft() && !parentNode.hasRight()){ //node to be deleted must be on left side
+                            parentNode.setLeft(deleteTheNode(currNode)); //sets left
                         }
-                        else if (!parentNode.hasLeft() && parentNode.hasRight()){
-                            parentNode.setRight(deleteTheNode(currNode));
+                        else if (!parentNode.hasLeft() && parentNode.hasRight()){ //must be on right
+                            parentNode.setRight(deleteTheNode(currNode)); //sets right
                         }
-                        else if (parentNode.hasLeft() && parentNode.hasRight()){
-                            if (parentNode.getLeft().getKey() == currNode.getKey()){
-                                parentNode.setLeft(deleteTheNode(currNode));
+                        else if (parentNode.hasLeft() && parentNode.hasRight()){ //if parent of deleted node has two children
+                            //to be deleted node has to be either left or right
+                            if (parentNode.getLeft().getKey() == currNode.getKey()){ //to be deleted node is on left
+                                parentNode.setLeft(deleteTheNode(currNode)); //sets left
                             }
-                            else{
-                                parentNode.setRight(deleteTheNode(currNode));
+                            else{ //on right
+                                parentNode.setRight(deleteTheNode(currNode)); //sets right
                             }
                         }
                     }
-                    break;
+                    System.out.println("Deletetion completed successfully");
+                    break; //delete complete break out of loop
 
                 }
-                else{
+                else{ //if word not in tree
                     System.out.println("Item does not exist in Tree");
                     break;
                 }
             }
-            else if (key < currNode.getKey()){
+            else if (key < currNode.getKey()){ //Goes left if to be deleted key is smaller than current node key
                 if (currNode.hasLeft()){
                     currNode = currNode.getLeft();
                 }
-                else{
+                else{ //if no left value then item doesn't exist in tree
                     System.out.println("Item does not exist in Tree");
                     break;
                 }
             }
-            else if (key > currNode.getKey()){
+            else if (key > currNode.getKey()){ //same as left
                 if (currNode.hasRight()){
                     currNode = currNode.getRight();
                 }
@@ -277,28 +205,26 @@ public class TreeUtils {
             }
         }
 
-        node = checkBalance(deleteStack,node);
-        if (node != null){
-            refreshAllHts(node);
-        }
-
+        node = checkBalance(deleteStack,node); //rebalances tree before completes operation
         return node;
 
     }
 
+    //Method that goes through each of the 4 possible cases when deleting a node
     public static AVLTreeNode deleteTheNode(AVLTreeNode toBeDeleted){
-        if (!toBeDeleted.hasRight() && !toBeDeleted.hasLeft()){
+        if (!toBeDeleted.hasRight() && !toBeDeleted.hasLeft()){ //if a leaf node then return nothing
             return null;
         }
-        else if (!toBeDeleted.hasRight() && toBeDeleted.hasLeft()){
+        else if (!toBeDeleted.hasRight() && toBeDeleted.hasLeft()){ //if it has left node only then replace it with that
             return toBeDeleted.getLeft();
         }
-        else if(toBeDeleted.hasRight() && !toBeDeleted.hasLeft()){
+        else if(toBeDeleted.hasRight() && !toBeDeleted.hasLeft()){ //similar to above
             return toBeDeleted.getRight();
         }
-        else{
-            AVLTreeNode successor = toBeDeleted.getRight();
-            AVLTreeNode beforeSuccessor = toBeDeleted;
+        else{ //if to be deleted node has two children
+            AVLTreeNode successor = toBeDeleted.getRight(); //gets the successor which will replace to be deleted node
+            AVLTreeNode beforeSuccessor = toBeDeleted; //get before successor node so as to get rid of successor nodes old place
+            //Successor is the left most node from the right subtree
             if (successor.hasLeft()){
                 beforeSuccessor = beforeSuccessor.getRight();
                 successor = successor.getLeft();
@@ -307,13 +233,14 @@ public class TreeUtils {
                 successor = successor.getLeft();
                 beforeSuccessor = beforeSuccessor.getLeft();
             }
+            //if there is a succesor node that is not just to the right of the to be deleted node
             if (beforeSuccessor.getKey() != toBeDeleted.getKey()){
-                beforeSuccessor.setLeft(successor.getRight());
-                toBeDeleted.changeNodeDet(successor);
+                beforeSuccessor.setLeft(successor.getRight()); //set the left of the parent of successor to the right of successor node sp as to not lose any nodes
+                toBeDeleted.changeNodeDet(successor); //change the details of to be deleted node
             }
             else{
-                successor.setLeft(toBeDeleted.getLeft());
-                return successor;
+                successor.setLeft(toBeDeleted.getLeft()); //change the left node of successor to left node of deleted so as to not leave out nodes
+                return successor; //return successor 
             }
 
         }
@@ -323,7 +250,7 @@ public class TreeUtils {
     }
 
     public static AVLTreeNode checkBalance(Stack<AVLTreeNode> stackBalance, AVLTreeNode root){
-        refreshAllHts(root);
+        //refreshAllHts(root);
         AVLTreeNode insertedNode = stackBalance.peek();
         //System.out.println("This is the inserted node " + insertedNode);
         AVLTreeNode currStackNode;
@@ -340,29 +267,14 @@ public class TreeUtils {
             if (currStackNode.getBalanceFactor() > 1){
                 if (i == 0){
                     AVLTreeNode newRootNode = rebalanceLeft(currStackNode, currStackNode.getLeft().getKey());
-                    newRootNode.setHeight(heightSetter(newRootNode));
                     return newRootNode;
                 }
                 else{
                     if (beforeImbalanceNode.getKey() >= currStackNode.getKey() ){
                         beforeImbalanceNode.setLeft(rebalanceLeft(currStackNode, currStackNode.getLeft().getKey()));
-                        beforeImbalanceNode.getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft()));
-                        if (beforeImbalanceNode.getLeft().hasLeft()){
-                            beforeImbalanceNode.getLeft().getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft().getLeft()));
-                        }
-                        else if (beforeImbalanceNode.getLeft().hasRight()){
-                            beforeImbalanceNode.getLeft().getRight().setHeight(heightSetter(beforeImbalanceNode.getLeft().getRight()));
-                        }
                     }
                     else{
                         beforeImbalanceNode.setRight(rebalanceLeft(currStackNode, currStackNode.getLeft().getKey()));
-                        beforeImbalanceNode.getRight().setHeight(heightSetter(beforeImbalanceNode.getRight()));
-                        if (beforeImbalanceNode.getRight().hasLeft()){
-                            beforeImbalanceNode.getRight().getLeft().setHeight(heightSetter(beforeImbalanceNode.getRight().getLeft()));
-                        }
-                        else if (beforeImbalanceNode.getRight().hasRight()){
-                            beforeImbalanceNode.getRight().getRight().setHeight(heightSetter(beforeImbalanceNode.getRight().getRight()));
-                        }
                     }
 
                 }
@@ -372,29 +284,14 @@ public class TreeUtils {
             else if (currStackNode.getBalanceFactor() < -1){
                 if (i == 0){
                     AVLTreeNode newRootNode = rebalanceRight(currStackNode, currStackNode.getRight().getKey());
-                    newRootNode.setHeight(heightSetter(newRootNode));
                     return newRootNode;
                 }
                 else{
                     if (beforeImbalanceNode.getKey() <= currStackNode.getKey()){
                         beforeImbalanceNode.setRight(rebalanceRight(currStackNode, currStackNode.getRight().getKey()));
-                        beforeImbalanceNode.getRight().setHeight(heightSetter(beforeImbalanceNode.getRight()));
-                        if (beforeImbalanceNode.getRight().hasLeft()){
-                            beforeImbalanceNode.getRight().getLeft().setHeight(heightSetter(beforeImbalanceNode.getRight().getLeft()));
-                        }
-                        else if (beforeImbalanceNode.getRight().hasRight()){
-                            beforeImbalanceNode.getRight().getRight().setHeight(heightSetter(beforeImbalanceNode.getRight().getRight()));
-                        }
                     }
                     else{
                         beforeImbalanceNode.setLeft(rebalanceRight(currStackNode, currStackNode.getRight().getKey()));
-                        beforeImbalanceNode.getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft()));
-                        if (beforeImbalanceNode.getLeft().hasLeft()){
-                            beforeImbalanceNode.getLeft().getLeft().setHeight(heightSetter(beforeImbalanceNode.getLeft().getLeft()));
-                        }
-                        else if (beforeImbalanceNode.getLeft().hasRight()){
-                            beforeImbalanceNode.getLeft().getRight().setHeight(heightSetter(beforeImbalanceNode.getRight().getRight()));
-                        }
                     }
 
                 }
@@ -405,7 +302,7 @@ public class TreeUtils {
     }
 
     
-    public static void refreshAllHts(AVLTreeNode allTreeNodes) {
+    /*public static void refreshAllHts(AVLTreeNode allTreeNodes) {
         //System.out.println("Every node here " + allTreeNodes.getKey());
         allTreeNodes.setHeight(heightSetter(allTreeNodes));
         //System.out.println("Every node here " + allTreeNodes);
@@ -415,7 +312,7 @@ public class TreeUtils {
         if (allTreeNodes.hasRight()) {
             refreshAllHts(allTreeNodes.getRight());
         }
-    }
+    }*/
 
     public static int heightSetter(AVLTreeNode nodeToChangeHt){
         if (nodeToChangeHt.hasLeft() && nodeToChangeHt.hasRight()) {
@@ -468,16 +365,9 @@ public class TreeUtils {
     public static AVLTreeNode rotateWithLeftChild( AVLTreeNode AVLk2 ) {
         
         AVLTreeNode AVLk1 = AVLk2.getLeft();
-        //System.out.println("Parameter(k2) is " + AVLk2.getKey());
-        //System.out.println("k1 is " + AVLk1.getKey());
         AVLk2.setLeft(AVLk1.getRight());
         AVLk1.setRight(AVLk2);
-        //System.out.println("Centre = " + AVLk1.getKey() + "Right = " + AVLk1.getRight() + "Left is " + AVLk1.getLeft());
-        AVLk1.setHeight(AVLk1.getHeight()+1);
-        AVLk1.getRight().setHeight(AVLk1.getRight().getHeight() - 1);
-        if (AVLk1.hasLeft()){
-            AVLk1.getLeft().setHeight(AVLk1.getLeft().getHeight() - 1);
-        }
+
         return AVLk1;
     }
 
@@ -515,8 +405,6 @@ public class TreeUtils {
         AVLk3.setRight(rotateWithLeftChild(AVLk3.getRight()));
         return rotateWithRightChild(AVLk3);
     }
-    
-    
 
     
     /**

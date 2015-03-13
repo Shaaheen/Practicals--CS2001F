@@ -25,7 +25,7 @@ public class AVLTree {
     }
 
 
-    //Finds key word(first letter) and prints all values in dictionary
+    //Finds key word and prints all values in dictionary
     public String find(String keyWord) {
         return TreeUtils.find(root,keyWord);
     }

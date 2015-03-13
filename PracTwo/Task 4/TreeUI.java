@@ -12,9 +12,9 @@ import java.util.Scanner;
  * @author Stephan Jamieson
  * @version 4/3/2015
  *
- * Modified by Shaaheen Sacoor on 7/03/2015
+ * modified by Shaaheen Sacoor on 7/03/2015
  * SCRSHA001
- * Added more commands to the interface - new,insert,print,write,delete,find
+ * Added more commands to the interface - new,insert,print,write
  */
 public class TreeUI {
 

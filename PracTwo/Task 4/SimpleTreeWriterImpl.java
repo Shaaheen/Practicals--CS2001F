@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 /**
+ * Write a description of class AVLTreeNodePrintStream here.
  * 
  * @author (Shaaheen Sacoor SCRSHA001)
  * @version (12 March 2015
@@ -31,8 +32,8 @@ public class SimpleTreeWriterImpl implements SimpleTreeWriter {
             List<AVLTreeNode> level = TreeUtils.levelZero(node);
             final int labelSize = node.getLargest();
    
-            for(int levelNum=0; levelNum<TreeUtils.height(node); levelNum++) {
-                final int nodeSpacing = powerOf2(TreeUtils.height(node)-levelNum)-1;
+            for(int levelNum=0; levelNum<node.getHeight(); levelNum++) {
+                final int nodeSpacing = powerOf2(node.getHeight()-levelNum)-1;
                 writeLevel(nodeSpacing, labelSize, level);
                 level = TreeUtils.nextLevel(level);
             }

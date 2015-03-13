@@ -21,12 +21,13 @@ public class AVLTree {
      * Insert the given key into the tree.
      */
     public void insert(String keyWord) {
+
         root = TreeUtils.insert(root, keyWord);
     }
 
     //Delete given node from tree
     public void delete(String keyWord) {
-        root = TreeUtils.delete(root, keyWord);
+        this.root = TreeUtils.delete(root, keyWord);
     }
 
     /**
