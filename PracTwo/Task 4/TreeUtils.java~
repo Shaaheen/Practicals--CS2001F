@@ -158,9 +158,7 @@ public class TreeUtils {
                 else if (deleteItem.equals(currNode.getDictionary().get(0))){
                     if (deleteStack.size()  == 1){ //if delete stack is one then we were told to delete root node so have to change root node
                         node = deleteTheNode(currNode); // set root node to new root node
-                        if (node != null){
-                            node = checkBalance(deleteStack,node);
-                        }
+                        node = checkBalance(deleteStack,node);
                         System.out.println("Deletion completed successfully");
                         return node; //return node straight away
                     }

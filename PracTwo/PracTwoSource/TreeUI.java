@@ -12,9 +12,9 @@ import java.util.Scanner;
  * @author Stephan Jamieson
  * @version 4/3/2015
  *
- * modified by Shaaheen Sacoor on 7/03/2015
+ * Modified by Shaaheen Sacoor on 7/03/2015
  * SCRSHA001
- * Added more commands to the interface - new,insert,print,write
+ * Added more commands to the interface - new,insert,print,write,delete,find
  */
 public class TreeUI {
 
@@ -33,6 +33,8 @@ public class TreeUI {
         commands.put("write", new Write());
         commands.put("help", new Help());
         commands.put("quit", new Quit());
+        commands.put("delete",new Delete());
+        commands.put("find",new Find());
         target = new AVLTree();
     }
     
@@ -73,12 +75,26 @@ public class TreeUI {
 
         public void execute(String argument) throws IllegalArgumentException {
             try {
-                String response = target.contains(Integer.parseInt(argument)) ? "Yes" : "No";
+                String response = target.contains(argument) ? "Yes" : "No";
                 System.out.println(response);
             }
             catch (NumberFormatException numFormE) {
                 throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
             }    
+        }
+    }
+    //Calls Find method to return a string containing all values in a dictionary
+    private class Find extends Command {
+        public String help() { return "find <key value>"; }
+
+        public void execute(String argument) throws IllegalArgumentException {
+            try {
+                String response = target.find(argument);
+                System.out.println(response);
+            }
+            catch (NumberFormatException numFormE) {
+                throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
+            }
         }
     }
     //calls insert method in TreeUtils
@@ -87,8 +103,20 @@ public class TreeUI {
 
         public void execute(String argument) throws IllegalArgumentException {
             try {
-                int key = Integer.parseInt(argument);
-                target.insert(key);
+                target.insert(argument);
+            }
+            catch (NumberFormatException numFormE) {
+                throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
+            }
+        }
+    }
+    //calls delete method from TreeUtils
+    private class Delete extends Command {
+        public String help() { return "delete <key value>"; }
+
+        public void execute(String argument) throws IllegalArgumentException {
+            try {
+                target.delete(argument);
             }
             catch (NumberFormatException numFormE) {
                 throw new IllegalArgumentException("Insert "+argument+" : argument not an integer.");
@@ -155,6 +183,6 @@ public class TreeUI {
             System.exit(0);
         }
     }
- 
+
 
 }
