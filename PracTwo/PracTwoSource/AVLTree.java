@@ -5,6 +5,10 @@ import java.io.PrintStream;
  * 
  * @author Stephan Jamieson
  * @version 3/3/2015
+ *
+ * Modified by Shaaheen Sacoor
+ * SCRSHA001
+ * Added methods for delete and find
  */
 public class AVLTree {
 
@@ -20,8 +24,19 @@ public class AVLTree {
     /**
      * Insert the given key into the tree.
      */
-    public void insert(Integer key) {
-        root = TreeUtils.insert(root, key);
+    public void insert(String keyWord) {
+        root = TreeUtils.insert(root, keyWord);
+    }
+
+
+    //Finds key word(first letter) and prints all values in dictionary
+    public String find(String keyWord) {
+        return TreeUtils.find(root,keyWord);
+    }
+
+    //Delete given node from tree
+    public void delete(String keyWord) {
+        root = TreeUtils.delete(root, keyWord);
     }
 
     /**
@@ -35,12 +50,12 @@ public class AVLTree {
     /**
      * Determine whether the tree contains the given key.
      */
-    public boolean contains(Integer key) {
+    public boolean contains(String keyWord) {
         if (root==null) {
             return false;
         }
         else {
-            return TreeUtils.contains(root, key);
+            return TreeUtils.contains(root, keyWord);
         }
     }
 

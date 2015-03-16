@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (55/ 55)
+    (57/ 57)
   </span>
 </td>
 </tr>
@@ -86,129 +86,122 @@
 <i>12</i>&nbsp;
 <b class="fc"><i>13</i>&nbsp;public class AVLTreeTest extends TestCase {</b>
 <b class="fc"><i>14</i>&nbsp;    AVLTree testTree = new AVLTree();</b>
-<b class="fc"><i>15</i>&nbsp;    String path = new File(&quot;.&quot;).getAbsolutePath();</b>
+<i>15</i>&nbsp;
 <i>16</i>&nbsp;
-<i>17</i>&nbsp;
-<i>18</i>&nbsp;    @Test
-<i>19</i>&nbsp;    public void testCase1() throws Exception{
-<i>20</i>&nbsp;        //Set up
-<b class="fc"><i>21</i>&nbsp;        testTree.insert(20);</b>
-<b class="fc"><i>22</i>&nbsp;        testTree.insert(30);</b>
-<b class="fc"><i>23</i>&nbsp;        testTree.insert(10);</b>
-<b class="fc"><i>24</i>&nbsp;        testTree.insert(12);</b>
-<b class="fc"><i>25</i>&nbsp;        testTree.insert(14);</b>
+<i>17</i>&nbsp;    @Test
+<i>18</i>&nbsp;    public void testCase1() throws Exception{
+<i>19</i>&nbsp;        //Set up
+<b class="fc"><i>20</i>&nbsp;        testTree.insert(&quot;Alpha&quot;);</b>
+<b class="fc"><i>21</i>&nbsp;        testTree.insert(&quot;Beta&quot;);</b>
+<b class="fc"><i>22</i>&nbsp;        testTree.insert(&quot;Blue&quot;);</b>
+<b class="fc"><i>23</i>&nbsp;        testTree.insert(&quot;Charlie&quot;);</b>
+<b class="fc"><i>24</i>&nbsp;        testTree.insert(&quot;Delta&quot;);</b>
+<b class="fc"><i>25</i>&nbsp;        testTree.delete(&quot;Delta&quot;);</b>
 <i>26</i>&nbsp;
 <i>27</i>&nbsp;        //Check if contains method works
 <b class="fc"><i>28</i>&nbsp;        boolean containsAll = false;</b>
-<b class="fc"><i>29</i>&nbsp;        if (testTree.contains(14) &amp;&amp; testTree.contains(30) &amp;&amp; testTree.contains(10)){</b>
+<b class="fc"><i>29</i>&nbsp;        if (testTree.contains(&quot;Alpha&quot;) &amp;&amp; testTree.contains(&quot;Beta&quot;) &amp;&amp; testTree.contains(&quot;Charlie&quot;)){</b>
 <b class="fc"><i>30</i>&nbsp;            containsAll = true;</b>
 <i>31</i>&nbsp;        }
 <b class="fc"><i>32</i>&nbsp;        boolean expected = true;</b>
 <b class="fc"><i>33</i>&nbsp;        assertEquals(expected,containsAll);</b>
 <i>34</i>&nbsp;
-<i>35</i>&nbsp;
-<i>36</i>&nbsp;        //Test to see if tree is structured correctly and that insert &amp; delete works correctly
-<i>37</i>&nbsp;
-<i>38</i>&nbsp;          //Create file from methods to test against expected
-<b class="fc"><i>39</i>&nbsp;        System.out.println(new File(&quot;.&quot;).getAbsolutePath());</b>
-<b class="fc"><i>40</i>&nbsp;        File testFile = new File( path + &quot;//PracTwoSource//test//TestTxtFiles//testFile1.txt&quot;);</b>
-<b class="fc"><i>41</i>&nbsp;        PrintStream streamtoFile = new PrintStream(testFile);</b>
-<b class="fc"><i>42</i>&nbsp;        testTree.print(streamtoFile);</b>
-<i>43</i>&nbsp;
-<i>44</i>&nbsp;          //Get expected Test File
-<b class="fc"><i>45</i>&nbsp;        File expectedTestFile = new File(path + &quot;//PracTwoSource//test//TestTxtFiles//expectedTestFile1.txt&quot;);</b>
-<i>46</i>&nbsp;
-<i>47</i>&nbsp;          //Turn File into a string so we can compare the content of both files
-<b class="fc"><i>48</i>&nbsp;        String actualFileString = turnToString(testFile);</b>
-<b class="fc"><i>49</i>&nbsp;        String expectedFileString = turnToString(expectedTestFile);</b>
+<i>35</i>&nbsp;        //Checks if Find function works correctly
+<b class="fc"><i>36</i>&nbsp;        String expectedOutput = &quot;(2)(Beta, Blue)&quot;;</b>
+<b class="fc"><i>37</i>&nbsp;        assertEquals(expectedOutput, testTree.find(&quot;B&quot;));</b>
+<b class="fc"><i>38</i>&nbsp;        expectedOutput = &quot;(1)(Alpha)&quot;;</b>
+<b class="fc"><i>39</i>&nbsp;        assertEquals(expectedOutput,testTree.find(&quot;A&quot;));</b>
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;        //Test to see if tree is structured correctly and that insert &amp; delete works correctly
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;          //Create file from methods to test against expected
+<b class="fc"><i>44</i>&nbsp;        File testFile = new File(&quot;testFile1.txt&quot;);</b>
+<b class="fc"><i>45</i>&nbsp;        PrintStream streamtoFile = new PrintStream(testFile);</b>
+<b class="fc"><i>46</i>&nbsp;        testTree.print(streamtoFile);</b>
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;          //Get expected Test File
+<b class="fc"><i>49</i>&nbsp;        File expectedTestFile = new File(&quot;expectedTestFile1.txt&quot;);</b>
 <i>50</i>&nbsp;
-<i>51</i>&nbsp;          //Check if tree structures are the same
-<b class="fc"><i>52</i>&nbsp;        assertEquals(expectedFileString,actualFileString);</b>
-<i>53</i>&nbsp;
-<b class="fc"><i>54</i>&nbsp;        tearDown();</b>
-<b class="fc"><i>55</i>&nbsp;    }</b>
-<i>56</i>&nbsp;
-<i>57</i>&nbsp;    //This Case will test the evidence case given for Task 4 as evidence that it works
-<i>58</i>&nbsp;    @Test
-<i>59</i>&nbsp;    public void testCase2() throws Exception{
-<i>60</i>&nbsp;        //Set up - From Task 4 evidence
-<b class="fc"><i>61</i>&nbsp;        testTree.insert(100); testTree.insert(150); testTree.insert(175); testTree.insert(125);</b>
-<b class="fc"><i>62</i>&nbsp;        testTree.insert(90); testTree.insert(99); testTree.insert(95);</b>
-<i>63</i>&nbsp;
-<i>64</i>&nbsp;        //Check if contains method works
-<b class="fc"><i>65</i>&nbsp;        boolean containsAll = false;</b>
-<b class="fc"><i>66</i>&nbsp;        if (testTree.contains(95) &amp;&amp; testTree.contains(150) &amp;&amp; testTree.contains(90)){</b>
-<b class="fc"><i>67</i>&nbsp;            containsAll = true;</b>
-<i>68</i>&nbsp;        }
-<b class="fc"><i>69</i>&nbsp;        boolean expected = true;</b>
-<b class="fc"><i>70</i>&nbsp;        assertEquals(expected,containsAll);</b>
-<i>71</i>&nbsp;
-<i>72</i>&nbsp;        //Test to see if tree is structured correctly and that insert &amp; delete works correctly
-<i>73</i>&nbsp;
-<i>74</i>&nbsp;        //Create file from methods to test against expected
-<b class="fc"><i>75</i>&nbsp;        File testFile = new File(path + &quot;//PracTwoSource//test//TestTxtFiles//testFileAVL0.txt&quot;);</b>
-<b class="fc"><i>76</i>&nbsp;        PrintStream streamtoFile = new PrintStream(testFile);</b>
-<b class="fc"><i>77</i>&nbsp;        testTree.print(streamtoFile);</b>
+<i>51</i>&nbsp;          //Turn File into a string so we can compare the content of both files
+<b class="fc"><i>52</i>&nbsp;        String actualFileString = turnToString(testFile);</b>
+<b class="fc"><i>53</i>&nbsp;        String expectedFileString = turnToString(expectedTestFile);</b>
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;          //Check if tree structures are the same
+<b class="fc"><i>56</i>&nbsp;        assertEquals(expectedFileString,actualFileString);</b>
+<i>57</i>&nbsp;
+<b class="fc"><i>58</i>&nbsp;        tearDown();</b>
+<b class="fc"><i>59</i>&nbsp;    }</b>
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;    //This Case will test the evidence case given for Task 4 as evidence that it works
+<i>62</i>&nbsp;    @Test
+<i>63</i>&nbsp;    public void testCase2() throws Exception{
+<i>64</i>&nbsp;        //Set up - From Task 4 evidence
+<b class="fc"><i>65</i>&nbsp;        testTree.insert(&quot;alpha&quot;); testTree.insert(&quot;beta&quot;); testTree.insert(&quot;gamma&quot;); testTree.insert(&quot;delta&quot;);</b>
+<b class="fc"><i>66</i>&nbsp;        testTree.insert(&quot;epsilon&quot;); testTree.insert(&quot;zeta&quot;); testTree.insert(&quot;eta&quot;); testTree.insert(&quot;theta&quot;);</b>
+<b class="fc"><i>67</i>&nbsp;        testTree.insert(&quot;iota&quot;); testTree.insert(&quot;kappa&quot;); testTree.insert(&quot;lambda&quot;); testTree.insert(&quot;mu&quot;);</b>
+<b class="fc"><i>68</i>&nbsp;        testTree.insert(&quot;ka&quot;); testTree.insert(&quot;sa&quot;); testTree.insert(&quot;ta&quot;); testTree.insert(&quot;na&quot;);</b>
+<b class="fc"><i>69</i>&nbsp;        testTree.insert(&quot;ha&quot;); testTree.insert(&quot;ma&quot;); testTree.insert(&quot;ra&quot;); testTree.insert(&quot;wa&quot;);</b>
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;        //Check if contains method works
+<b class="fc"><i>72</i>&nbsp;        boolean containsAll = false;</b>
+<b class="fc"><i>73</i>&nbsp;        if (testTree.contains(&quot;zeta&quot;) &amp;&amp; testTree.contains(&quot;lambda&quot;) &amp;&amp; testTree.contains(&quot;iota&quot;)){</b>
+<b class="fc"><i>74</i>&nbsp;            containsAll = true;</b>
+<i>75</i>&nbsp;        }
+<b class="fc"><i>76</i>&nbsp;        boolean expected = true;</b>
+<b class="fc"><i>77</i>&nbsp;        assertEquals(expected,containsAll);</b>
 <i>78</i>&nbsp;
-<i>79</i>&nbsp;        //Get expected Test File
-<b class="fc"><i>80</i>&nbsp;        File expectedTestFile = new File(path + &quot;//PracTwoSource//test//TestTxtFiles//expectedAVL0.txt&quot;);</b>
-<i>81</i>&nbsp;
-<i>82</i>&nbsp;        //Turn File into a string so we can compare the content of both files
-<b class="fc"><i>83</i>&nbsp;        String actualFileString = turnToString(testFile);</b>
-<b class="fc"><i>84</i>&nbsp;        String expectedFileString = turnToString(expectedTestFile);</b>
-<i>85</i>&nbsp;
-<i>86</i>&nbsp;        //Check if tree structures are the same
-<b class="fc"><i>87</i>&nbsp;        assertEquals(expectedFileString,actualFileString);</b>
-<i>88</i>&nbsp;
-<i>89</i>&nbsp;        //Now for AVL2 evidence, have to insert more nodes
-<b class="fc"><i>90</i>&nbsp;        testTree.insert(87); testTree.insert(200); testTree.insert(110); testTree.insert(130);</b>
-<b class="fc"><i>91</i>&nbsp;        testTree.insert(135);</b>
-<i>92</i>&nbsp;
-<i>93</i>&nbsp;        //Test to see if tree is structured correctly and that insert &amp; delete works correctly
+<i>79</i>&nbsp;        //Checks if Find function works correctly
+<b class="fc"><i>80</i>&nbsp;        String expectedOutput = &quot;(2)(kappa, ka)&quot;;</b>
+<b class="fc"><i>81</i>&nbsp;        assertEquals(expectedOutput, testTree.find(&quot;K&quot;));</b>
+<b class="fc"><i>82</i>&nbsp;        expectedOutput = &quot;(1)(delta)&quot;;</b>
+<b class="fc"><i>83</i>&nbsp;        assertEquals(expectedOutput,testTree.find(&quot;D&quot;));</b>
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;        //Test to see if tree is structured correctly and that insert &amp; delete works correctly
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;        //Create file from methods to test against expected
+<b class="fc"><i>88</i>&nbsp;        File testFile = new File(&quot;testFileAVL5.txt&quot;);</b>
+<b class="fc"><i>89</i>&nbsp;        PrintStream streamtoFile = new PrintStream(testFile);</b>
+<b class="fc"><i>90</i>&nbsp;        testTree.print(streamtoFile);</b>
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;        //Get expected Test File
+<b class="fc"><i>93</i>&nbsp;        File expectedTestFile = new File(&quot;expectedAVL5.txt&quot;);</b>
 <i>94</i>&nbsp;
-<i>95</i>&nbsp;        //Create file from methods to test against expected
-<b class="fc"><i>96</i>&nbsp;        File testFileNew = new File(path + &quot;//PracTwoSource//test//TestTxtFiles//testFileAVL1.txt&quot;);</b>
-<b class="fc"><i>97</i>&nbsp;        PrintStream streamtoFileNew = new PrintStream(testFileNew);</b>
-<b class="fc"><i>98</i>&nbsp;        testTree.print(streamtoFileNew);</b>
-<i>99</i>&nbsp;
-<i>100</i>&nbsp;        //Get expected Test File
-<b class="fc"><i>101</i>&nbsp;        File expectedTestFileNew = new File(path + &quot;//PracTwoSource//test//TestTxtFiles//expectedAVL1.txt&quot;);</b>
-<i>102</i>&nbsp;
-<i>103</i>&nbsp;        //Turn File into a string so we can compare the content of both files
-<b class="fc"><i>104</i>&nbsp;        String actualFileStringNew = turnToString(testFileNew);</b>
-<b class="fc"><i>105</i>&nbsp;        String expectedFileStringNew = turnToString(expectedTestFileNew);</b>
-<i>106</i>&nbsp;
-<i>107</i>&nbsp;        //Check if tree structures are the same
-<b class="fc"><i>108</i>&nbsp;        assertEquals(expectedFileStringNew,actualFileStringNew);</b>
-<i>109</i>&nbsp;
-<b class="fc"><i>110</i>&nbsp;    }</b>
-<i>111</i>&nbsp;
-<i>112</i>&nbsp;    public void tearDown() throws Exception {
-<b class="fc"><i>113</i>&nbsp;        testTree = new AVLTree();</b>
-<b class="fc"><i>114</i>&nbsp;    }</b>
-<i>115</i>&nbsp;
-<i>116</i>&nbsp;    public static String turnToString(File fileToString) throws IOException {
-<b class="fc"><i>117</i>&nbsp;        FileInputStream fin =  new FileInputStream(fileToString);</b>
-<b class="fc"><i>118</i>&nbsp;        BufferedReader myInput = new BufferedReader(new InputStreamReader(fin));</b>
-<b class="fc"><i>119</i>&nbsp;        String returnString = &quot;&quot;;</b>
-<i>120</i>&nbsp;        String thisLine;
-<b class="fc"><i>121</i>&nbsp;        while ((thisLine = myInput.readLine()) != null) {</b>
-<b class="fc"><i>122</i>&nbsp;            returnString = returnString + thisLine + &quot;\r\n&quot;;</b>
-<i>123</i>&nbsp;        }
-<i>124</i>&nbsp;
-<b class="fc"><i>125</i>&nbsp;        return returnString;</b>
-<i>126</i>&nbsp;
-<i>127</i>&nbsp;    }
-<i>128</i>&nbsp;
-<i>129</i>&nbsp;
-<i>130</i>&nbsp;
-<i>131</i>&nbsp;}
+<i>95</i>&nbsp;        //Turn File into a string so we can compare the content of both files
+<b class="fc"><i>96</i>&nbsp;        String actualFileString = turnToString(testFile);</b>
+<b class="fc"><i>97</i>&nbsp;        String expectedFileString = turnToString(expectedTestFile);</b>
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;        //Check if tree structures are the same
+<b class="fc"><i>100</i>&nbsp;        assertEquals(expectedFileString,actualFileString);</b>
+<i>101</i>&nbsp;
+<b class="fc"><i>102</i>&nbsp;        tearDown();</b>
+<b class="fc"><i>103</i>&nbsp;    }</b>
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;    public void tearDown() throws Exception {
+<b class="fc"><i>106</i>&nbsp;        testTree = new AVLTree();</b>
+<b class="fc"><i>107</i>&nbsp;    }</b>
+<i>108</i>&nbsp;
+<i>109</i>&nbsp;    public static String turnToString(File fileToString) throws IOException {
+<b class="fc"><i>110</i>&nbsp;        FileInputStream fin =  new FileInputStream(fileToString);</b>
+<b class="fc"><i>111</i>&nbsp;        BufferedReader myInput = new BufferedReader(new InputStreamReader(fin));</b>
+<b class="fc"><i>112</i>&nbsp;        String returnString = &quot;&quot;;</b>
+<i>113</i>&nbsp;        String thisLine;
+<b class="fc"><i>114</i>&nbsp;        while ((thisLine = myInput.readLine()) != null) {</b>
+<b class="fc"><i>115</i>&nbsp;            returnString = returnString + thisLine + &quot;\r\n&quot;;</b>
+<i>116</i>&nbsp;        }
+<i>117</i>&nbsp;
+<b class="fc"><i>118</i>&nbsp;        return returnString;</b>
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;    }
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-03-14 16:27</div>
+    <div style="float:right;">generated on 2015-03-14 15:22</div>
 </div>
 </body>
 </html>

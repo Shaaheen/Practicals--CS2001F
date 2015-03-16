@@ -1,0 +1,10 @@
+Main Java files kept in PracTwoSource 
+
+Every Task is kept in a zip file in their respective folders
+Extract Task into PracTwoSource to access desired Task
+
+Evidence files are also in main folder 
+There is testing for each Task which is kept in their zip files
+Testing uses the evidence cases provided as proof that program works with them
+
+Thanks for your time
