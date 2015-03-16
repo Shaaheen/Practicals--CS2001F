@@ -1,4 +1,5 @@
-To Run: use make from terminal in root folder PracTwo. Then use java TreeUI as that is the main Driver class.
+To Run: Use "make" from terminal in root folder PracTwo. Then use java TreeUI as that is the main Driver class. Use "make clean" and load up new Task.
+	Currently Task 1 is in use
 
 Main Java files kept in PracTwoSource 
 
