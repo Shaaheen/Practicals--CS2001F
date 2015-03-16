@@ -1,21 +1,24 @@
 JAVAC = javac
 JFLAGS = -g
-SOURCES = AVLTreeNode.java \
-	AVLTree.java \
-	TreeUI.java \
-	TreeUtils.java \
-	SimpleTreeWriter.java \
-	SimpleTreeWriterImpl.java
+SOURCES = TreeUI.java \
+	PracTwoSource/AVLTree.java \
+	PracTwoSource/TreeUtils.java \
+	PracTwoSource/AVLTreeNode.java \
+	PracTwoSource/SimpleTreeWriter.java \
+	PracTwoSource/SimpleTreeWriterImpl.java
 
 .SUFFIXES: .java .class
-
-.java.class:
-	$(JAVAC) $(JFLAGS) $<
 
 CLS= $(SOURCES:.java=.class)
 
 all:	$(CLS)
 
+.java.class:
+	$(JAVAC) $(JFLAGS) $<
+
+
 clean:
+	@rm -f TreeUI*.class
 	@rm -f $(SOURCES:.java=.class)
+	
 

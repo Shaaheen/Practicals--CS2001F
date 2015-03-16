@@ -18,26 +18,20 @@ public class AVLTreeTest extends TestCase {
     @Test
     public void testCase1() throws Exception{
         //Set up
-        testTree.insert("Alpha");
-        testTree.insert("Beta");
-        testTree.insert("Blue");
-        testTree.insert("Charlie");
-        testTree.insert("Delta");
-        testTree.delete("Delta");
+        testTree.insert(20);
+        testTree.insert(30);
+        testTree.insert(10);
+        testTree.insert(12);
+        testTree.insert(14);
 
         //Check if contains method works
         boolean containsAll = false;
-        if (testTree.contains("Alpha") && testTree.contains("Beta") && testTree.contains("Charlie")){
+        if (testTree.contains(14) && testTree.contains(30) && testTree.contains(10)){
             containsAll = true;
         }
         boolean expected = true;
         assertEquals(expected,containsAll);
 
-        //Checks if Find function works correctly
-        String expectedOutput = "(2)(Beta, Blue)";
-        assertEquals(expectedOutput, testTree.find("B"));
-        expectedOutput = "(1)(Alpha)";
-        assertEquals(expectedOutput,testTree.find("A"));
 
         //Test to see if tree is structured correctly and that insert & delete works correctly
 
@@ -64,35 +58,26 @@ public class AVLTreeTest extends TestCase {
     @Test
     public void testCase2() throws Exception{
         //Set up - From Task 4 evidence
-        testTree.insert("alpha"); testTree.insert("beta"); testTree.insert("gamma"); testTree.insert("delta");
-        testTree.insert("epsilon"); testTree.insert("zeta"); testTree.insert("eta"); testTree.insert("theta");
-        testTree.insert("iota"); testTree.insert("kappa"); testTree.insert("lambda"); testTree.insert("mu");
-        testTree.insert("ka"); testTree.insert("sa"); testTree.insert("ta"); testTree.insert("na");
-        testTree.insert("ha"); testTree.insert("ma"); testTree.insert("ra"); testTree.insert("wa");
+        testTree.insert(100); testTree.insert(150); testTree.insert(175); testTree.insert(125);
+        testTree.insert(90); testTree.insert(99); testTree.insert(95);
 
         //Check if contains method works
         boolean containsAll = false;
-        if (testTree.contains("zeta") && testTree.contains("lambda") && testTree.contains("iota")){
+        if (testTree.contains(95) && testTree.contains(150) && testTree.contains(90)){
             containsAll = true;
         }
         boolean expected = true;
         assertEquals(expected,containsAll);
 
-        //Checks if Find function works correctly
-        String expectedOutput = "(2)(kappa, ka)";
-        assertEquals(expectedOutput, testTree.find("K"));
-        expectedOutput = "(1)(delta)";
-        assertEquals(expectedOutput,testTree.find("D"));
-
         //Test to see if tree is structured correctly and that insert & delete works correctly
 
         //Create file from methods to test against expected
-        File testFile = new File(path + "//PracTwoSource//test//TestTxtFiles//testFileAVL5.txt");
+        File testFile = new File(path + "//PracTwoSource//test//TestTxtFiles//testFileAVL0.txt");
         PrintStream streamtoFile = new PrintStream(testFile);
         testTree.print(streamtoFile);
 
         //Get expected Test File
-        File expectedTestFile = new File(path + "//PracTwoSource//test//TestTxtFiles//expectedAVL5.txt");
+        File expectedTestFile = new File(path + "//PracTwoSource//test//TestTxtFiles//expectedAVL0.txt");
 
         //Turn File into a string so we can compare the content of both files
         String actualFileString = turnToString(testFile);
@@ -101,32 +86,27 @@ public class AVLTreeTest extends TestCase {
         //Check if tree structures are the same
         assertEquals(expectedFileString,actualFileString);
 
-        //Will provide evidence for the AVL6 result
-            //Checks if deletions are correct
-        testTree.delete("eta");
-        testTree.delete("theta");
-        testTree.delete("iota");
-        testTree.delete("kappa");
-        testTree.delete("lambda");
+        //Now for AVL2 evidence, have to insert more nodes
+        testTree.insert(87); testTree.insert(200); testTree.insert(110); testTree.insert(130);
+        testTree.insert(135);
 
         //Test to see if tree is structured correctly and that insert & delete works correctly
 
         //Create file from methods to test against expected
-        File newTestFile = new File(path + "//PracTwoSource//test//TestTxtFiles//testFileAVL6.txt");
-        PrintStream streamtoFileNew = new PrintStream(newTestFile);
+        File testFileNew = new File(path + "//PracTwoSource//test//TestTxtFiles//testFileAVL1.txt");
+        PrintStream streamtoFileNew = new PrintStream(testFileNew);
         testTree.print(streamtoFileNew);
 
         //Get expected Test File
-        File expectedTestFileNew = new File(path + "//PracTwoSource//test//TestTxtFiles//expectedAVL6.txt");
+        File expectedTestFileNew = new File(path + "//PracTwoSource//test//TestTxtFiles//expectedAVL1.txt");
 
         //Turn File into a string so we can compare the content of both files
-        String actualFileStringNew = turnToString(newTestFile);
+        String actualFileStringNew = turnToString(testFileNew);
         String expectedFileStringNew = turnToString(expectedTestFileNew);
 
         //Check if tree structures are the same
         assertEquals(expectedFileStringNew,actualFileStringNew);
 
-        tearDown();
     }
 
     public void tearDown() throws Exception {
