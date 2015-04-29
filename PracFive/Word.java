@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -5,7 +6,7 @@ import java.util.List;
  */
 public class Word implements Entry{
     String word;
-    List<Definition> definitions;
+    ArrayList<Definition> definitions = new ArrayList<Definition>();
 
     public Word(String word,Definition def){
         this.word = word;
