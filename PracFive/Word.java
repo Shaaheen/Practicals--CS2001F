@@ -4,34 +4,35 @@ import java.util.List;
  * Created by Shaaheen on 4/28/2015.
  */
 public class Word implements Entry{
+    String word;
+    List<Definition> definitions;
 
-    WordType typeOfWord;
-    Definition defOfWord;
-    String descrip;
-
+    public Word(String word,Definition def){
+        this.word = word;
+        definitions.add(def);
+    }
     @Override
     public String getWord() {
-        return null;
+        return word;
     }
 
     @Override
     public List<Definition> getDefinitions() {
-        return null;
+        return definitions;
     }
 
     @Override
     public void addDefinition(WordType wordType, String description) {
-        this.typeOfWord = wordType;
-        this.descrip = description;
+        definitions.add(new Definition(wordType,description));
     }
 
     @Override
     public void addDefinition(Definition definition) {
-        defOfWord = definition;
+        definitions.add(definition);
     }
 
     @Override
     public boolean isEntryFor(String word) {
-        return false;
+        return  this.word == word;
     }
 }

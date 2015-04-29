@@ -31,19 +31,13 @@ public class FileUtil {
         BufferedReader bufReader = new BufferedReader( new FileReader("lexicon.txt"));
         String line = null;
         while( ( line = bufReader.readLine() ) != null ) {
-            
+            int indxWord = line.indexOf(":", 4);
+            System.out.print(line.substring(5, indxWord - 1));
+            if (indxWord +1 != line.length()){
+                System.out.print(" " + line.substring(indxWord+2, line.length()));
+            }
+            System.out.println();
         }
     }
 
-    private static String getStringFile() throws IOException {
-        BufferedReader bufReader = new BufferedReader( new FileReader("b.in"));
-        String         line = null;
-        StringBuilder  inputText = new StringBuilder();
-        String         ls = System.getProperty("line.separator");
-        while( ( line = bufReader.readLine() ) != null ) {
-            inputText.append( line );
-            inputText.append( ls );
-        }
-        return inputText.toString();
-    }
 }

@@ -38,6 +38,7 @@ public class LPHashtable implements Dictionary
     
     public void insert(String word, Definition definition) {        
         // Implement this.
+        entries ++;
     }
         
     public boolean isEmpty() { return entries == 0; }
