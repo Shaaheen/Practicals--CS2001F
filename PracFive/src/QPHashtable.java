@@ -32,17 +32,18 @@ public class QPHashtable implements Dictionary {
 
     public boolean containsWord(String word) {
         // Implement this.
-        if (getHashOfWord(word,hashFunction(word)) != -1){
+        if (getHashOfWord(word,hashFunction(word),0) != -1){
             return true;
         }
         else{
             return false;
         }
     }
+
     public List<Definition> getDefinitions(String word) {
         // Implement this.
         boolean found = false;
-        int key = getHashOfWord(word,hashFunction(word));
+        int key = getHashOfWord(word,hashFunction(word),0);
         if (key != -1){
             return table[key].getDefinitions();
         }
@@ -51,7 +52,11 @@ public class QPHashtable implements Dictionary {
         }
     }
 
-    public int getHashOfWord(String word,int hashKey){
+    public int getHashOfWord(String word,int hashKey,int i){
+        if (hashKey > table.length){
+            hashKey = hashKey - table.length;
+        }
+
         if (table[hashKey] == null){
             return -1;
         }
@@ -59,7 +64,8 @@ public class QPHashtable implements Dictionary {
             return hashKey;
         }
         else{
-            return getHashOfWord(word,hashKey +1 );
+            i ++;
+            return getHashOfWord(word,hashKey + (i * i) ,i);
         }
     }
 
@@ -67,13 +73,21 @@ public class QPHashtable implements Dictionary {
         // Implement this.
         int hashKey = hashFunction(word);
         boolean inserted = false;
+        Word toInsert = new Word(word,definition);
         while (!inserted ){
+            if (hashKey > table.length){
+                hashKey = hashKey - table.length;
+            }
+            if (toInsert.probe > table.length) {
+                //throw Exception;
+            }
             if (table[hashKey] == null){
-                table[hashKey] = new Word(word,definition);
+                table[hashKey] = toInsert;
                 inserted = true;
             }
             else {
-                hashKey ++;
+                toInsert.addProbe();
+                hashKey = hashKey + ((toInsert.probe)*(toInsert.probe));
             }
         }
         entries ++;

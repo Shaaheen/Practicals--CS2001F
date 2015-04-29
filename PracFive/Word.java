@@ -7,10 +7,14 @@ import java.util.List;
 public class Word implements Entry{
     String word;
     ArrayList<Definition> definitions = new ArrayList<Definition>();
+    int probe;
 
     public Word(String word,Definition def){
         this.word = word;
         definitions.add(def);
+    }
+    public void addProbe(){
+        probe++;
     }
     @Override
     public String getWord() {
