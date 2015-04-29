@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/QPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileUtil.java" afterPath="$PROJECT_DIR$/src/FileUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LPHashtable.java" afterPath="$PROJECT_DIR$/src/LPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserInterface.java" afterPath="$PROJECT_DIR$/src/UserInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Word.java" afterPath="$PROJECT_DIR$/Word.java" />
+    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Implemented the LPHashtable. Added methods for the LPHashtable to insert new word objects into its table. Hash function taken from textbook.&#10;Collisions are handled by looking in the next position in the table - Linear Probing. &#10;Change the List of definition in the Word Entry to an ArrayList.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QPHashtable.java" afterPath="$PROJECT_DIR$/src/QPHashtable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracFive.iws" />
@@ -107,9 +103,12 @@
       <file leaf-file-name="QPHashtable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23943663" vertical-offset="0" max-vertical-offset="426">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="4.2300467" vertical-offset="0" max-vertical-offset="1938">
+              <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+              <folding>
+                <element signature="e#2323#2324#0" expanded="true" />
+                <element signature="e#2374#2375#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -549,7 +548,7 @@
       <option name="number" value="Default" />
       <updated>1430249396756</updated>
       <workItem from="1430249405301" duration="6345000" />
-      <workItem from="1430291025632" duration="6729000" />
+      <workItem from="1430291025632" duration="6977000" />
     </task>
     <task id="LOCAL-00001" summary="Initilaised new Project for Practical 5">
       <created>1430251419047</created>
@@ -563,11 +562,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430292145590</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implemented the LPHashtable. Added methods for the LPHashtable to insert new word objects into its table. Hash function taken from textbook.&#10;Collisions are handled by looking in the next position in the table - Linear Probing. &#10;Change the List of definition in the Word Entry to an ArrayList.">
+      <created>1430299028697</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1430299028697</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13074000" />
+    <option name="totallyTimeSpent" value="13322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -619,7 +624,8 @@
     </option>
     <MESSAGE value="Initilaised new Project for Practical 5" />
     <MESSAGE value="Implemented Word class that implements from the Entry. &#10;Word class contains the word and a list of definitions. Added methods to add to the definitions to the list. Also added methods to get information about a word object." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Word class that implements from the Entry. &#10;Word class contains the word and a list of definitions. Added methods to add to the definitions to the list. Also added methods to get information about a word object." />
+    <MESSAGE value="Implemented the LPHashtable. Added methods for the LPHashtable to insert new word objects into its table. Hash function taken from textbook.&#10;Collisions are handled by looking in the next position in the table - Linear Probing. &#10;Change the List of definition in the Word Entry to an ArrayList." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented the LPHashtable. Added methods for the LPHashtable to insert new word objects into its table. Hash function taken from textbook.&#10;Collisions are handled by looking in the next position in the table - Linear Probing. &#10;Change the List of definition in the Word Entry to an ArrayList." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -836,9 +842,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23943663" vertical-offset="0" max-vertical-offset="426">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="4.2300467" vertical-offset="0" max-vertical-offset="1938">
+          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding>
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
