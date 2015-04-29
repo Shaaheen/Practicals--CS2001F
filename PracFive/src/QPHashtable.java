@@ -4,7 +4,7 @@ import java.util.List;
  * Created by Shaaheen on 4/29/2015.
  */
 public class QPHashtable implements Dictionary {
-    private final static int DEFAULT_SIZE = 50;
+    private static int DEFAULT_SIZE = 50;
 
     private Entry[] table;
     private int entries;
@@ -12,10 +12,39 @@ public class QPHashtable implements Dictionary {
     public QPHashtable() { this(DEFAULT_SIZE); }
 
     public QPHashtable(int size) {
+        size = primeSize(size); //Will make sure that size is a prime number
         this.table = new Entry[size];
         this.entries = 0;
     }
 
+    //Returns a prime size number
+    private int primeSize(int size){
+       while (!checkPrime(size)){ //keep adding size by 1 until finds a prime size
+           size++;
+       }
+        return size;
+    }
+
+    //checks if a number is a prime number
+    private boolean checkPrime(int size){
+        boolean prime = true;
+        //if can divide by two then it is not prime
+        if (size%2==0)  prime = false;
+        //if not, then just check the odds as all even numbers are divisible by 2
+        for(int i = 3; i*i <= size; i += 2) {
+            if(size % i == 0)
+                prime = false;
+        }
+        return prime;
+    }
+
+    //Will rehash table if load factor is more than 0.5 as if it is more than 0.5 a insert is not guaranteed
+    private void validateHashTable(){
+        if (loadFactor()>0.5){
+            int size = (int) (table.length * 1.5);
+            this.table = new Entry[size];
+        }
+    }
 
     private int hashFunction(String key) {
         // Your hash function here.
@@ -53,19 +82,19 @@ public class QPHashtable implements Dictionary {
     }
 
     public int getHashOfWord(String word,int hashKey,int noOfProbes){
-        if (hashKey > table.length){
+        if (hashKey > table.length){ // if hashkey surpassed table size then deduct the table size amount from it to loop around
             hashKey = hashKey - table.length;
         }
-        if (noOfProbes > table.length) {
-            //throw Exception;
-        }
-        if (table[hashKey] == null){
+        if (noOfProbes > table.length) { //Probing fails so word can't exist
             return -1;
         }
-        else if (word.equals(table[hashKey].getWord())){
+        if (table[hashKey] == null){ //if the position of the hash key is empty then the word must not exist
+            return -1;
+        }
+        else if (word.equals(table[hashKey].getWord())){ //found a non-empty value, now will check if it is right word
             return hashKey;
         }
-        else{
+        else{               //if not correct word then follow along the appropriate probing strategy
             noOfProbes ++;
             return getHashOfWord(word,hashKey + (noOfProbes * noOfProbes) ,noOfProbes);
         }
@@ -73,6 +102,7 @@ public class QPHashtable implements Dictionary {
 
     //Inserts Word into the dictionary with its definition
     public void insert(String word, Definition definition) {
+        validateHashTable(); //Makes sure the load factor is smaller than 0.5
         int hashKey = hashFunction(word); //Get hash code for word
         boolean inserted = false; //Used for while
         Word toInsert = new Word(word,definition); //The word object that will be inserted
@@ -83,6 +113,7 @@ public class QPHashtable implements Dictionary {
             }
             if (toInsert.probe > table.length) { //if the hashtable has probed the entry more than the size of table then probing failed
                 //throw Exception;
+                System.out.println("EXCEPTION");
             }
             if (table[hashKey] != null){ // if found empty position in table then put in word
                 if (table[hashKey].getWord().equals(word)){
