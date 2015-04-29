@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Fixed bug that wouldn't allow definitions to be added to a word entry">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QPHashtable.java" afterPath="$PROJECT_DIR$/src/QPHashtable.java" />
+    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Added rehashing function &#10;to the Quadratic Probing hash table to make sure the load factor is always smaller than 0.5. &#10;which makes sure there will be a valid insert into the hash table available">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChainedEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChainedWord.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SCHashtable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserInterface.java" afterPath="$PROJECT_DIR$/src/UserInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Word.java" afterPath="$PROJECT_DIR$/Word.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracFive.iws" />
@@ -39,45 +43,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lexicon.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lexicon.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15487" max-vertical-offset="85034">
-              <caret line="911" column="13" selection-start-line="911" selection-start-column="13" selection-end-line="911" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Entry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="731">
-              <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Word.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="833">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#203#215#0" expanded="true" />
-                <element signature="e#368#369#0" expanded="true" />
                 <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#435#436#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#524#525#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#826#827#0" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
-                <element signature="e#927#928#0" expanded="true" />
+                <element signature="e#414#415#0" expanded="true" />
+                <element signature="e#458#459#0" expanded="true" />
+                <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
+                <element signature="e#849#850#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
+                <element signature="e#950#951#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChainedEntry.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ChainedEntry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,28 +89,55 @@
       <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1105">
-              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1105">
+              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QPHashtable.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SCHashtable.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.23943663" vertical-offset="255" max-vertical-offset="1513">
+              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+              <folding>
+                <element signature="method#hashFunction#0;class#SCHashtable#0" expanded="false" />
+                <element signature="method#containsWord#0;class#SCHashtable#0" expanded="false" />
+                <element signature="e#2557#2558#0" expanded="true" />
+                <element signature="e#2608#2609#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChainedWord.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ChainedWord.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+              <folding>
+                <element signature="e#507#508#0" expanded="true" />
+                <element signature="e#534#535#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QPHashtable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.8779343" vertical-offset="918" max-vertical-offset="1853">
-              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#primeSize#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#checkPrime#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#hashFunction#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#containsWord#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#getDefinitions#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#getHashOfWord#0;class#QPHashtable#0" expanded="false" />
-                <element signature="e#5227#5228#0" expanded="true" />
-                <element signature="e#5278#5279#0" expanded="true" />
+                <element signature="e#5199#5200#0" expanded="true" />
+                <element signature="e#5250#5251#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,16 +166,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WordType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WordType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="765">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -170,10 +181,13 @@
       <list>
         <option value="$PROJECT_DIR$/lexicon.txt" />
         <option value="$PROJECT_DIR$/src/FileUtil.java" />
-        <option value="$PROJECT_DIR$/Word.java" />
-        <option value="$PROJECT_DIR$/src/UserInterface.java" />
         <option value="$PROJECT_DIR$/src/LPHashtable.java" />
         <option value="$PROJECT_DIR$/src/QPHashtable.java" />
+        <option value="$PROJECT_DIR$/src/UserInterface.java" />
+        <option value="$PROJECT_DIR$/src/ChainedEntry.java" />
+        <option value="$PROJECT_DIR$/Word.java" />
+        <option value="$PROJECT_DIR$/src/ChainedWord.java" />
+        <option value="$PROJECT_DIR$/src/SCHashtable.java" />
       </list>
     </option>
   </component>
@@ -195,7 +209,7 @@
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
     <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -557,7 +571,7 @@
       <option name="number" value="Default" />
       <updated>1430249396756</updated>
       <workItem from="1430249405301" duration="6345000" />
-      <workItem from="1430291025632" duration="17464000" />
+      <workItem from="1430291025632" duration="20977000" />
     </task>
     <task id="LOCAL-00001" summary="Initilaised new Project for Practical 5">
       <created>1430251419047</created>
@@ -607,11 +621,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430329175019</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added rehashing function &#10;to the Quadratic Probing hash table to make sure the load factor is always smaller than 0.5. &#10;which makes sure there will be a valid insert into the hash table available">
+      <created>1430335534441</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1430335534441</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23809000" />
+    <option name="totallyTimeSpent" value="27322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -667,12 +687,13 @@
     <MESSAGE value="Initialised the Quadratic Probing class. Copied everything from the Linear Probing class and will now configure it for Quadratic Probing" />
     <MESSAGE value="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly" />
     <MESSAGE value="Fixed bug that wouldn't allow definitions to be added to a word entry" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug that wouldn't allow definitions to be added to a word entry" />
+    <MESSAGE value="Added rehashing function &#10;to the Quadratic Probing hash table to make sure the load factor is always smaller than 0.5. &#10;which makes sure there will be a valid insert into the hash table available" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added rehashing function &#10;to the Quadratic Probing hash table to make sure the load factor is always smaller than 0.5. &#10;which makes sure there will be a valid insert into the hash table available" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -712,16 +733,16 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#203#215#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
             <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,43 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Word.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="833">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#203#215#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#927#928#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1105">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WordType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="765">
@@ -878,20 +862,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8779343" vertical-offset="918" max-vertical-offset="1853">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#primeSize#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#checkPrime#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#hashFunction#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#containsWord#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#getDefinitions#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#getHashOfWord#0;class#QPHashtable#0" expanded="false" />
-            <element signature="e#5227#5228#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
+            <element signature="e#5199#5200#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChainedEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Word.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#203#215#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1105">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChainedWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding>
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23943663" vertical-offset="255" max-vertical-offset="1513">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="method#hashFunction#0;class#SCHashtable#0" expanded="false" />
+            <element signature="method#containsWord#0;class#SCHashtable#0" expanded="false" />
+            <element signature="e#2557#2558#0" expanded="true" />
+            <element signature="e#2608#2609#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -13,6 +13,9 @@ public class Word implements Entry{
         this.word = word;
         definitions.add(def);
     }
+
+    public Word() {}
+
     public void addProbe(){
         probe++;
     }
