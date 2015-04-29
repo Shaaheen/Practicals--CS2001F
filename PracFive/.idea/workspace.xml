@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Initialised the Quadratic Probing class. Copied everything from the Linear Probing class and will now configure it for Quadratic Probing">
+    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LPHashtable.java" afterPath="$PROJECT_DIR$/src/LPHashtable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QPHashtable.java" afterPath="$PROJECT_DIR$/src/QPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Word.java" afterPath="$PROJECT_DIR$/Word.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracFive.iws" />
@@ -87,8 +86,8 @@
       <file leaf-file-name="Dictionary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="407" max-vertical-offset="833">
-              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -107,15 +106,15 @@
       <file leaf-file-name="QPHashtable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32159624" vertical-offset="475" max-vertical-offset="1445">
-              <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+            <state vertical-scroll-proportion="1.0399061" vertical-offset="407" max-vertical-offset="1564">
+              <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
               <folding>
                 <element signature="method#hashFunction#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#containsWord#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#getDefinitions#0;class#QPHashtable#0" expanded="false" />
                 <element signature="method#getHashOfWord#0;class#QPHashtable#0" expanded="false" />
-                <element signature="e#2774#2775#0" expanded="true" />
-                <element signature="e#2825#2826#0" expanded="true" />
+                <element signature="e#3728#3729#0" expanded="true" />
+                <element signature="e#3779#3780#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,11 +123,11 @@
       <file leaf-file-name="LPHashtable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="2278">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="2414">
+              <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
               <folding>
-                <element signature="e#2977#2978#0" expanded="true" />
-                <element signature="e#3028#3029#0" expanded="true" />
+                <element signature="e#3801#3802#0" expanded="true" />
+                <element signature="e#3852#3853#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -556,7 +555,7 @@
       <option name="number" value="Default" />
       <updated>1430249396756</updated>
       <workItem from="1430249405301" duration="6345000" />
-      <workItem from="1430291025632" duration="9330000" />
+      <workItem from="1430291025632" duration="11039000" />
     </task>
     <task id="LOCAL-00001" summary="Initilaised new Project for Practical 5">
       <created>1430251419047</created>
@@ -582,11 +581,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430299133162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly">
+      <created>1430302156590</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1430302156590</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15675000" />
+    <option name="totallyTimeSpent" value="17384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -640,7 +645,8 @@
     <MESSAGE value="Implemented Word class that implements from the Entry. &#10;Word class contains the word and a list of definitions. Added methods to add to the definitions to the list. Also added methods to get information about a word object." />
     <MESSAGE value="Implemented the LPHashtable. Added methods for the LPHashtable to insert new word objects into its table. Hash function taken from textbook.&#10;Collisions are handled by looking in the next position in the table - Linear Probing. &#10;Change the List of definition in the Word Entry to an ArrayList." />
     <MESSAGE value="Initialised the Quadratic Probing class. Copied everything from the Linear Probing class and will now configure it for Quadratic Probing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialised the Quadratic Probing class. Copied everything from the Linear Probing class and will now configure it for Quadratic Probing" />
+    <MESSAGE value="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -728,8 +734,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1275">
           <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
           <folding>
-            <element signature="e#2977#2978#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3852#3853#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -843,33 +849,33 @@
     <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="2278">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="2414">
+          <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
           <folding>
-            <element signature="e#2977#2978#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3852#3853#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32159624" vertical-offset="475" max-vertical-offset="1445">
-          <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+        <state vertical-scroll-proportion="1.0399061" vertical-offset="407" max-vertical-offset="1564">
+          <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
           <folding>
             <element signature="method#hashFunction#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#containsWord#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#getDefinitions#0;class#QPHashtable#0" expanded="false" />
             <element signature="method#getHashOfWord#0;class#QPHashtable#0" expanded="false" />
-            <element signature="e#2774#2775#0" expanded="true" />
-            <element signature="e#2825#2826#0" expanded="true" />
+            <element signature="e#3728#3729#0" expanded="true" />
+            <element signature="e#3779#3780#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -52,11 +52,13 @@ public class QPHashtable implements Dictionary {
         }
     }
 
-    public int getHashOfWord(String word,int hashKey,int i){
+    public int getHashOfWord(String word,int hashKey,int noOfProbes){
         if (hashKey > table.length){
             hashKey = hashKey - table.length;
         }
-
+        if (noOfProbes > table.length) {
+            //throw Exception;
+        }
         if (table[hashKey] == null){
             return -1;
         }
@@ -64,33 +66,40 @@ public class QPHashtable implements Dictionary {
             return hashKey;
         }
         else{
-            i ++;
-            return getHashOfWord(word,hashKey + (i * i) ,i);
+            noOfProbes ++;
+            return getHashOfWord(word,hashKey + (noOfProbes * noOfProbes) ,noOfProbes);
         }
     }
 
+    //Inserts Word into the dictionary with its defintion
     public void insert(String word, Definition definition) {
-        // Implement this.
-        int hashKey = hashFunction(word);
-        boolean inserted = false;
-        Word toInsert = new Word(word,definition);
+        int hashKey = hashFunction(word); //Get hash code for word
+        boolean inserted = false; //Used for while
+        Word toInsert = new Word(word,definition); //The word object that will be inserted
+        //Loops until word is inserted into hashtable or until the probing fails
         while (!inserted ){
-            if (hashKey > table.length){
+            if (hashKey > table.length){ //if the hashkey is greater than the lenght of the table then loop around to beginning
                 hashKey = hashKey - table.length;
             }
-            if (toInsert.probe > table.length) {
+            if (toInsert.probe > table.length) { //if the hashtable has probed the enrty more than the size of table then probing failed
                 //throw Exception;
             }
-            if (table[hashKey] == null){
-                table[hashKey] = toInsert;
-                inserted = true;
+            if (table[hashKey] != null){ // if found empty position in table then put in word
+                if (table[hashKey].getWord().equals(word)){
+                    table[hashKey].addDefinition(definition); // If word already exist then add a definition to it
+                    inserted = true;
+                }
+                else {
+                    toInsert.addProbe(); //add probe value to be stored in word object
+                    hashKey = hashKey + ((toInsert.probe)*(toInsert.probe)); // add Quadtratic probe value to hashkey (probe squared)
+                }
             }
             else {
-                toInsert.addProbe();
-                hashKey = hashKey + ((toInsert.probe)*(toInsert.probe));
+                table[hashKey] = toInsert;
+                inserted = true; //ends loop
             }
         }
-        entries ++;
+        entries ++; //new entry
     }
 
     public boolean isEmpty() { return entries == 0; }
