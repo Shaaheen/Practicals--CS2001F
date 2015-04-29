@@ -43,14 +43,14 @@ public class SCHashtable implements Dictionary {
 
     public List<Definition> getDefinitions(String word) {
         // Implement this.
-        boolean found = false;
-        int key = getHashOfWord(word,hashFunction(word),0);
-        if (key != -1){
-            return table[key].getDefinitions();
+        ChainedEntry listEntry = table[hashFunction(word)];
+        while (listEntry != null){
+            if (listEntry.getWord().equals(word)){
+                return listEntry.getDefinitions();
+            }
+            listEntry = listEntry.getNext();
         }
-        else {
-            return null;
-        }
+        return null;
     }
 
 

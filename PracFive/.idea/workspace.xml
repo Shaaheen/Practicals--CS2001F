@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Added rehashing function &#10;to the Quadratic Probing hash table to make sure the load factor is always smaller than 0.5. &#10;which makes sure there will be a valid insert into the hash table available">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChainedEntry.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChainedWord.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SCHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserInterface.java" afterPath="$PROJECT_DIR$/src/UserInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Word.java" afterPath="$PROJECT_DIR$/Word.java" />
+    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Created a Seperate Chaining Hashtable.&#10;Implemented insert method to keep adding a word link to an already existing Linked List.&#10;Implemented the contains method to see if a word exists in the appropriate linked list">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SCHashtable.java" afterPath="$PROJECT_DIR$/src/SCHashtable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracFive.iws" />
@@ -99,13 +95,12 @@
       <file leaf-file-name="SCHashtable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23943663" vertical-offset="255" max-vertical-offset="1513">
-              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.92488265" vertical-offset="303" max-vertical-offset="1683">
+              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
               <folding>
                 <element signature="method#hashFunction#0;class#SCHashtable#0" expanded="false" />
-                <element signature="method#containsWord#0;class#SCHashtable#0" expanded="false" />
-                <element signature="e#2557#2558#0" expanded="true" />
-                <element signature="e#2608#2609#0" expanded="true" />
+                <element signature="e#2621#2622#0" expanded="true" />
+                <element signature="e#2672#2673#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -571,7 +566,7 @@
       <option name="number" value="Default" />
       <updated>1430249396756</updated>
       <workItem from="1430249405301" duration="6345000" />
-      <workItem from="1430291025632" duration="20977000" />
+      <workItem from="1430291025632" duration="21208000" />
     </task>
     <task id="LOCAL-00001" summary="Initilaised new Project for Practical 5">
       <created>1430251419047</created>
@@ -627,11 +622,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430335534441</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Created a Seperate Chaining Hashtable.&#10;Implemented insert method to keep adding a word link to an already existing Linked List.&#10;Implemented the contains method to see if a word exists in the appropriate linked list">
+      <created>1430339075187</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1430339075187</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27322000" />
+    <option name="totallyTimeSpent" value="27553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -688,7 +689,8 @@
     <MESSAGE value="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly" />
     <MESSAGE value="Fixed bug that wouldn't allow definitions to be added to a word entry" />
     <MESSAGE value="Added rehashing function &#10;to the Quadratic Probing hash table to make sure the load factor is always smaller than 0.5. &#10;which makes sure there will be a valid insert into the hash table available" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added rehashing function &#10;to the Quadratic Probing hash table to make sure the load factor is always smaller than 0.5. &#10;which makes sure there will be a valid insert into the hash table available" />
+    <MESSAGE value="Created a Seperate Chaining Hashtable.&#10;Implemented insert method to keep adding a word link to an already existing Linked List.&#10;Implemented the contains method to see if a word exists in the appropriate linked list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a Seperate Chaining Hashtable.&#10;Implemented insert method to keep adding a word link to an already existing Linked List.&#10;Implemented the contains method to see if a word exists in the appropriate linked list" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -937,13 +939,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23943663" vertical-offset="255" max-vertical-offset="1513">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.92488265" vertical-offset="303" max-vertical-offset="1683">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
           <folding>
             <element signature="method#hashFunction#0;class#SCHashtable#0" expanded="false" />
-            <element signature="method#containsWord#0;class#SCHashtable#0" expanded="false" />
-            <element signature="e#2557#2558#0" expanded="true" />
-            <element signature="e#2608#2609#0" expanded="true" />
+            <element signature="e#2621#2622#0" expanded="true" />
+            <element signature="e#2672#2673#0" expanded="true" />
           </folding>
         </state>
       </provider>
