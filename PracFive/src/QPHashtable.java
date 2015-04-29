@@ -71,17 +71,17 @@ public class QPHashtable implements Dictionary {
         }
     }
 
-    //Inserts Word into the dictionary with its defintion
+    //Inserts Word into the dictionary with its definition
     public void insert(String word, Definition definition) {
         int hashKey = hashFunction(word); //Get hash code for word
         boolean inserted = false; //Used for while
         Word toInsert = new Word(word,definition); //The word object that will be inserted
         //Loops until word is inserted into hashtable or until the probing fails
         while (!inserted ){
-            if (hashKey > table.length){ //if the hashkey is greater than the lenght of the table then loop around to beginning
+            if (hashKey > table.length){ //if the hashkey is greater than the length of the table then loop around to beginning
                 hashKey = hashKey - table.length;
             }
-            if (toInsert.probe > table.length) { //if the hashtable has probed the enrty more than the size of table then probing failed
+            if (toInsert.probe > table.length) { //if the hashtable has probed the entry more than the size of table then probing failed
                 //throw Exception;
             }
             if (table[hashKey] != null){ // if found empty position in table then put in word
