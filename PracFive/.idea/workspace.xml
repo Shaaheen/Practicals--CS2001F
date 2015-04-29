@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LPHashtable.java" afterPath="$PROJECT_DIR$/src/LPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QPHashtable.java" afterPath="$PROJECT_DIR$/src/QPHashtable.java" />
+    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Fixed bug that wouldn't allow definitions to be added to a word entry">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracFive.iws" />
@@ -555,7 +553,7 @@
       <option name="number" value="Default" />
       <updated>1430249396756</updated>
       <workItem from="1430249405301" duration="6345000" />
-      <workItem from="1430291025632" duration="11039000" />
+      <workItem from="1430291025632" duration="11101000" />
     </task>
     <task id="LOCAL-00001" summary="Initilaised new Project for Practical 5">
       <created>1430251419047</created>
@@ -587,11 +585,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430302156590</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed bug that wouldn't allow definitions to be added to a word entry">
+      <created>1430303716737</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1430303716737</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17384000" />
+    <option name="totallyTimeSpent" value="17446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -646,7 +650,8 @@
     <MESSAGE value="Implemented the LPHashtable. Added methods for the LPHashtable to insert new word objects into its table. Hash function taken from textbook.&#10;Collisions are handled by looking in the next position in the table - Linear Probing. &#10;Change the List of definition in the Word Entry to an ArrayList." />
     <MESSAGE value="Initialised the Quadratic Probing class. Copied everything from the Linear Probing class and will now configure it for Quadratic Probing" />
     <MESSAGE value="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more measures to make sure the Linear Probing dictionary's hashing function doesn't break the hash tables rules &#10;- Doesn't go out of bounds&#10;- Doesn't probe indefinetly" />
+    <MESSAGE value="Fixed bug that wouldn't allow definitions to be added to a word entry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug that wouldn't allow definitions to be added to a word entry" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
