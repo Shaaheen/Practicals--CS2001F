@@ -118,6 +118,7 @@ public class QPHashtable implements Dictionary {
             if (table[hashKey] != null){ // if found empty position in table then put in word
                 if (table[hashKey].getWord().equals(word)){
                     table[hashKey].addDefinition(definition); // If word already exist then add a definition to it
+                    entries --; // Reduce entries to cancel out when need to add to entries as a new entry is not being made
                     inserted = true;
                 }
                 else {

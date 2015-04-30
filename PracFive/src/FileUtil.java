@@ -5,8 +5,8 @@ import java.io.IOException;
 /**
  * Module containing utility methods.
  * 
- * @author Stephan Jamieson
- * @version 24/4/2015
+ * @author Shaaheen Sacoor
+ * @version 29/4/2015
  */
 public class FileUtil {
 

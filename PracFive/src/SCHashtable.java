@@ -61,14 +61,24 @@ public class SCHashtable implements Dictionary {
         if (hashKey > table.length){ //if the hashkey is greater than the length of the table then loop around to beginning
             hashKey = hashKey - table.length;
         }
-        if (table[hashKey] == null){
+        if (table[hashKey] == null){ //If the space is empty then add the chained word
             table[hashKey] = toInsert;
         }
         else{
-            while (table[hashKey].getNext() != null) {
-                table[hashKey] = table[hashKey].getNext();
+             //Finds the last ChainedWord object in the Linked List.
+            ChainedEntry current = table[hashKey];
+            while (current.getNext() != null) {
+                if (current.getWord().equals(word)){ //If find an already existing word in list then add to its definitions
+                    current.addDefinition(definition);
+                    return;
+                }
+                current = current.getNext(); // Move to next Node
             }
-            table[hashKey] = new ChainedWord((ChainedWord) table[hashKey],toInsert);
+            if (current.getWord().equals(word)){ //If last node is the word to be added then just add definisiont
+                current.addDefinition(definition);
+                return;
+            }
+            ((ChainedWord) current).next = toInsert; //Adds a new Chained Word to the end of the Linked List
         }
 
         entries ++; //new entry
