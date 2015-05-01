@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Fixed Bug&#10;Fixed bug where Seperate Chaining wouldn't link to next node if there were more than 2 links&#10;Added more specific comments to code">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/EfficiencyCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileUtil.java" afterPath="$PROJECT_DIR$/src/FileUtil.java" />
+    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Added an Efficiency checker class for the load performance check.&#10;It assigns a table size based on load factors 0.5, 0.75 and 1. &#10;Then prints the number of probes each hashtable took to insert the given lexicon dictionary and the % difference">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SearchPerformanceUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EfficiencyCheck.java" afterPath="$PROJECT_DIR$/src/EfficiencyCheck.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LPHashtable.java" afterPath="$PROJECT_DIR$/src/LPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QPHashtable.java" afterPath="$PROJECT_DIR$/src/QPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SCHashtable.java" afterPath="$PROJECT_DIR$/src/SCHashtable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracFive.iws" />
@@ -46,8 +44,8 @@
       <file leaf-file-name="EfficiencyCheck.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EfficiencyCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43956044" vertical-offset="1013" max-vertical-offset="1530">
-              <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.62953997" vertical-offset="811" max-vertical-offset="1819">
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,8 +89,8 @@
       <file leaf-file-name="SCHashtable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="713" max-vertical-offset="1938">
-              <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1938">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding>
                 <element signature="method#containsWord#0;class#SCHashtable#0" expanded="false" />
                 <element signature="e#3473#3474#0" expanded="true" />
@@ -122,12 +120,22 @@
       <file leaf-file-name="LPHashtable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3026">
-              <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2737">
+              <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
               <folding>
-                <element signature="e#5230#5231#0" expanded="true" />
-                <element signature="e#5281#5282#0" expanded="true" />
+                <element signature="e#4690#4691#0" expanded="true" />
+                <element signature="e#4741#4742#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchPerformanceUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SearchPerformanceUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,10 +160,11 @@
         <option value="$PROJECT_DIR$/src/ChainedEntry.java" />
         <option value="$PROJECT_DIR$/src/ChainedWord.java" />
         <option value="$PROJECT_DIR$/src/FileUtil.java" />
-        <option value="$PROJECT_DIR$/src/LPHashtable.java" />
         <option value="$PROJECT_DIR$/src/SCHashtable.java" />
         <option value="$PROJECT_DIR$/src/QPHashtable.java" />
+        <option value="$PROJECT_DIR$/src/SearchPerformanceUtil.java" />
         <option value="$PROJECT_DIR$/src/EfficiencyCheck.java" />
+        <option value="$PROJECT_DIR$/src/LPHashtable.java" />
       </list>
     </option>
   </component>
@@ -567,7 +576,7 @@
       <option name="number" value="Default" />
       <updated>1430249396756</updated>
       <workItem from="1430249405301" duration="6345000" />
-      <workItem from="1430291025632" duration="38509000" />
+      <workItem from="1430291025632" duration="44226000" />
     </task>
     <task id="LOCAL-00001" summary="Initilaised new Project for Practical 5">
       <created>1430251419047</created>
@@ -641,11 +650,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430379324843</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added an Efficiency checker class for the load performance check.&#10;It assigns a table size based on load factors 0.5, 0.75 and 1. &#10;Then prints the number of probes each hashtable took to insert the given lexicon dictionary and the % difference">
+      <created>1430471812763</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1430471812763</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44854000" />
+    <option name="totallyTimeSpent" value="50571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -662,7 +677,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740742" sideWeight="0.4978038" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32740742" sideWeight="0.4978038" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14860907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -672,7 +687,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -705,12 +720,13 @@
     <MESSAGE value="Created a Seperate Chaining Hashtable.&#10;Implemented insert method to keep adding a word link to an already existing Linked List.&#10;Implemented the contains method to see if a word exists in the appropriate linked list" />
     <MESSAGE value="Created the get definitions method.&#10;Same as the contains method but returns list of definitions of chained word class" />
     <MESSAGE value="Fixed Bug&#10;Fixed bug where Seperate Chaining wouldn't link to next node if there were more than 2 links&#10;Added more specific comments to code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bug&#10;Fixed bug where Seperate Chaining wouldn't link to next node if there were more than 2 links&#10;Added more specific comments to code" />
+    <MESSAGE value="Added an Efficiency checker class for the load performance check.&#10;It assigns a table size based on load factors 0.5, 0.75 and 1. &#10;Then prints the number of probes each hashtable took to insert the given lexicon dictionary and the % difference" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an Efficiency checker class for the load performance check.&#10;It assigns a table size based on load factors 0.5, 0.75 and 1. &#10;Then prints the number of probes each hashtable took to insert the given lexicon dictionary and the % difference" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -785,8 +801,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1275">
           <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
           <folding>
-            <element signature="e#5230#5231#0" expanded="true" />
-            <element signature="e#5281#5282#0" expanded="true" />
+            <element signature="e#4690#4691#0" expanded="true" />
+            <element signature="e#4741#4742#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -909,34 +925,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1745" max-vertical-offset="3026">
-          <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
-          <folding>
-            <element signature="e#5230#5231#0" expanded="true" />
-            <element signature="e#5281#5282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="713" max-vertical-offset="1938">
-          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-          <folding>
-            <element signature="method#containsWord#0;class#SCHashtable#0" expanded="false" />
-            <element signature="e#3473#3474#0" expanded="true" />
-            <element signature="e#3524#3525#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../InfinitePancakes/InfinitePancakes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.9201877" vertical-offset="779" max-vertical-offset="2380">
           <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="968" max-vertical-offset="1938">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+          <folding>
+            <element signature="method#containsWord#0;class#SCHashtable#0" expanded="false" />
+            <element signature="e#3473#3474#0" expanded="true" />
+            <element signature="e#3524#3525#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -963,10 +968,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchPerformanceUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2737">
+          <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
+          <folding>
+            <element signature="e#4690#4691#0" expanded="true" />
+            <element signature="e#4741#4742#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EfficiencyCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43956044" vertical-offset="1013" max-vertical-offset="1530">
-          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.62953997" vertical-offset="811" max-vertical-offset="1819">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

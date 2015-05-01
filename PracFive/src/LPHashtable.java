@@ -13,36 +13,16 @@ public class LPHashtable implements Dictionary
     private int entries;
     public int totalProbes; //To keep track of total probes that hashTable has done
     boolean performanceTest = false; //Variable to make sure rehashing doesn't occur while doing performance tests.
+    public int searchProbes;
  
     public LPHashtable() { this(DEFAULT_SIZE); }
 
     public LPHashtable(int size) {
-        size = primeSize(size); //Will make sure that size is a prime number
         this.table = new Entry[size];
         this.entries = 0;
         this.totalProbes = 0;
     }
 
-    //Returns a prime size number
-    private int primeSize(int size){
-        while (!checkPrime(size)){ //keep adding size by 1 until finds a prime size
-            size++;
-        }
-        return size;
-    }
-
-    //checks if a number is a prime number
-    private boolean checkPrime(int size){
-        boolean prime = true;
-        //if can divide by two then it is not prime
-        if (size%2==0)  prime = false;
-        //if not, then just check the odds as all even numbers are divisible by 2
-        for(int i = 3; i*i <= size; i += 2) {
-            if(size % i == 0)
-                prime = false;
-        }
-        return prime;
-    }
 
     //Will rehash table if load factor is more than 0.5 as if it is more than 0.5 a insert is not guaranteed
     private void validateHashTable(){
@@ -93,12 +73,15 @@ public class LPHashtable implements Dictionary
             hashKey = hashKey - table.length;
         }
         if (noOfProbes > table.length) {
-            //throw Exception;
+            searchProbes = searchProbes + noOfProbes;
+            return -1;
         }
         if (table[hashKey] == null){
+            searchProbes = searchProbes + noOfProbes;
             return -1;
         }
         else if (word.equals(table[hashKey].getWord())){
+            searchProbes = searchProbes + noOfProbes;
             return hashKey;
         }
         else{
