@@ -26,21 +26,18 @@ public class FileUtil {
      * A word consists of a sequence of one or more letters. <br>
      * A description consists of 1 or more characters (generally, it’s a word phrase). <br>
      */
-    public static void load(Dictionary dictionary, String filename) throws FileNotFoundException, IOException { 
+    public static void load(Dictionary dictionary, String filename) throws FileNotFoundException, IOException {
         // Implement this.
         BufferedReader bufReader = new BufferedReader( new FileReader(filename));
         String line = null;
         while( ( line = bufReader.readLine() ) != null ) {
             int indxWord = line.indexOf(":", 4);
-            System.out.print(line.substring(5, indxWord - 1));
             String word = line.substring(5, indxWord - 1);
             String description = "";
             if (indxWord +1 != line.length()){
-                System.out.print(" " + line.substring(indxWord+2, line.length()));
                 description = line.substring(indxWord+2, line.length());
             }
-            dictionary.insert(word,new Definition(WordType.toWordType(line.substring(0,1)),description));
-            System.out.println();
+            dictionary.insert(word, new Definition(WordType.toWordType(line.substring(0, 1)), description));
         }
     }
 

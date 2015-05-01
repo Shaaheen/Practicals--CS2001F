@@ -11,14 +11,47 @@ public class LPHashtable implements Dictionary
  
     private Entry[] table;
     private int entries;
+    public int totalProbes; //To keep track of total probes that hashTable has done
+    boolean performanceTest = false; //Variable to make sure rehashing doesn't occur while doing performance tests.
  
     public LPHashtable() { this(DEFAULT_SIZE); }
-    
-    public LPHashtable(int size) { 
+
+    public LPHashtable(int size) {
+        size = primeSize(size); //Will make sure that size is a prime number
         this.table = new Entry[size];
         this.entries = 0;
+        this.totalProbes = 0;
     }
-    
+
+    //Returns a prime size number
+    private int primeSize(int size){
+        while (!checkPrime(size)){ //keep adding size by 1 until finds a prime size
+            size++;
+        }
+        return size;
+    }
+
+    //checks if a number is a prime number
+    private boolean checkPrime(int size){
+        boolean prime = true;
+        //if can divide by two then it is not prime
+        if (size%2==0)  prime = false;
+        //if not, then just check the odds as all even numbers are divisible by 2
+        for(int i = 3; i*i <= size; i += 2) {
+            if(size % i == 0)
+                prime = false;
+        }
+        return prime;
+    }
+
+    //Will rehash table if load factor is more than 0.5 as if it is more than 0.5 a insert is not guaranteed
+    private void validateHashTable(){
+        if (loadFactor()>0.5 &&!performanceTest){
+            int size = (int) (table.length * 1.5);
+            this.table = new Entry[size];
+        }
+    }
+
 
     private int hashFunction(String key) {
         // Your hash function here.
@@ -76,12 +109,13 @@ public class LPHashtable implements Dictionary
 
     //Inserts Word into the dictionary with its defintion
     public void insert(String word, Definition definition) {
+        validateHashTable();
         int hashKey = hashFunction(word); //Get hash code for word
         boolean inserted = false; //Used for while
         Word toInsert = new Word(word,definition); //The word object that will be inserted
         //Loops until word is inserted into hashtable or until the probing fails
         while (!inserted ){
-            if (hashKey > table.length){ //if the hashkey is greater than the lenght of the table then loop around to beginning
+            if (hashKey >= table.length){ //if the hashkey is greater than the lenght of the table then loop around to beginning
                 hashKey = hashKey - table.length;
             }
             if (toInsert.probe > table.length) { //if the hashtable has probed the enrty more than the size of table then probing failed
@@ -104,6 +138,7 @@ public class LPHashtable implements Dictionary
             }
 
         }
+        totalProbes = totalProbes + ((Word) table[hashKey]).probe;
         entries ++; //new entry
     }
         

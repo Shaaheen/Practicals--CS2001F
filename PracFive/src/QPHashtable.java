@@ -8,6 +8,8 @@ public class QPHashtable implements Dictionary {
 
     private Entry[] table;
     private int entries;
+    public int totalProbes; //To keep track of total probes that hashTable has done
+    boolean performanceTest; //Variable to make sure rehashing doesn't occur while doing performance tests.
 
     public QPHashtable() { this(DEFAULT_SIZE); }
 
@@ -15,6 +17,8 @@ public class QPHashtable implements Dictionary {
         size = primeSize(size); //Will make sure that size is a prime number
         this.table = new Entry[size];
         this.entries = 0;
+        this.totalProbes = 0;
+        this.performanceTest = false;
     }
 
     //Returns a prime size number
@@ -40,7 +44,7 @@ public class QPHashtable implements Dictionary {
 
     //Will rehash table if load factor is more than 0.5 as if it is more than 0.5 a insert is not guaranteed
     private void validateHashTable(){
-        if (loadFactor()>0.5){
+        if (loadFactor()>0.5 && !performanceTest){
             int size = (int) (table.length * 1.5);
             this.table = new Entry[size];
         }
@@ -102,18 +106,18 @@ public class QPHashtable implements Dictionary {
 
     //Inserts Word into the dictionary with its definition
     public void insert(String word, Definition definition) {
-        validateHashTable(); //Makes sure the load factor is smaller than 0.5
+        validateHashTable(); //Makes sure the load factor is smaller than 0.5 except if doing a performance test
         int hashKey = hashFunction(word); //Get hash code for word
         boolean inserted = false; //Used for while
         Word toInsert = new Word(word,definition); //The word object that will be inserted
         //Loops until word is inserted into hashtable or until the probing fails
         while (!inserted ){
-            if (hashKey > table.length){ //if the hashkey is greater than the length of the table then loop around to beginning
+            while (hashKey >= table.length){ //if the hashkey is greater than the length of the table then loop around to beginning
                 hashKey = hashKey - table.length;
             }
             if (toInsert.probe > table.length) { //if the hashtable has probed the entry more than the size of table then probing failed
                 //throw Exception;
-                System.out.println("EXCEPTION");
+                throw new IndexOutOfBoundsException();
             }
             if (table[hashKey] != null){ // if found empty position in table then put in word
                 if (table[hashKey].getWord().equals(word)){
@@ -131,6 +135,7 @@ public class QPHashtable implements Dictionary {
                 inserted = true; //ends loop
             }
         }
+        totalProbes = totalProbes + toInsert.probe;
         entries ++; //new entry
     }
 
