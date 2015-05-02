@@ -10,6 +10,7 @@ public class QPHashtable implements Dictionary {
     private int entries;
     public int totalProbes; //To keep track of total probes that hashTable has done
     boolean performanceTest; //Variable to make sure rehashing doesn't occur while doing performance tests.
+    public int searchProbes;
 
     public QPHashtable() { this(DEFAULT_SIZE); }
 
@@ -19,6 +20,7 @@ public class QPHashtable implements Dictionary {
         this.entries = 0;
         this.totalProbes = 0;
         this.performanceTest = false;
+        this.searchProbes = 0;
     }
 
     //Returns a prime size number
@@ -86,16 +88,19 @@ public class QPHashtable implements Dictionary {
     }
 
     public int getHashOfWord(String word,int hashKey,int noOfProbes){
-        if (hashKey > table.length){ // if hashkey surpassed table size then deduct the table size amount from it to loop around
+        while (hashKey >= table.length){ // if hashkey surpassed table size then deduct the table size amount from it to loop around
             hashKey = hashKey - table.length;
         }
         if (noOfProbes > table.length) { //Probing fails so word can't exist
+            searchProbes = searchProbes + noOfProbes;
             return -1;
         }
         if (table[hashKey] == null){ //if the position of the hash key is empty then the word must not exist
+            searchProbes = searchProbes + noOfProbes;
             return -1;
         }
         else if (word.equals(table[hashKey].getWord())){ //found a non-empty value, now will check if it is right word
+            searchProbes = searchProbes + noOfProbes;
             return hashKey;
         }
         else{               //if not correct word then follow along the appropriate probing strategy

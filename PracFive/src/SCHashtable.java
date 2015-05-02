@@ -9,6 +9,7 @@ public class SCHashtable implements Dictionary {
     private ChainedEntry[] table;
     private int entries;
     public int totalProbes; //To keep track of total probes that hashTable has done
+    public int searchProbes;
 
     public SCHashtable() { this(DEFAULT_SIZE); }
 
@@ -16,6 +17,7 @@ public class SCHashtable implements Dictionary {
         this.table = new ChainedEntry[size];
         this.entries = 0;
         this.totalProbes = 0;
+        this.searchProbes = 0;
     }
 
     private int hashFunction(String key) {
@@ -47,6 +49,7 @@ public class SCHashtable implements Dictionary {
         // Implement this.
         ChainedEntry listEntry = table[hashFunction(word)];
         while (listEntry != null){
+            searchProbes = searchProbes + 1;
             if (listEntry.getWord().equals(word)){
                 return listEntry.getDefinitions();
             }

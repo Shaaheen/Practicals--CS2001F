@@ -21,6 +21,7 @@ public class LPHashtable implements Dictionary
         this.table = new Entry[size];
         this.entries = 0;
         this.totalProbes = 0;
+        this.searchProbes = 0;
     }
 
 
@@ -69,7 +70,7 @@ public class LPHashtable implements Dictionary
     }
 
     public int getHashOfWord(String word,int hashKey,int noOfProbes){
-        if (hashKey > table.length){
+        while (hashKey >= table.length){
             hashKey = hashKey - table.length;
         }
         if (noOfProbes > table.length) {
@@ -98,7 +99,7 @@ public class LPHashtable implements Dictionary
         Word toInsert = new Word(word,definition); //The word object that will be inserted
         //Loops until word is inserted into hashtable or until the probing fails
         while (!inserted ){
-            if (hashKey >= table.length){ //if the hashkey is greater than the lenght of the table then loop around to beginning
+            while (hashKey >= table.length){ //if the hashkey is greater than the lenght of the table then loop around to beginning
                 hashKey = hashKey - table.length;
             }
             if (toInsert.probe > table.length) { //if the hashtable has probed the enrty more than the size of table then probing failed

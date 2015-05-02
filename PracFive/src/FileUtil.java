@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
+
 /**
  * Module containing utility methods.
  * 
@@ -30,6 +32,7 @@ public class FileUtil {
         // Implement this.
         BufferedReader bufReader = new BufferedReader( new FileReader(filename));
         String line = null;
+        int noOfEntries = 0;
         while( ( line = bufReader.readLine() ) != null ) {
             int indxWord = line.indexOf(":", 4);
             String word = line.substring(5, indxWord - 1);
@@ -38,7 +41,23 @@ public class FileUtil {
                 description = line.substring(indxWord+2, line.length());
             }
             dictionary.insert(word, new Definition(WordType.toWordType(line.substring(0, 1)), description));
+            noOfEntries++;
         }
+    }
+
+    public static String getRandomLexiconWord() throws IOException {
+        Random rnd = new Random();
+        int i = 0;
+        int randomLine = rnd.nextInt(4996) + 1; //Gets random number between 1 and 4997
+        BufferedReader bufReader = new BufferedReader( new FileReader("lexicon.txt"));
+        String line = null;
+        while ( i < randomLine){
+            line = bufReader.readLine();
+            i++;
+        }
+        int indxWord = line.indexOf(":", 4);
+        String word = line.substring(5, indxWord - 1);
+        return word;
     }
 
 }
