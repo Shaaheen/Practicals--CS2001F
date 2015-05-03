@@ -2,18 +2,20 @@ import java.util.List;
 
 /**
  * Created by Shaaheen on 4/29/2015.
+ * Quadratic Probing hashtable implementation
  */
 public class QPHashtable implements Dictionary {
     private static int DEFAULT_SIZE = 50;
 
     private Entry[] table;
-    private int entries;
+    private int entries; //keeps track of current number of entries in list
     public int totalProbes; //To keep track of total probes that hashTable has done
     boolean performanceTest; //Variable to make sure rehashing doesn't occur while doing performance tests.
-    public int searchProbes;
+    public int searchProbes; //keeps track of the number of probes taken to search hashtable
 
     public QPHashtable() { this(DEFAULT_SIZE); }
 
+    //Constructor method
     public QPHashtable(int size) {
         size = primeSize(size); //Will make sure that size is a prime number
         this.table = new Entry[size];
@@ -46,14 +48,19 @@ public class QPHashtable implements Dictionary {
 
     //Will rehash table if load factor is more than 0.5 as if it is more than 0.5 a insert is not guaranteed
     private void validateHashTable(){
+        //This if statement is never met while running the performance tests as this method
+        //would keep expanding the table when need be, which will make it unfair to compare to other hashtable
         if (loadFactor()>0.5 && !performanceTest){
-            int size = (int) (table.length * 1.5);
+            int size = (int) (table.length * 1.5); //increase the tables size by 50%
+
+            //This statement rehashes the table - Expands the tables size of the hashtable whilst
+            //still keeping all the entries in the same positions
             this.table = new Entry[size];
         }
     }
 
+    //Method to get a key value when given a string word - Taken from textbook
     private int hashFunction(String key) {
-        // Your hash function here.
         int hashVal = 0;
         for( int i = 0; i < key.length( ); i++ )
             hashVal = 37 * hashVal + key.charAt( i );
@@ -64,9 +71,10 @@ public class QPHashtable implements Dictionary {
         return hashVal;
     }
 
-
+    //Method to check if a word exist in the table
     public boolean containsWord(String word) {
-        // Implement this.
+        //Gets the proper hash of word, probing through table if need be and checking if exists
+        //If value is -1 then word was not found
         if (getHashOfWord(word,hashFunction(word),0) != -1){
             return true;
         }
@@ -75,9 +83,9 @@ public class QPHashtable implements Dictionary {
         }
     }
 
+    //Gets definitions for a specified word
     public List<Definition> getDefinitions(String word) {
-        // Implement this.
-        boolean found = false;
+        //gets the proper hashkey of a word, probing if need be and checks if it exist then returning the list of definitions
         int key = getHashOfWord(word,hashFunction(word),0);
         if (key != -1){
             return table[key].getDefinitions();
@@ -87,20 +95,21 @@ public class QPHashtable implements Dictionary {
         }
     }
 
+    //Recursively find the hash key of a word, probing through the table if need be and returning -1 if not found
     public int getHashOfWord(String word,int hashKey,int noOfProbes){
         while (hashKey >= table.length){ // if hashkey surpassed table size then deduct the table size amount from it to loop around
             hashKey = hashKey - table.length;
         }
         if (noOfProbes > table.length) { //Probing fails so word can't exist
-            searchProbes = searchProbes + noOfProbes;
+            searchProbes = searchProbes + noOfProbes; //add to search probes as it took this many probes to find out word doesn't exist
             return -1;
         }
         if (table[hashKey] == null){ //if the position of the hash key is empty then the word must not exist
-            searchProbes = searchProbes + noOfProbes;
+            searchProbes = searchProbes + noOfProbes; //add to search probes as it took this many to probes to find word doesn't exist
             return -1;
         }
         else if (word.equals(table[hashKey].getWord())){ //found a non-empty value, now will check if it is right word
-            searchProbes = searchProbes + noOfProbes;
+            searchProbes = searchProbes + noOfProbes;//add to search probes as it took this many to probes to find word exists
             return hashKey;
         }
         else{               //if not correct word then follow along the appropriate probing strategy
@@ -136,18 +145,21 @@ public class QPHashtable implements Dictionary {
                 }
             }
             else {
-                table[hashKey] = toInsert;
+                table[hashKey] = toInsert; //if nothing in index then add word to the table
                 inserted = true; //ends loop
             }
         }
-        totalProbes = totalProbes + toInsert.probe;
+        totalProbes = totalProbes + toInsert.probe; //This many probes were taken to insert a word
         entries ++; //new entry
     }
 
+    //checks no entries are in table
     public boolean isEmpty() { return entries == 0; }
 
-    public void empty() { this.table = new Entry[this.table.length]; this.entries=0; }
+    //Empties out the table
+    public void empty() { this.table = new ChainedEntry[this.table.length]; this.entries=0; }
 
+    //returns the number of entries in table
     public int size() { return this.entries; }
 
     /* Hash Table Functions */

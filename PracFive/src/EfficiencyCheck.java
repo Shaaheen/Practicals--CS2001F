@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 /**
  * Created by Shaaheen on 4/30/2015.
+ * Program to check the efficiency statistics of the implemented hash tables
  */
 public class EfficiencyCheck {
 
@@ -10,7 +11,7 @@ public class EfficiencyCheck {
         Scanner user_input = new Scanner(System.in);
         int caseIn = 0;
         int choice=0;
-        
+        //Loops until user wants to quit
         while (choice != 3) {
             System.out.println("Check Efficiency of 1)Load Performance or 2)Search Performance or 3)Quit");
             choice = user_input.nextInt();
@@ -19,9 +20,13 @@ public class EfficiencyCheck {
                     System.out.println("1)Print total probes for each case  2)Check Percentage difference 3)Back");
                     caseIn = user_input.nextInt();
                     if (caseIn == 1) {
-                        double load = 0.5;
-                        for (int j = 0; j < 3; j++) {
+                        //Goes through each load factor
+                        for ( double load = 0.5; load < 1; load = load + 0.25) {
+                            //Gets hashtables for each load factor loaded with the lexicon dictionary
                             Dictionary[] hashTbles = getDictionarys(load);
+
+                            //Prints the total number of probes used to insert all of lexicon words and definitions
+                            System.out.println("Total number of probes used to insert all of lexicon words and definitions");
                             System.out.println("LP: Total number of Probes is " + ((LPHashtable) hashTbles[0]).totalProbes + " for a load factor " + load);
                             if (hashTbles[1] != null)
                                 System.out.println("QP: Total number of Probes is " + ((QPHashtable) hashTbles[1]).totalProbes + " for a load factor " + load);
@@ -29,28 +34,24 @@ public class EfficiencyCheck {
                                 System.out.println("QP: Failed at load factor " + load);
                             System.out.println("SC: Total number of Probes is " + ((SCHashtable) hashTbles[2]).totalProbes + " for a load factor " + load);
                             System.out.println();
-                            load = load + 0.25;
                         }
                     } else if (caseIn == 2) {
                         System.out.println("Percentage differences ");
                         double load = 0.5;
                         for (int j = 0; j < 3; j++) {
+                            //Same as above but calculates the differences
                             Dictionary[] hashTbles = getDictionarys(load);
                             int LPProbes = ((LPHashtable) hashTbles[0]).totalProbes;
                             int SCProbes = ((SCHashtable) hashTbles[2]).totalProbes;
                             if (hashTbles[1] != null) {
                                 int QPProbes = ((QPHashtable) hashTbles[1]).totalProbes;
                                 System.out.println("Quadratic and Linear Probing : " + Math.abs(Math.round((((double) (QPProbes - LPProbes) / QPProbes) * 100))) + "% for a load factor " + load);
+                                System.out.println("Sequential chaining and Quadratic Probing : " + Math.abs(Math.round((((double) SCProbes - QPProbes) / SCProbes) * 100)) + "% for a load factor " + load);
                             } else
                                 System.out.println("QP: Failed at load factor " + load);
 
                             System.out.println("Sequential chaining and Linear Probing : " + Math.abs(Math.round((((double) SCProbes - LPProbes) / SCProbes) * 100)) + "% for a load factor " + load);
 
-                            if (hashTbles[1] != null) {
-                                int QPProbes = ((QPHashtable) hashTbles[1]).totalProbes;
-                                System.out.println("Sequential chaining and Quadratic Probing : " + Math.abs(Math.round((((double) SCProbes - QPProbes) / SCProbes) * 100)) + "% for a load factor " + load);
-                            } else
-                                System.out.println("QP: Failed at load factor " + load);
                             System.out.println();
                             load = load + 0.25;
                         }
@@ -70,31 +71,34 @@ public class EfficiencyCheck {
                             int LPTrials = 0;
                             int QPTrials = 0; //Counts the number of probes throughout all the 100 trials
                             int SCTrials = 0;
-                            for (int j = 0; j < 20; j++) { //Goes through a 10 trials
+                            for (int j = 0; j < 20; j++) { //Goes through a 20 trials
                                 for (int i = 0; i < 100; i++) { //Searches through a hundred random words
                                     if (i < 20) {
-                                        String nonSense = SearchPerformanceUtil.getNonsenseString(); //Gets a nonsense word which will be searched for in all hashtables
+                                        String nonSense = FileUtil.getNonsenseString(); //Gets a nonsense word which will be searched for in all hashtables
                                         hashTables[0].getDefinitions(nonSense); //same nonsense word used for fairness
                                         hashTables[2].getDefinitions(nonSense);
                                         if (hashTables[1] != null)
                                             hashTables[1].getDefinitions(nonSense);
                                     } else {
-                                        String rndLexicon = FileUtil.getRandomLexiconWord(); //Gets random word from le
-                                        hashTables[0].getDefinitions(rndLexicon);
+                                        String rndLexicon = FileUtil.getRandomLexiconWord(); //Gets random word from lexicon dictionary
+                                        hashTables[0].getDefinitions(rndLexicon); //Searches for nonsense word in all hashtables
                                         if (hashTables[1] != null)
                                             hashTables[1].getDefinitions(rndLexicon);
                                         hashTables[2].getDefinitions(rndLexicon);
                                     }
                                 }
+                                //Adds the total search probes for every trial together so as to average it later for an approximation
                                 LPTrials = LPTrials + ((LPHashtable) hashTables[0]).searchProbes;
                                 if (hashTables[1] != null)
                                     QPTrials = QPTrials + ((QPHashtable) hashTables[1]).searchProbes;
                                 SCTrials = SCTrials + ((SCHashtable) hashTables[2]).searchProbes;
                             }
+                            //Average all Values
                             LPTrials = LPTrials / 20;
                             QPTrials = QPTrials / 20;
                             SCTrials = SCTrials / 20;
-                            System.out.println("The total average number of probes to search for a random 100 words for load factor " + load);
+                            //Prints out the Statistics
+                            System.out.println("The total average number of probes over 20 trials to search for a different random 100 words at each trial for load factor " + load);
                             System.out.println("Searching in LP is " + LPTrials);
                             if (hashTables[1] != null)
                                 System.out.println("Searching in QP is " + QPTrials);
@@ -120,10 +124,11 @@ public class EfficiencyCheck {
             }
         }
     }
-    
+
+    //Method to create all hashtables and insert all words from the lexicon dictionary into the hashtables
     public static Dictionary[] getDictionarys(double load) throws IOException {
-        Dictionary[] hashTables = new Dictionary[3];
-        
+        Dictionary[] hashTables = new Dictionary[3]; //3 hashtables
+
         LPHashtable LP = new LPHashtable(getSize(load));
         LP.performanceTest = true;
         FileUtil.load(LP, "lexicon.txt");
@@ -134,7 +139,7 @@ public class EfficiencyCheck {
             FileUtil.load(QP, "lexicon.txt");
 
         } catch (IndexOutOfBoundsException e) {
-            QP = null;
+            QP = null; //If Quadratic probing failes then put null value in place of QP hashtable
         }
 
 
@@ -147,7 +152,8 @@ public class EfficiencyCheck {
         
         return hashTables;
     }
-    
+
+    //Method to get the size that a table should be for the given load factor - based on lexicon
     private static int getSize(double loadFactor){
         int size = primeSize((int) (3739/loadFactor));
         return (size); // 3739 is the number of entries from the lexicon list

@@ -7,13 +7,14 @@ import java.util.List;
  */
 
 public class Word implements Entry{
-    String word;
+    String word; //keeps actual word string
     ArrayList<Definition> definitions = new ArrayList<Definition>(); //list of words definitions
     int probe; //Number of probes it took to insert this word
 
-    public Word(String word,Definition def){ //Constructor method
+    //Constructor method
+    public Word(String word,Definition def){
         this.word = word;
-        definitions.add(def);
+        definitions.add(def); //adds the definition the list of definitions ascociated with the word
 
     }
 

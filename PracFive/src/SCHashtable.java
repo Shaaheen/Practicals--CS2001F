@@ -2,17 +2,19 @@ import java.util.List;
 
 /**
  * Created by Shaaheen on 4/29/2015.
+ * Seperate Chaining Hashtable implementation
  */
 public class SCHashtable implements Dictionary {
     private static int DEFAULT_SIZE = 50;
 
     private ChainedEntry[] table;
-    private int entries;
+    private int entries; //keeps track of entries in table
     public int totalProbes; //To keep track of total probes that hashTable has done
-    public int searchProbes;
+    public int searchProbes; //keeps number of probes taken to search for a word
 
     public SCHashtable() { this(DEFAULT_SIZE); }
 
+    //Constructor method that sets instance variables
     public SCHashtable(int size) {
         this.table = new ChainedEntry[size];
         this.entries = 0;
@@ -20,8 +22,8 @@ public class SCHashtable implements Dictionary {
         this.searchProbes = 0;
     }
 
+    //Method to get a key value when given a string word - Taken from textbook
     private int hashFunction(String key) {
-        // Your hash function here.
         int hashVal = 0;
         for( int i = 0; i < key.length( ); i++ )
             hashVal = 37 * hashVal + key.charAt( i );
@@ -32,25 +34,26 @@ public class SCHashtable implements Dictionary {
         return hashVal;
     }
 
-
+    //Method to check if a word exist in the table
     public boolean containsWord(String word) {
-        // Implement this.
-        ChainedEntry listEntry = table[hashFunction(word)];
+        ChainedEntry listEntry = table[hashFunction(word)]; //Gets the Chained entry object as if word exist then it will exist in the hash functions key
+        //Loop that goes through the linked list found at the index in the table
         while (listEntry != null){
-            if (listEntry.getWord().equals(word)){
+            if (listEntry.getWord().equals(word)){ //If a word in the linked list is the same as the word searching for then end everything and return true
                 return true;
             }
-            listEntry = listEntry.getNext();
+            listEntry = listEntry.getNext(); //go onto next entry in linked list if word not found
         }
-        return false;
+        return false; //will return false if the entry is never found
     }
 
+    //Gets the definitions of a given word
     public List<Definition> getDefinitions(String word) {
         // Implement this.
-        ChainedEntry listEntry = table[hashFunction(word)];
-        while (listEntry != null){
-            searchProbes = searchProbes + 1;
-            if (listEntry.getWord().equals(word)){
+        ChainedEntry listEntry = table[hashFunction(word)]; //Gets linked list stored at a words hashed index
+        while (listEntry != null){ //Traverses through linked list
+            searchProbes = searchProbes + 1; //since had to go through an entry in linked list add to the search probes
+            if (listEntry.getWord().equals(word)){ //if found word then return the list of defintions associated with the word
                 return listEntry.getDefinitions();
             }
             listEntry = listEntry.getNext();
@@ -92,10 +95,13 @@ public class SCHashtable implements Dictionary {
         entries ++; //new entry
     }
 
+    //checks no entries are in table
     public boolean isEmpty() { return entries == 0; }
 
+    //Empties out the table
     public void empty() { this.table = new ChainedEntry[this.table.length]; this.entries=0; }
 
+    //returns the number of entries in table
     public int size() { return this.entries; }
 
     /* Hash Table Functions */
