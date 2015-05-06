@@ -1,3 +1,4 @@
+package PracFiveSource;
 import java.util.List;
 
 /**
@@ -75,9 +76,8 @@ public class QPHashtable implements Dictionary {
     public boolean containsWord(String word) {
         //Gets the proper hash of word, probing through table if need be and checking if exists
         //If value is -1 then word was not found
-        if (getHashOfWord(word,hashFunction(word),0) != -1){
+        if (getHashOfWord(word,hashFunction(word),0) != -1)
             return true;
-        }
         else{
             return false;
         }
@@ -120,7 +120,7 @@ public class QPHashtable implements Dictionary {
 
     //Inserts Word into the dictionary with its definition
     public void insert(String word, Definition definition) {
-        validateHashTable(); //Makes sure the load factor is smaller than 0.5 except if doing a performance test
+        validateHashTable(); //Makes sure the load factor is smaller than 0.5 except if doing a performance PracFiveSource.test
         int hashKey = hashFunction(word); //Get hash code for word
         boolean inserted = false; //Used for while
         Word toInsert = new Word(word,definition); //The word object that will be inserted

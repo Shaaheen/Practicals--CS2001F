@@ -1600,7 +1600,7 @@ n  : division : arithmetic operation
 n  : division : army unit
 n  : division : administrative unit
 n  : divorce :
-n  : doctor : doc, physician, MD
+n  : doctor : PracFiveSource.doc, physician, MD
 n  : doctor : Dr., person who holds Ph.D. degree
 n  : document : written document, papers
 n  : dog : domestic dog
@@ -1728,7 +1728,7 @@ n  : ethics : moral philosophy
 n  : Europe : continent
 n  : evening : eve
 n  : evolution : phylogeny, phylogenesis
-n  : examination : test
+n  : examination : PracFiveSource.test
 n  : example : illustration, instance, representative
 n  : example : exemplar, model, good example
 n  : excavation : dig, archeological site
@@ -3674,8 +3674,8 @@ n  : term : word or expression
 n  : terminal : keyboard and monitor
 n  : terrace : patio
 n  : terrorist :
-n  : test : trial, trial run, tryout
-n  : test : examination, exam
+n  : PracFiveSource.test : trial, trial run, tryout
+n  : PracFiveSource.test : examination, exam
 n  : text : textual matter
 n  : text : textbook, text edition, schoolbook
 n  : texture : appearance of a surface or fabric
@@ -4306,7 +4306,7 @@ v  : prosper : boom, thrive, flourish
 v  : elaborate : expand, expatiate, enlarge, flesh out
 v  : expand : spread out, extend in one or more directions, spread
 v  : expect : anticipate
-v  : experiment : conduct a test or investigation
+v  : experiment : conduct a PracFiveSource.test or investigation
 v  : explain : explicate
 v  : explode : detonate, blow up
 v  : explode : show a violent emotional reaction

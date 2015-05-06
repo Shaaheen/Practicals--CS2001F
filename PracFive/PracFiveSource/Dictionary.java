@@ -1,3 +1,4 @@
+package PracFiveSource;
 import java.util.List;
 /**
  * ADT for a dictionary type of object.

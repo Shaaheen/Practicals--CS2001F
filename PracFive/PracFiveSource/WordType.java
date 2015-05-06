@@ -1,4 +1,4 @@
-
+package PracFiveSource;
 /**
  * Enumeration class WordType.
  * 

@@ -1,5 +1,6 @@
+package PracFiveSource;
+
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
@@ -15,7 +16,7 @@ public class FileUtil {
     private FileUtil() {}
 
     //Loads in the words and definitions from the lexicon dictionary and inserts them into a dictionary
-    public static void load(Dictionary dictionary, String filename) throws FileNotFoundException, IOException {
+    public static void load(Dictionary dictionary, String filename) throws IOException {
         BufferedReader bufReader = new BufferedReader( new FileReader(filename)); //Accesses file
         String line = null;
         while( ( line = bufReader.readLine() ) != null ) { //Traverses through file

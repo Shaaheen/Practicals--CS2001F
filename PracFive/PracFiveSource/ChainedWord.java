@@ -1,3 +1,4 @@
+package PracFiveSource;
 /**
  * Created by Shaaheen on 4/29/2015.
  * A chained word entry that is for a Seperate Chaining Hashtable which contains a link to the next chained word

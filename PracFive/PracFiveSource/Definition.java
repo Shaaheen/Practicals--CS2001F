@@ -1,4 +1,4 @@
-
+package PracFiveSource;
 /**
  * A word definition has a word type and word description.
  * 

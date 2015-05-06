@@ -1,3 +1,4 @@
+package PracFiveSource;
 import java.util.List;
 /**
  * Simple hash table implementation of Dictionary using linear probing.
@@ -29,11 +30,11 @@ public class LPHashtable implements Dictionary
     }
 
 
-    //Will rehash table if load factor is more than 0.5 as if it is more than 0.5 a insert is not guaranteed
+    //Will rehash table if load factor is more than 0.75 as if it is more than 0.75 a insert is not guaranteed
     private void validateHashTable(){
         //This if statement is never met while running the performance tests as this method
         //would keep expanding the table when need be, which will make it unfair to compare to other hashtable
-        if (loadFactor()>0.5 && !performanceTest){
+        if (loadFactor()>0.75 && !performanceTest){
             int size = (int) (table.length * 1.5); //increase the tables size by 50%
 
             //This statement rehashes the table - Expands the tables size of the hashtable whilst
@@ -58,9 +59,8 @@ public class LPHashtable implements Dictionary
     public boolean containsWord(String word) {
         //Gets the proper hash of word, probing through table if need be and checking if exists
         //If value is -1 then word was not found
-        if (getHashOfWord(word,hashFunction(word),0) != -1){
+        if (getHashOfWord(word,hashFunction(word),0) != -1)
             return true;
-        }
         else{
             return false;
         }
@@ -113,7 +113,7 @@ public class LPHashtable implements Dictionary
                 hashKey = hashKey - table.length;
             }
             if (toInsert.probe > table.length) { //if the hashtable has probed the enrty more than the size of table then probing failed
-                //throw Exception;
+                throw new IndexOutOfBoundsException();
             }
             if (table[hashKey] != null){ // if found empty position in table then put in word
                 if (table[hashKey].getWord().equals(word)){

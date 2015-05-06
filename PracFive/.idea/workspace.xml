@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Fixed more bugs - Added Functionality to go through 20  trials for a different random 100 words each time&#10;Found more bugs where hashtables weren't searching for the same string making it unfair &#10;Reformatted code for more presentable UI&#10;Will work out percentage difference for trials searching">
-      <change type="DELETED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\SearchPerformanceUtil.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EfficiencyCheck.java" afterPath="$PROJECT_DIR$/src/EfficiencyCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileUtil.java" afterPath="$PROJECT_DIR$/src/FileUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LPHashtable.java" afterPath="$PROJECT_DIR$/src/LPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QPHashtable.java" afterPath="$PROJECT_DIR$/src/QPHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SCHashtable.java" afterPath="$PROJECT_DIR$/src/SCHashtable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Word.java" afterPath="$PROJECT_DIR$/src/Word.java" />
+    <list default="true" id="56d18b40-8fad-497b-b049-c033a855ffbf" name="Default" comment="Created Junit Tests and Coverage reports &#10;For all implemented classes in assignments&#10;Also moved around files for package simplicity&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PracFiveSource/test/ChainedWordTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PracFiveSource/test/LPHashtableTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PracFiveSource/test/QPHashtableTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PracFiveSource/test/SCHashtableTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PracFiveSource/test/WordTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\ChainedEntry.java" afterPath="$PROJECT_DIR$/PracFiveSource/ChainedEntry.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\ChainedWord.java" afterPath="$PROJECT_DIR$/PracFiveSource/ChainedWord.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\Definition.java" afterPath="$PROJECT_DIR$/PracFiveSource/Definition.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\Dictionary.java" afterPath="$PROJECT_DIR$/PracFiveSource/Dictionary.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\EfficiencyCheck.java" afterPath="$PROJECT_DIR$/PracFiveSource/EfficiencyCheck.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\Entry.java" afterPath="$PROJECT_DIR$/PracFiveSource/Entry.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\FileUtil.java" afterPath="$PROJECT_DIR$/PracFiveSource/FileUtil.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\LPHashtable.java" afterPath="$PROJECT_DIR$/PracFiveSource/LPHashtable.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\QPHashtable.java" afterPath="$PROJECT_DIR$/PracFiveSource/QPHashtable.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\SCHashtable.java" afterPath="$PROJECT_DIR$/PracFiveSource/SCHashtable.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\UserInterface.java" afterPath="$PROJECT_DIR$/PracFiveSource/UserInterface.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\Word.java" afterPath="$PROJECT_DIR$/PracFiveSource/Word.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\WordType.java" afterPath="$PROJECT_DIR$/PracFiveSource/WordType.java" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\Definition.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/Definition.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\Dictionary.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/Dictionary.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\Entry.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/Entry.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\FileUtil.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/FileUtil.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\LPHashtable.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/LPHashtable.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\UserInterface.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/UserInterface.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\WordType.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/WordType.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\allclasses-frame.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/allclasses-frame.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\allclasses-noframe.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/allclasses-noframe.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\constant-values.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/constant-values.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\help-doc.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/help-doc.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\index-all.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/index-all.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\index.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/index.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\logfile.txt" afterPath="$PROJECT_DIR$/PracFiveSource/doc/logfile.txt" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\overview-tree.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/overview-tree.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\package-frame.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/package-frame.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\package-list" afterPath="$PROJECT_DIR$/PracFiveSource/doc/package-list" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\package-summary.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/package-summary.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\package-tree.html" afterPath="$PROJECT_DIR$/PracFiveSource/doc/package-tree.html" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\resources\inherit.gif" afterPath="$PROJECT_DIR$/PracFiveSource/doc/resources/inherit.gif" />
+      <change type="MOVED" beforePath="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\src\doc\stylesheet.css" afterPath="$PROJECT_DIR$/PracFiveSource/doc/stylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PracFive.iml" afterPath="$PROJECT_DIR$/PracFive.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lexicon.txt" afterPath="$PROJECT_DIR$/lexicon.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PracFive.iws" />
@@ -23,6 +57,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/PracFive$AllTestsRunner.coverage" NAME="AllTestsRunner Coverage Results" MODIFIED="1430934393146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>PracFiveSource.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PracFive$ChainedWordTest.coverage" NAME="ChainedWordTest Coverage Results" MODIFIED="1430934564308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>PracFiveSource.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PracFive$LPHashtableTest.coverage" NAME="LPHashtableTest Coverage Results" MODIFIED="1430934440092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>PracFiveSource.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PracFive$QPHashtableTest.coverage" NAME="QPHashtableTest Coverage Results" MODIFIED="1430934499627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>PracFiveSource.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PracFive$SCHashtableTest.coverage" NAME="SCHashtableTest Coverage Results" MODIFIED="1430933525679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>PracFiveSource.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PracFive$WordTest.coverage" NAME="WordTest Coverage Results" MODIFIED="1430934533360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>PracFiveSource.test.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -30,26 +84,20 @@
     <disable_hints />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive\CoverageReport" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="PracFive" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FileUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FileUtil.java">
+      <file leaf-file-name="LPHashtableTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/test/LPHashtableTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-              <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EfficiencyCheck.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/EfficiencyCheck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.1511626" vertical-offset="0" max-vertical-offset="3196">
-              <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,10 +106,44 @@
         </entry>
       </file>
       <file leaf-file-name="Word.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Word.java">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-              <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="901">
+              <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1455#1456#0" expanded="true" />
+                <element signature="e#1501#1502#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LPHashtable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/LPHashtable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1695" max-vertical-offset="2941">
+              <caret line="115" column="54" selection-start-line="115" selection-start-column="54" selection-end-line="115" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QPHashtable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/QPHashtable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="3213">
+              <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EfficiencyCheck.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/EfficiencyCheck.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2583" max-vertical-offset="3230">
+              <caret line="161" column="5" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,44 +151,55 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FileUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/FileUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37135923" vertical-offset="0" max-vertical-offset="1105">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1105">
-              <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1122">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SCHashtable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
+      <file leaf-file-name="QPHashtableTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/test/QPHashtableTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="2227">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="104" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QPHashtable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
+      <file leaf-file-name="WordTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/test/WordTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3213">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LPHashtable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="2941">
-              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="969">
+              <caret line="14" column="98" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="98" />
               <folding>
-                <marker date="1430681838052" expanded="true" signature="23:248" placeholder="/**...*/" />
+                <element signature="e#774#786#0" expanded="true" />
+                <element signature="e#1148#1160#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChainedWordTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PracFiveSource/test/ChainedWordTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="374">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,17 +218,39 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/lexicon.txt" />
-        <option value="$PROJECT_DIR$/src/UserInterface.java" />
         <option value="$PROJECT_DIR$/Word.java" />
-        <option value="$PROJECT_DIR$/src/ChainedEntry.java" />
-        <option value="$PROJECT_DIR$/src/ChainedWord.java" />
-        <option value="$PROJECT_DIR$/src/Word.java" />
-        <option value="$PROJECT_DIR$/src/SCHashtable.java" />
-        <option value="$PROJECT_DIR$/src/QPHashtable.java" />
-        <option value="$PROJECT_DIR$/src/LPHashtable.java" />
         <option value="$PROJECT_DIR$/src/SearchPerformanceUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/LPHashtableTest.java" />
+        <option value="$PROJECT_DIR$/src/test/QPHashtableTest.java" />
+        <option value="$PROJECT_DIR$/src/test/SCHashtableTest.java" />
+        <option value="$PROJECT_DIR$/src/SCHashtable.java" />
         <option value="$PROJECT_DIR$/src/FileUtil.java" />
         <option value="$PROJECT_DIR$/src/EfficiencyCheck.java" />
+        <option value="$PROJECT_DIR$/src/UserInterface.java" />
+        <option value="$PROJECT_DIR$/src/QPHashtable.java" />
+        <option value="$PROJECT_DIR$/src/LPHashtable.java" />
+        <option value="$PROJECT_DIR$/src/Definition.java" />
+        <option value="$PROJECT_DIR$/src/ChainedWord.java" />
+        <option value="$PROJECT_DIR$/src/ChainedEntry.java" />
+        <option value="$PROJECT_DIR$/src/Dictionary.java" />
+        <option value="$PROJECT_DIR$/src/Entry.java" />
+        <option value="$PROJECT_DIR$/src/Word.java" />
+        <option value="$PROJECT_DIR$/src/WordType.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/WordType.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/WordTest.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/test/WordTest.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/ChainedWordTest.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/test/ChainedWordTest.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/test/SCHashtableTest.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/test/QPHashtableTest.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/test/AllTests.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/test/AllTestsRunner.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/test/LPHashtableTest.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/Word.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/LPHashtable.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/QPHashtable.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/EfficiencyCheck.java" />
+        <option value="$PROJECT_DIR$/PracFiveSource/FileUtil.java" />
       </list>
     </option>
   </component>
@@ -173,6 +288,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -201,14 +318,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="PracFiveSource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracFive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracFive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracFiveSource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,7 +354,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CoverageReport" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -244,6 +377,9 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="840" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FullScreen" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -252,14 +388,27 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Shaaheen\IdeaProjects\Practicals- CS2001F\PracFive" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="PracFiveSource.test" />
+      <recent name="PracFiveSource" />
+      <recent name="test" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.EfficiencyCheck">
-    <configuration default="false" name="UserInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="UserInterface" />
+  <component name="RunManager" selected="JUnit.WordTest">
+    <configuration default="false" name="AllTestsRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="PracFiveSource.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="PracFiveSource.test.AllTestsRunner" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -270,36 +419,129 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="PracFive" />
       <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
+      <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="EfficiencyCheck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="EfficiencyCheck" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration default="false" name="LPHashtableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="PracFiveSource.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="PracFive" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="PracFiveSource.test" />
+      <option name="MAIN_CLASS_NAME" value="PracFiveSource.test.LPHashtableTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="PracFive" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="QPHashtableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="PracFiveSource.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="PracFive" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="PracFiveSource.test" />
+      <option name="MAIN_CLASS_NAME" value="PracFiveSource.test.QPHashtableTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="WordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="PracFiveSource.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="PracFive" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="PracFiveSource.test" />
+      <option name="MAIN_CLASS_NAME" value="PracFiveSource.test.WordTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ChainedWordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="PracFiveSource.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="PracFive" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="PracFiveSource.test" />
+      <option name="MAIN_CLASS_NAME" value="PracFiveSource.test.ChainedWordTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -545,14 +787,20 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.UserInterface" />
-      <item index="1" class="java.lang.String" itemvalue="Application.EfficiencyCheck" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.AllTestsRunner" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.LPHashtableTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.QPHashtableTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WordTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ChainedWordTest" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.EfficiencyCheck" />
-        <item index="1" class="java.lang.String" itemvalue="Application.UserInterface" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.WordTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.QPHashtableTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.LPHashtableTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ChainedWordTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.AllTestsRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -569,7 +817,8 @@
       <workItem from="1430249405301" duration="6345000" />
       <workItem from="1430291025632" duration="48221000" />
       <workItem from="1430600445192" duration="77000" />
-      <workItem from="1430601070972" duration="6965000" />
+      <workItem from="1430601070972" duration="10969000" />
+      <workItem from="1430856950986" duration="10627000" />
     </task>
     <task id="LOCAL-00001" summary="Initilaised new Project for Practical 5">
       <created>1430251419047</created>
@@ -661,20 +910,26 @@
       <option name="project" value="LOCAL" />
       <updated>1430603608692</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added more specific comments to code">
+      <created>1430683196566</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1430683196566</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61608000" />
+    <option name="totallyTimeSpent" value="76239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -682,7 +937,8 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.047407407" sideWeight="0.4978038" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40888888" sideWeight="0.4978038" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14787701" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -697,7 +953,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -728,12 +984,14 @@
     <MESSAGE value="Added an Efficiency checker class for the load performance check.&#10;It assigns a table size based on load factors 0.5, 0.75 and 1. &#10;Then prints the number of probes each hashtable took to insert the given lexicon dictionary and the % difference" />
     <MESSAGE value="Modified the Efficiency Checker&#10;Changed around code to make it more reusable&#10;Search Performance will now be implemented to check the amount of probes taken when searching" />
     <MESSAGE value="Fixed more bugs - Added Functionality to go through 20  trials for a different random 100 words each time&#10;Found more bugs where hashtables weren't searching for the same string making it unfair &#10;Reformatted code for more presentable UI&#10;Will work out percentage difference for trials searching" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed more bugs - Added Functionality to go through 20  trials for a different random 100 words each time&#10;Found more bugs where hashtables weren't searching for the same string making it unfair &#10;Reformatted code for more presentable UI&#10;Will work out percentage difference for trials searching" />
+    <MESSAGE value="Added more specific comments to code" />
+    <MESSAGE value="Created Junit Tests and Coverage reports &#10;For all implemented classes in assignments&#10;Also moved around files for package simplicity&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Junit Tests and Coverage reports &#10;For all implemented classes in assignments&#10;Also moved around files for package simplicity&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -742,7 +1000,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FileUtil.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Definition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="1105">
           <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
@@ -750,7 +1016,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EfficiencyCheck.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/EfficiencyCheck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="2635">
           <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
@@ -760,7 +1026,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Word.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1020">
           <caret line="48" column="63" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
@@ -770,7 +1036,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1105">
           <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
@@ -778,7 +1044,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/SCHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1989">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
@@ -786,7 +1052,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/QPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -794,17 +1060,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/LPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="2754">
           <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <marker date="1430681838052" expanded="true" signature="23:248" placeholder="/**...*/" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileUtil.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="1105">
           <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
@@ -812,7 +1076,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EfficiencyCheck.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/EfficiencyCheck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2635">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -822,7 +1086,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Word.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1020">
           <caret line="48" column="63" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
@@ -832,7 +1096,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1105">
           <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
@@ -840,7 +1104,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/SCHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1989">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
@@ -848,7 +1112,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/QPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="401" max-vertical-offset="2567">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
@@ -856,17 +1120,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/LPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="2754">
           <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <marker date="1430681838052" expanded="true" signature="23:248" placeholder="/**...*/" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileUtil.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -881,14 +1143,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entry.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Entry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="731">
           <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Word.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="731">
           <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
@@ -898,14 +1160,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Dictionary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="833">
           <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="1105">
           <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
@@ -913,24 +1175,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/LPHashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1275">
           <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <marker date="1430681838052" expanded="true" signature="23:248" placeholder="/**...*/" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Definition.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Definition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="680">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordType.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/WordType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="765">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
@@ -951,52 +1211,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="731">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="765">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Definition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="680">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lexicon.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="15402" max-vertical-offset="85034">
           <caret line="911" column="13" selection-start-line="911" selection-start-column="13" selection-end-line="911" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChainedWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChainedEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1007,65 +1225,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+    <entry file="file://$USER_HOME$/Desktop/Practicals- CS2001F/PracTwo/PracTwoSource/test/AVLTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1105">
-          <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.0635514" vertical-offset="0" max-vertical-offset="2176">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Definition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Word.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Dictionary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Entry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Practicals- CS2001F/PracTwo/PracTwoSource/AVLTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/WordType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3153014" vertical-offset="0" max-vertical-offset="765">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/SCHashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4874552" vertical-offset="1173" max-vertical-offset="2244">
+          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/SeparateChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1530">
+          <caret line="61" column="60" selection-start-line="61" selection-start-column="60" selection-end-line="61" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/test/SCHashtableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SCHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/ChainedWord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="2227">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="104" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/QPHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/ChainedEntry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3213">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LPHashtable.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/test/QPHashtableTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="2941">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/test/WordTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="969">
+          <caret line="14" column="98" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="98" />
           <folding>
-            <marker date="1430681838052" expanded="true" signature="23:248" placeholder="/**...*/" />
+            <element signature="e#774#786#0" expanded="true" />
+            <element signature="e#1148#1160#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileUtil.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/test/ChainedWordTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-          <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="374">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EfficiencyCheck.java">
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/test/LPHashtableTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.1511626" vertical-offset="0" max-vertical-offset="3196">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/Word.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="901">
+          <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/LPHashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1695" max-vertical-offset="2941">
+          <caret line="115" column="54" selection-start-line="115" selection-start-column="54" selection-end-line="115" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/QPHashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="3213">
+          <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/EfficiencyCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2583" max-vertical-offset="3230">
+          <caret line="161" column="5" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1122">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PracFiveSource/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37135923" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

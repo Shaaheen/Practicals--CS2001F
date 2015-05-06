@@ -1,6 +1,6 @@
+package PracFiveSource;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Created by Shaaheen on 4/28/2015.
  * Word object that has all entry methods and contains a word and all its definitions
@@ -9,7 +9,7 @@ import java.util.List;
 public class Word implements Entry{
     String word; //keeps actual word string
     ArrayList<Definition> definitions = new ArrayList<Definition>(); //list of words definitions
-    int probe; //Number of probes it took to insert this word
+    public int probe; //Number of probes it took to insert this word
 
     //Constructor method
     public Word(String word,Definition def){
@@ -50,6 +50,6 @@ public class Word implements Entry{
     //checks if the word object is an entry for a specific word
     @Override
     public boolean isEntryFor(String word) {
-        return  this.word == word;
+        return  this.word.equals(word);
     }
 }

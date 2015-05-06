@@ -1,3 +1,4 @@
+package PracFiveSource;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -9,19 +10,19 @@ public class EfficiencyCheck {
 
     public static void main(String[] args) throws IOException {
         Scanner user_input = new Scanner(System.in);
-        int caseIn = 0;
         int choice=0;
         //Loops until user wants to quit
         while (choice != 3) {
             System.out.println("Check Efficiency of 1)Load Performance or 2)Search Performance or 3)Quit");
             choice = user_input.nextInt();
+            int caseIn = 0;
             if (choice == 1) {
                 while (caseIn!=3) {
                     System.out.println("1)Print total probes for each case  2)Check Percentage difference 3)Back");
                     caseIn = user_input.nextInt();
                     if (caseIn == 1) {
                         //Goes through each load factor
-                        for ( double load = 0.5; load < 1; load = load + 0.25) {
+                        for ( double load = 0.5; load <= 1; load = load + 0.25) {
                             //Gets hashtables for each load factor loaded with the lexicon dictionary
                             Dictionary[] hashTbles = getDictionarys(load);
 
@@ -59,7 +60,6 @@ public class EfficiencyCheck {
                 }
             }
             else if (choice == 2){
-
                 int case2 = 0;
                 while (case2 !=2 ) {
                     System.out.println("1)Output performance stats 2)Back");
@@ -112,7 +112,7 @@ public class EfficiencyCheck {
                                 System.out.println("Linear Probing and Quadratic Probing : " + Math.abs(Math.round((((double) (QPTrials - LPTrials)) / QPTrials) * 100)) + "%");
                                 System.out.println("Sequential Chaining and Quadratic Probing : " + Math.abs(Math.round((((double) (SCTrials - QPTrials)) / SCTrials) * 100)) + "%");
                             }else{
-                                System.out.println("QP failed - Can't word out percentage(%) difference with Quadratic Probing");
+                                System.out.println("QP failed - Can't work out percentage difference with Quadratic Probing");
                             }
 
                             System.out.println("Linear Probing and Sequential Chaining : " + Math.abs(Math.round((((double) (SCTrials - LPTrials)) / SCTrials) * 100)) + "%");
@@ -149,14 +149,16 @@ public class EfficiencyCheck {
         hashTables[0] = LP;
         hashTables[1] = QP;
         hashTables[2] = SC;
-        
+
+       // System.out.println("The load factor here is " + ((QPHashtable) hashTables[1]).loadFactor());
+
+
         return hashTables;
     }
 
     //Method to get the size that a table should be for the given load factor - based on lexicon
     private static int getSize(double loadFactor){
-        int size = primeSize((int) (3739/loadFactor));
-        return (size); // 3739 is the number of entries from the lexicon list
+        return (primeSize((int) (3739/loadFactor))); // 3739 is the number of entries from the lexicon list
     }
 
     //Returns a prime size number
