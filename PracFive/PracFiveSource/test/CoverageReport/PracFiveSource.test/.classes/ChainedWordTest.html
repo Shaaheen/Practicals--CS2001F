@@ -1,0 +1,102 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ChainedWordTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">PracFiveSource.test</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ChainedWordTest (PracFiveSource.test)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChainedWordTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package PracFiveSource.test;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import PracFiveSource.ChainedWord;
+<i>4</i>&nbsp;import PracFiveSource.Definition;
+<i>5</i>&nbsp;import PracFiveSource.Word;
+<i>6</i>&nbsp;import PracFiveSource.WordType;
+<i>7</i>&nbsp;import junit.framework.TestCase;
+<i>8</i>&nbsp;
+<b class="fc"><i>9</i>&nbsp;public class ChainedWordTest extends WordTest {</b>
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    public void setUp() throws Exception {
+<b class="fc"><i>12</i>&nbsp;        super.setUp();</b>
+<b class="fc"><i>13</i>&nbsp;        testWrd = new ChainedWord(&quot;testWord&quot;,new Definition(WordType.toWordType(&quot;n&quot;),&quot;test definition&quot;));</b>
+<b class="fc"><i>14</i>&nbsp;    }</b>
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    public void testGetNext() throws Exception {
+<b class="fc"><i>17</i>&nbsp;        assertEquals(null,((ChainedWord) testWrd).getNext());</b>
+<b class="fc"><i>18</i>&nbsp;    }</b>
+<i>19</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2015-05-06 19:50</div>
+</div>
+</body>
+</html>

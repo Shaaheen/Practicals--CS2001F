@@ -13,6 +13,7 @@ import java.util.Random;
  */
 public class FileUtil {
 
+    public static String[] lexiconList = new String[4998];
     private FileUtil() {}
 
     //Loads in the words and definitions from the lexicon dictionary and inserts them into a dictionary
@@ -31,20 +32,23 @@ public class FileUtil {
         }
     }
 
+    public static void makeLexiconList() throws IOException {
+        BufferedReader bufReader = new BufferedReader( new FileReader("lexicon.txt")); //accesses file
+        String line = null;
+        int i = 0;
+        while ((line = bufReader.readLine()) != null ){ //traverses through list until reaches the random line number
+            int indxWord = line.indexOf(":", 4);
+            String word = line.substring(5, indxWord - 1); //gets word string out of line
+            lexiconList[i] = word;
+            i++;
+        }
+    }
+
     //Gets a random word from the lexicon dictionary
     public static String getRandomLexiconWord() throws IOException {
         Random rnd = new Random();
-        int i = 0;
         int randomLine = rnd.nextInt(4996) + 1; //Gets random number between 1 and 4997
-        BufferedReader bufReader = new BufferedReader( new FileReader("lexicon.txt")); //accesses file
-        String line = null;
-        while ( i < randomLine){ //traverses through list until reaches the random line number
-            line = bufReader.readLine(); //gets line string
-            i++;
-        }
-        int indxWord = line.indexOf(":", 4);
-        String word = line.substring(5, indxWord - 1); //gets word string out of line
-        return word;
+        return lexiconList[randomLine];
     }
 
     //returns a random string of random characters

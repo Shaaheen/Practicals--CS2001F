@@ -11,7 +11,7 @@ public class UserInterface {
     
     private UserInterface() {}
     
-    public static void main(String[] args) throws java.io.FileNotFoundException, java.io.IOException {
+    public static void main(String[] args) throws java.io.IOException {
         Scanner input = new Scanner(System.in);
         
         System.out.println("Choose a hash table implementation:");
@@ -51,11 +51,7 @@ public class UserInterface {
             }           
             System.out.println("Enter a word (or '#quit'):");
             word = input.next().toLowerCase();
-        }        
-        
-        
-        
-        
+        }
         
      }
 }

@@ -1,5 +1,6 @@
 package PracFiveSource;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 /**
@@ -29,8 +30,9 @@ public class EfficiencyCheck {
                             //Prints the total number of probes used to insert all of lexicon words and definitions
                             System.out.println("Total number of probes used to insert all of lexicon words and definitions");
                             System.out.println("LP: Total number of Probes is " + ((LPHashtable) hashTbles[0]).totalProbes + " for a load factor " + load);
-                            if (hashTbles[1] != null)
+                            if (hashTbles[1] != null) {
                                 System.out.println("QP: Total number of Probes is " + ((QPHashtable) hashTbles[1]).totalProbes + " for a load factor " + load);
+                            }
                             else
                                 System.out.println("QP: Failed at load factor " + load);
                             System.out.println("SC: Total number of Probes is " + ((SCHashtable) hashTbles[2]).totalProbes + " for a load factor " + load);
@@ -62,20 +64,24 @@ public class EfficiencyCheck {
             else if (choice == 2){
                 int case2 = 0;
                 while (case2 !=2 ) {
+                    FileUtil.makeLexiconList();
                     System.out.println("1)Output performance stats 2)Back");
                     case2 = user_input.nextInt();
                     if (case2 == 1) {
                         System.out.println("Loading ...");
                         for (double load = 0.5; load <= 1; load = load + 0.25) {
+                            if (load == 1.0){
+                                System.out.println("This will take a few seconds. Please be patient");
+                            }
                             Dictionary[] hashTables = getDictionarys(load);
                             int LPTrials = 0;
                             int QPTrials = 0; //Counts the number of probes throughout all the 100 trials
                             int SCTrials = 0;
-                            for (int j = 0; j < 20; j++) { //Goes through a 20 trials
+                            for (int j = 0; j < 100; j++) { //Goes through a 100 trials
                                 for (int i = 0; i < 100; i++) { //Searches through a hundred random words
                                     if (i < 20) {
                                         String nonSense = FileUtil.getNonsenseString(); //Gets a nonsense word which will be searched for in all hashtables
-                                        hashTables[0].getDefinitions(nonSense); //same nonsense word used for fairness
+                                        hashTables[0].getDefinitions(nonSense); //same nonsense word used for all tables for fairness
                                         hashTables[2].getDefinitions(nonSense);
                                         if (hashTables[1] != null)
                                             hashTables[1].getDefinitions(nonSense);
@@ -92,19 +98,24 @@ public class EfficiencyCheck {
                                 if (hashTables[1] != null)
                                     QPTrials = QPTrials + ((QPHashtable) hashTables[1]).searchProbes;
                                 SCTrials = SCTrials + ((SCHashtable) hashTables[2]).searchProbes;
+
+                                //Resets counter for next iteration
+                                ((LPHashtable) hashTables[0]).searchProbes = 0;
+                                ((QPHashtable) hashTables[1]).searchProbes = 0;
+                                ((SCHashtable) hashTables[2]).searchProbes = 0;
                             }
                             //Average all Values
-                            LPTrials = LPTrials / 20;
-                            QPTrials = QPTrials / 20;
-                            SCTrials = SCTrials / 20;
+                            LPTrials = LPTrials / 100;
+                            QPTrials = QPTrials / 100;
+                            SCTrials = SCTrials / 100;
                             //Prints out the Statistics
-                            System.out.println("The total average number of probes over 20 trials to search for a different random 100 words at each trial for load factor " + load);
-                            System.out.println("Searching in LP is " + LPTrials);
+                            System.out.println("The total average number of probes over 100 trials to search for a different random 100 words at each trial for load factor " + load);
+                            System.out.println("Searching in LP is total: " + LPTrials + " Avg per word: " + round(LPTrials/100.0,8));
                             if (hashTables[1] != null)
-                                System.out.println("Searching in QP is " + QPTrials);
+                                System.out.println("Searching in QP is total: " + QPTrials + " Avg per word : " + round(QPTrials/100.0,4));
                             else
                                 System.out.println("QP failed at probing");
-                            System.out.println("Searching in SC is " + SCTrials);
+                            System.out.println("Searching in SC is total: " + SCTrials + " Avg per word: " + round(SCTrials/100.0,4));
                             System.out.println();
 
                             System.out.println("Percentage difference");
@@ -180,5 +191,13 @@ public class EfficiencyCheck {
                 prime = false;
         }
         return prime;
+    }
+
+    public static double round(double value, int places){
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places,BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
     }
 }
